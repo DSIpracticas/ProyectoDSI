@@ -1,0 +1,47 @@
+﻿<Page
+    x:Class="ProyectoDSI.SeleccionMundo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ProyectoDSI"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+        <!--Botones para los mundos (cada uno tiene funcionalidad de botón)-->
+        <Image x:Name="World1" Source="Assets/Mundo1.png" PointerPressed="World_Click" VerticalAlignment="Bottom" Margin="0,0,30,60" Width="198" Height="260.7"/>
+        <Image x:Name="World2" Source="Assets/Mundo2.png" PointerPressed="World_Click" Grid.Column="1" VerticalAlignment="Center" Margin="30,0,0,80" Width="451.33" Height="415.03"/>
+        <Image x:Name="World3" Source="Assets/Mundo3.png" PointerPressed="World_Click" Grid.Column="2" VerticalAlignment="Top" Margin="0,100,50,0" Width="217.8" Height="158.4"/>
+
+        <!--Descripciones de los mundos-->
+        <StackPanel Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock FontSize="50" Text="Información" TextDecorations="Underline" TextAlignment="Center" TextWrapping="Wrap" Margin="0,600,0,0"/>
+            <TextBlock x:Name="Difficulty" Text="Dificultad" FontSize="40" Margin="0,5,0,0" TextAlignment="Center"/>
+            <TextBlock x:Name="Races" Text="Nº carreras" FontSize="40" Margin="0,5,0,0" TextAlignment="Center"/>
+        </StackPanel>
+
+        <!--Última fila de botones-->
+        <!--botón de atrás-->
+        <StackPanel x:Name="downLeft" Grid.Row="3">
+            <Button x:Name="back" Width="120" Height="90" Background="Transparent"  HorizontalAlignment="Center" Margin="-275,-39,0,0" Click="back_Click"  >
+                <Canvas x:Name="backCanvas">
+                    <Image Source="Assets/backButton.png" Stretch="Fill" Height="100" Width="150" Margin="-70,-45,0,0"/>
+                </Canvas>
+            </Button>
+        </StackPanel>
+        <Button Content="Ranking mundial" FontSize="50" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Click="ranking_Click"/>
+        <Button x:Name="MapAccess" Content="Acceder al mapa" FontSize="50" Visibility="Collapsed" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Click="seleccion_Click"/>
+        <TextBlock x:Name="Unlock" Text="Para desbloquear superar el ranking del mundo anterior" Visibility="Collapsed" TextWrapping="Wrap" Grid.Column="2" Grid.Row="1" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Top" TextAlignment="Center" Height="200" Width="448" Margin="0,15,0,0"/>
+    </Grid>
+</Page>

@@ -1,0 +1,60 @@
+﻿<Page
+    x:Class="ProyectoDSI.SeleccionZona"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ProyectoDSI"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="8*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+
+        <!--Primera fila-->
+        <TextBlock Text="Dinero: 60000€" Grid.Column="1" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Top" TextAlignment="Center" Height="200" Width="448" Margin="0,15,0,0"/>
+        <TextBlock Text="Fama: 1200 seguidores" Grid.Column="2" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Top" TextAlignment="Center" Height="200" Width="448" Margin="0,15,0,0"/>
+
+        <!--Imagen del mundo-->
+        <Image Source="Assets/Mundo1.png" Grid.ColumnSpan="2" Grid.Row="1" PointerPressed="Zone_Click" VerticalAlignment="Center" Margin="0,0,0,0" Width="531.65" Height="700"/>
+        <Image x:Name="ZoneA" Source="Assets/ZonaA.png" Grid.ColumnSpan="2" Grid.Row="1" PointerPressed="Zone_Click" VerticalAlignment="Center" Margin="250,0,0,600" Width="80" Height="80"/>
+        <Image x:Name="ZoneAA" Source="Assets/ZonaA.png" Grid.ColumnSpan="2" Grid.Row="1" PointerPressed="Zone_Click" VerticalAlignment="Center" Margin="150,0,0,300" Width="80" Height="80"/>
+        <Image x:Name="ZoneB" Source="Assets/ZonaB.png" Grid.ColumnSpan="2" Grid.Row="1" PointerPressed="Zone_Click" VerticalAlignment="Center" Margin="0,0,300,200" Width="80" Height="80"/>
+        <Image x:Name="ZoneBB" Source="Assets/ZonaB.png" Grid.ColumnSpan="2" Grid.Row="1" PointerPressed="Zone_Click" VerticalAlignment="Center" Margin="0,30,40,0" Width="80" Height="80"/>
+        <Image x:Name="ZoneBBB" Source="Assets/ZonaB.png" Grid.ColumnSpan="2" Grid.Row="1" PointerPressed="Zone_Click" VerticalAlignment="Center" Margin="0,550,30,0" Width="80" Height="80"/>
+
+        <!--Información de la zona-->
+        <StackPanel Grid.Column="2" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Información" FontSize="50" TextDecorations="Underline" TextAlignment="Center" TextWrapping="Wrap" Margin="0,0,0,0"/>
+            <TextBlock x:Name="Difficulty" Text="Dificultad" FontSize="40" Margin="0,5,0,0" TextAlignment="Center"/>
+            <TextBlock x:Name="Type" Text="Tipo de carrera" FontSize="40" Margin="0,5,0,0" TextAlignment="Center"/>
+            <TextBlock x:Name="Laps" Text="Nº de vueltas" FontSize="40" Margin="0,5,0,0" TextAlignment="Center"/>
+            <TextBlock Text="Recompensas:" FontSize="40" TextDecorations="Underline" Margin="0,5,0,0" TextAlignment="Center"/>
+            <TextBlock x:Name="Reward1" Text="Primer puesto" FontSize="40" Margin="0,5,0,0" TextAlignment="Center" TextWrapping="Wrap"/>
+            <TextBlock x:Name="Reward2" Text="Segundo puesto" FontSize="40" Margin="0,5,0,0" TextAlignment="Center" TextWrapping="Wrap"/>
+            <TextBlock x:Name="Reward3" Text="Tercer puesto" FontSize="40" Margin="0,5,0,0" TextAlignment="Center" TextWrapping="Wrap"/>
+            <TextBlock x:Name="RestReward" Text="Resto" FontSize="40" Margin="0,5,0,0" TextAlignment="Center" TextWrapping="Wrap"/>
+        </StackPanel>
+
+        <!--Última fila de botones-->
+        <!--botón de atrás-->
+        <StackPanel x:Name="downLeft" Grid.Row="3">
+            <Button x:Name="back" Width="120" Height="90" Background="Transparent"  HorizontalAlignment="Center" Margin="-275,-39,0,0" Click="back_Click"  >
+                <Canvas x:Name="backCanvas">
+                    <Image Source="Assets/backButton.png" Stretch="Fill" Height="100" Width="150" Margin="-70,-45,0,0"/>
+                </Canvas>
+            </Button>
+        </StackPanel>
+        <Button x:Name="Challenge" Content="Desafío" FontSize="50" Visibility="Collapsed" Grid.Column="2" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Click="grarage_Click"/>
+        <TextBlock x:Name="Unlock" Text="Para desbloquear superar la carrera anterior" Visibility="Collapsed" TextWrapping="Wrap" Grid.Column="2" Grid.Row="2" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Top" TextAlignment="Center" Height="200" Width="448" Margin="0,0,0,0"/>
+    </Grid>
+</Page>
