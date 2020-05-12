@@ -51,5 +51,10 @@ namespace ProyectoDSI
         {
             Application.Current.Exit();
         }
+
+        private void achievements_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(Logros));
+        }
     }
 }

@@ -20,68 +20,82 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
+
         <!--imagen de fondo-->
         <Image x:Name="backgroudImage" Source="Assets/mainMenuBackgroud.png" Stretch="Fill" Grid.ColumnSpan="3" Grid.RowSpan="4"></Image>
 
         <!--botón de carreras callejeras-->
-        <StackPanel x:Name="upRig" Grid.Row="1" Grid.Column="2">
-            <Button x:Name="streetRacing" Width="300" Height="100" Background="Transparent" Margin="0,60,0,0" HorizontalAlignment="Center" Click="worldSelection_Click">
-                <Canvas x:Name="streetRacingCanvas">
-                    <Image Source="Assets/mainButton.png" Stretch="Fill" Height="100" Width="300" Margin="-150,-50,0,0"/>
-                    <TextBlock Text="STREET RACING" FontSize="35" Foreground="White" Width="260" Height="50" FontStretch="Expanded" Margin="-120,-30,0,0"/>
-                </Canvas>
-            </Button>
-        </StackPanel>
+        <RelativePanel x:Name="upRig" Grid.Row="1" Grid.Column="2" Margin="25,0,25,0">
+            <Image x:Name="streetRacingImage" Source="Assets/mainButton.png" Stretch="Fill" MaxWidth="300" MaxHeight="100"
+                    RelativePanel.AlignVerticalCenterWith="streetRacing" RelativePanel.AlignHorizontalCenterWith="streetRacing"/>
+            <Viewbox RelativePanel.AlignVerticalCenterWith="streetRacing" RelativePanel.AlignHorizontalCenterWith="streetRacing" 
+                     MaxWidth="250" MaxHeight="75" Margin="15,0,15,0" >
+                <TextBlock x:Name="streetRacingTxt" Text="STREET RACING" Foreground="White" TextWrapping="Wrap" TextAlignment="Center"/>
+            </Viewbox>
+            <Button x:Name="streetRacing" Background="Transparent" Click="worldSelection_Click" Width="300" Height="100"
+                    RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True"/>
+        </RelativePanel>
 
         <!--botón de ranking mundial-->
-        <StackPanel x:Name="upLeft" Grid.Row="1">
-            <Button x:Name="worldRanking" Width="300" Height="100" Background="Transparent" Margin="0,60,0,0" HorizontalAlignment="Center" Click="ranking_Click">
-                <Canvas x:Name="rankingCanvas">
-                    <Image Source="Assets/mainButton.png" Stretch="Fill" Height="100" Width="300" Margin="-150,-50,0,0"/>
-                    <TextBlock Text="RANKING MUNDIAL" FontSize="28" Foreground="White" Width="260" Height="50" FontStretch="Expanded" Margin="-125,-30,0,0"/>
-                </Canvas>
-            </Button>
-        </StackPanel>
+        <RelativePanel x:Name="upLeft" Grid.Row="1" Margin="25,0,25,0">
+            <Image x:Name="worldRankingImage" Source="Assets/mainButton.png" Stretch="Fill" MaxWidth="300" MaxHeight="100"
+                    RelativePanel.AlignVerticalCenterWith="streetRanking" RelativePanel.AlignHorizontalCenterWith="streetRanking"/>
+            <Viewbox RelativePanel.AlignVerticalCenterWith="streetRanking" RelativePanel.AlignHorizontalCenterWith="streetRanking" 
+                     MaxWidth="250" MaxHeight="75" Margin="15,0,15,0" >
+                <TextBlock x:Name="worldRankingText" Text="WORLD RANKING" Foreground="White" TextWrapping="Wrap" TextAlignment="Center"/>
+            </Viewbox>
+            <Button x:Name="streetRanking" Background="Transparent" Click="ranking_Click" Width="300" Height="100"
+                    RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True"/>
+        </RelativePanel>
 
         <!--botón de ajustes-->
-        <StackPanel x:Name="centerLeft" Grid.Row="2">
-            <Button x:Name="settings" Width="300" Height="100" Background="Transparent" Margin="0,60,0,0" HorizontalAlignment="Center" Click="settings_Click" >
-                <Canvas x:Name="settingsCanvas">
-                    <Image Source="Assets/mainButton.png" Stretch="Fill" Height="100" Width="300" Margin="-150,-50,0,0"/>
-                    <TextBlock Text="SETTINGS" FontSize="32" Foreground="White" Width="150" Height="50" FontStretch="Expanded" Margin="-75,-30,0,0"/>
-                </Canvas>
-            </Button>
-        </StackPanel>
+        <RelativePanel x:Name="centerLeft" Grid.Row="2" Margin="25,0,25,0">
+            <Image x:Name="settingsImage" Source="Assets/mainButton.png" Stretch="Fill" MaxWidth="300" MaxHeight="100"
+                    RelativePanel.AlignVerticalCenterWith="settings" RelativePanel.AlignHorizontalCenterWith="settings"/>
+            <Viewbox RelativePanel.AlignVerticalCenterWith="settings" RelativePanel.AlignHorizontalCenterWith="settings" 
+                     MaxWidth="250" MaxHeight="75" Margin="15,0,15,0" >
+                <TextBlock x:Name="settingsText" Text="SETTINGS" Foreground="White" TextWrapping="Wrap" TextAlignment="Center"/>
+            </Viewbox>
+            <Button x:Name="settings" Background="Transparent" Click="settings_Click" Width="300" Height="100"
+                    RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True"/>
+        </RelativePanel>
 
         <!--botón de garaje-->
-        <StackPanel x:Name="centerCenter" Grid.Row="2" Grid.Column="1">
-            <Button x:Name="garage" Width="300" Height="100" Background="Transparent" Margin="0,60,0,0" HorizontalAlignment="Center" Click="garage_Click">
-                <Canvas x:Name="garageCanvas">
-                    <Image Source="Assets/mainButton.png" Stretch="Fill" Height="100" Width="300" Margin="-150,-50,0,0"/>
-                    <TextBlock Text="GARAGE" FontSize="32" TextAlignment="Center" Foreground="White" Width="150" Height="50" FontStretch="Expanded" Margin="-75,-30,0,0"/>
-                </Canvas>
-            </Button>
-        </StackPanel>
+        <RelativePanel x:Name="centerCenter" Grid.Row="2" Grid.Column="1" Margin="10,0,10,0">
+            <Image x:Name="garageImage" Source="Assets/mainButton.png" Stretch="Fill" MaxWidth="300" MaxHeight="100"
+                    RelativePanel.AlignVerticalCenterWith="garage" RelativePanel.AlignHorizontalCenterWith="garage"/>
+            <Viewbox RelativePanel.AlignVerticalCenterWith="garage" RelativePanel.AlignHorizontalCenterWith="garage" 
+                     MaxWidth="250" MaxHeight="75" Margin="5,15,5,15" >
+                <TextBlock x:Name="garageText" Text="GARAGE" Foreground="White" TextWrapping="Wrap" TextAlignment="Center"/>
+            </Viewbox>
+            <Button x:Name="garage" Background="Transparent" Click="garage_Click" Width="300" Height="100"
+                    RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True"/>
+        </RelativePanel>
 
         <!--botón de logros-->
-        <StackPanel x:Name="centerRight" Grid.Row="2" Grid.Column="2">
-            <Button x:Name="achievements" Width="300" Height="100" Background="Transparent" Margin="0,60,0,0" HorizontalAlignment="Center" Click="logros_Click">
-                <Canvas x:Name="achievementsCanvas">
-                    <Image Source="Assets/mainButton.png" Stretch="Fill" Height="100" Width="300" Margin="-150,-50,0,0"/>
-                    <TextBlock Text="ACHIEVEMENTS" FontSize="32" TextAlignment="Center" Foreground="White" Width="230" Height="50" FontStretch="Expanded" Margin="-115,-30,0,0"/>
-                </Canvas>
-            </Button>
-        </StackPanel>
+        <RelativePanel x:Name="centerRight" Grid.Row="2" Grid.Column="2" Margin="25,0,25,0">
+            <Image x:Name="achievementsImage" Source="Assets/mainButton.png" Stretch="Fill" MaxWidth="300" MaxHeight="100"
+                    RelativePanel.AlignVerticalCenterWith="achievements" RelativePanel.AlignHorizontalCenterWith="achievements"/>
+            <Viewbox RelativePanel.AlignVerticalCenterWith="achievements" RelativePanel.AlignHorizontalCenterWith="achievements" 
+                     MaxWidth="250" MaxHeight="75" Margin="15,0,15,0" >
+                <TextBlock x:Name="achievementsText" Text="ACHIEVEMENTS" Foreground="White" TextWrapping="Wrap" TextAlignment="Center"/>
+            </Viewbox>
+            <Button x:Name="achievements" Background="Transparent"  Width="300" Height="100"
+                    RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True" Click="achievements_Click"/>
+        </RelativePanel>
 
         <!--botón de salir-->
-        <StackPanel x:Name="downCenter" Grid.Row="3" Grid.Column="1">
-            <Button x:Name="exit" Width="300" Height="100" Background="Transparent" Margin="0,60,0,0" HorizontalAlignment="Center" Click="exit_Click">
-                <Canvas x:Name="exitCanvas">
-                    <Image Source="Assets/mainButton.png" Stretch="Fill" Height="100" Width="300" Margin="-150,-50,0,0"/>
-                    <TextBlock Text="EXIT" FontSize="32" TextAlignment="Center" Foreground="White" Width="70" Height="50" FontStretch="Expanded" Margin="-35,-30,0,0"/>
-                </Canvas>
-            </Button>
-        </StackPanel>
+        <RelativePanel x:Name="downCenter" Grid.Row="3" Grid.Column="1" Margin="10,0,10,0">
+            <Image x:Name="exitImage" Source="Assets/mainButton.png" Stretch="Fill" MaxWidth="300" MaxHeight="100"
+                    RelativePanel.AlignVerticalCenterWith="exit" RelativePanel.AlignHorizontalCenterWith="exit"/>
+            <Viewbox RelativePanel.AlignVerticalCenterWith="exit" RelativePanel.AlignHorizontalCenterWith="exit" 
+                     MaxWidth="250" MaxHeight="50" Margin="5,15,5,15"  >
+                <TextBlock x:Name="exitText" Text="EXIT" Foreground="White" TextWrapping="Wrap" TextAlignment="Center"/>
+            </Viewbox>
+            <Button x:Name="exit" Background="Transparent" Click="exit_Click" Width="300" Height="100"
+                    RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True"/>
+        </RelativePanel>
+
 
     </Grid>
 </Page>
