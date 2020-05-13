@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RankingDSI;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
@@ -36,7 +37,7 @@ namespace ProyectoDSI
                 AppViewBackButtonVisibility.Collapsed;
             // Carga la lista de ModelView a partir de la lista de Modelo
             if (ListaRanking != null)
-                foreach (RankingID ranking in Model.GetAllRanking())
+                foreach (RankingID ranking in RankingModel.GetAllRanking())
                 {
                     VMRanking VMitem = new VMRanking(ranking);
                     if (VMitem.Estado == RankingID.estados.player)
@@ -51,7 +52,7 @@ namespace ProyectoDSI
         }
         private void garage_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(SeleccionCoche));
+            this.Frame.Navigate(typeof(SeleccionCoche), false);
         }
         private void worldSelection_Click(object sender, RoutedEventArgs e)
         {

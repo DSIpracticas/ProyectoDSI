@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LogroDSI;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
@@ -48,7 +49,7 @@ namespace ProyectoDSI
                 AppViewBackButtonVisibility.Collapsed;
             // Carga la lista de ModelView a partir de la lista de Modelo
             if (ListaLogros != null)
-                foreach (LogroID logro in Model.GetAllLogros())
+                foreach (LogroID logro in LogroModel.GetAllLogros())
                 {
                     VMLogro VMitem = new VMLogro(logro);
                     //VMitem.Nombre = logro.Nombre;

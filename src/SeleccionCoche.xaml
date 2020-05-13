@@ -2,7 +2,7 @@
     x:Class="ProyectoDSI.SeleccionCoche"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:ProyectoDSI"
+    xmlns:local="using:CocheDSI"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
@@ -22,73 +22,77 @@
         </Grid.RowDefinitions>
 
         <!--Dinero-->
-        <TextBox Text="DINERO: XXXXXX€" Grid.Column="2" HorizontalAlignment="Right" Grid.Row="0" FontSize="40" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Height="77" Width="382"/>
+        <TextBlock x:Name="DineroText" Text="DINERO: €" Grid.Column="2" HorizontalAlignment="Right" Grid.Row="0" FontSize="40" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Height="77" Width="382"/>
 
         <!--Estadisticas-->
-        <StackPanel Grid.Row="1"  HorizontalAlignment="Center">
-            <TextBox Text="GAMA" FontSize="20" TextAlignment="Center" Background="GreenYellow" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="382"/>
-            <TextBox Text="ESTRELLAS" FontSize="20" TextAlignment="Center" Background="Yellow" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="382"/>
-            <TextBox Text="ACELERACION" FontSize="20" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="382"/>
-            <TextBox Text="80" FontSize="20" TextAlignment="Center" Background="Chocolate" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="382"/>
-            <TextBox Text="VELOCIDAD" FontSize="20" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="382"/>
-            <TextBox Text="70" FontSize="20" TextAlignment="Center" Background="Chocolate" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="382"/>
-            <TextBox Text="SUSPENSION" FontSize="20" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="382"/>
-            <TextBox Text="40" FontSize="20" TextAlignment="Center" Background="Chocolate" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="382"/>
-            <TextBox Text="AGARRE" FontSize="20" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="382"/>
-            <TextBox Text="30" FontSize="20" TextAlignment="Center" Background="Chocolate" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="382"/>
-            <TextBox Text="AERODINAMICA" FontSize="20" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="382"/>
-            <TextBox Text="80" FontSize="20" TextAlignment="Center" Background="Chocolate" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="382"/>
+        <StackPanel Grid.Row="1" HorizontalAlignment="Center">
+            <TextBlock Text="GAMA" FontSize="20" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="382"/>
+            <TextBlock x:Name="GamaText" Text="1" FontSize="20" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="382"/>
+            <TextBlock Text="ACELERACION" FontSize="20" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="382"/>
+            <TextBlock x:Name="AceleracionText" Text="80" FontSize="20" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="382"/>
+            <TextBlock Text="VELOCIDAD" FontSize="20" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="382"/>
+            <TextBlock x:Name="VelocidadText" Text="70" FontSize="20" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="382"/>
+            <TextBlock Text="SUSPENSION" FontSize="20" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="382"/>
+            <TextBlock x:Name="SuspensionText" Text="40" FontSize="20" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="382"/>
+            <TextBlock Text="AGARRE" FontSize="20" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="382"/>
+            <TextBlock x:Name="AgarreText" Text="30" FontSize="20" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="382"/>
+            <TextBlock Text="AERODINAMICA" FontSize="20" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="382"/>
+            <TextBlock x:Name="AerodinamicaText" Text="80" FontSize="20" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="382"/>
         </StackPanel>
 
         <!--Panel de mejora-->
         <StackPanel Grid.Row="1" Grid.Column="2"  HorizontalAlignment="Center">
-            <TextBox Text="PANEL DE MEJORAS" Background="Cyan" FontSize="20" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="382"/>
-            <TextBox Text="TURBO" FontSize="20" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="382"/>
-            <TextBox Text="ACELERACION +5" FontSize="20" TextAlignment="Center" Background="Chocolate" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="382"/>
-            <TextBox Text="MOTOR" FontSize="20" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="382"/>
-            <TextBox Text="VELOCIDAD +5" FontSize="20" TextAlignment="Center" Background="Chocolate" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="382"/>
-            <TextBox Text="AMORTIGUADORES" FontSize="20" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="382"/>
-            <TextBox Text=" SUSPENSION +5" FontSize="20" TextAlignment="Center" Background="Chocolate" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="382"/>
-            <TextBox Text="NEUMATICOS" FontSize="20" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="382"/>
-            <TextBox Text="AGARRE +5" FontSize="20" TextAlignment="Center" Background="Chocolate" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="382"/>
-            <TextBox Text="CARROCERIA" FontSize="20" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="382"/>
-            <TextBox Text="AERODINAMICA +5" FontSize="20" TextAlignment="Center" Background="Chocolate" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="382"/>
+            <TextBlock Text="PANEL DE MEJORAS" FontSize="20" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="382"/>
+            <TextBlock Text="TURBO LVL: 0" FontSize="20" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="382"/>
+            <TextBlock Text="ACELERACION +5" FontSize="20" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="382"/>
+            <TextBlock Text="MOTOR LVL:0" FontSize="20" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="382"/>
+            <TextBlock Text="VELOCIDAD +5" FontSize="20" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="382"/>
+            <TextBlock Text="AMORTIGUADORES LVL:0" FontSize="20" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="382"/>
+            <TextBlock Text=" SUSPENSION +5" FontSize="20" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="382"/>
+            <TextBlock Text="NEUMATICOS LVL:0" FontSize="20" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="382"/>
+            <TextBlock Text="AGARRE +5" FontSize="20" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="382"/>
+            <TextBlock Text="CARROCERIA LVL:0" FontSize="20" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="382"/>
+            <TextBlock Text="AERODINAMICA +5" FontSize="20" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="382"/>
         </StackPanel>
 
         <!--Coche-->
         <StackPanel Grid.Column="1" Grid.Row="1">
-            <Image x:Name="ImagenMostrada" Source="Assets/Cars/1.jpg" VerticalAlignment="Top" HorizontalAlignment="Center" Stretch="Fill" Height="500"/>
-            <TextBox x:Name="CosteCompra" Text="COSTE: XXXX€" FontSize="20" TextAlignment="Center" Background="Chocolate" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="382"/>
-            <Button x:Name="BotonComprar" Content="Comprar" Click="Comprar" Grid.Row="3" Grid.Column="2" Height="50" Width="250" Background="Yellow" HorizontalAlignment="Center"/>
+            <!--<FlipView Height="400" SelectionChanged="FlipView_SelectionChanged">
+                <Image x:Name="ImagenCoche1" Source="/Assets/Cars/Coche1.png"/>
+                <Image x:Name="ImagenCoche2" Source="/Assets/Cars/Coche2.png"/>
+                <Image x:Name="ImagenCoche3" Source="/Assets/Cars/Coche3.png"/>
+                <Image x:Name="ImagenCoche4" Source="/Assets/Cars/Coche4.png"/>
+                <Image x:Name="ImagenCoche5" Source="/Assets/Cars/Coche5.png"/>
+                <Image x:Name="ImagenCoche6" Source="/Assets/Cars/Coche6.png"/>
+                <Image x:Name="ImagenCoche7" Source="/Assets/Cars/Coche7.png"/>
+                <Image x:Name="ImagenCoche8" Source="/Assets/Cars/Coche8.png"/>
+                <Image x:Name="ImagenCoche9" Source="/Assets/Cars/Coche9.png"/>
+                <Image x:Name="ImagenCoche10" Source="/Assets/Cars/Coche10.png"/>
+                <Image x:Name="ImagenCoche11" Source="/Assets/Cars/Coche11.png"/>
+                <Image x:Name="ImagenCoche12" Source="/Assets/Cars/Coche12.png"/>
+                <Image x:Name="ImagenCoche13" Source="/Assets/Cars/Coche13.png"/>
+            </FlipView>-->
+            <TextBlock x:Name="NombreCoche" Text="Ferrari 599XX Dogde Charger" Foreground="Black" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            <Image x:Name="ImagenGrande" Height="400" Source="/Assets/Cars/Coche1.png"/>
+            <TextBox x:Name="CosteCompra" Text="COSTE: XXXX€" Visibility="Collapsed" FontSize="20" Margin="20" TextAlignment="Center" Background="Chocolate" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="382"/>
+            <Button x:Name="BotonComprar" Content="Comprar" Visibility="Collapsed" Click="Comprar" Grid.Row="3" Grid.Column="2" Height="50" Width="250" Background="Yellow" HorizontalAlignment="Center"/>
         </StackPanel>
 
         <!--Lista de coches-->
-        <ScrollViewer x:Name="CochesImageScroller"
-                      Grid.Row="2"
-                      Grid.ColumnSpan="3"
-                      ZoomMode="Disabled"
-                      HorizontalScrollMode="Enabled"
-                      HorizontalScrollBarVisibility="Visible"
-                      HorizontalAlignment="Stretch"
-                      VerticalAlignment="Stretch">
-            <ListView x:Name="ImageGridView"
-                  Background="LightGray" 
-                  ItemClick="ImageGridView_ItemClick" 
-                  SelectionMode="Single" 
-                  SelectionChanged="ImageGridView_SelectionChanged" 
-                  IsItemClickEnabled="True">
-                <StackPanel Orientation="Horizontal">
-                    <Image x:Name="Imagen1" Source="Assets/Cars/1.jpg" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Stretch="Uniform" Width="300" Height="120"/>
-                    <Image x:Name="Imagen2" Source="Assets/Cars/2.jpg" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Stretch="Uniform" Width="300" Height="120"/>
-                    <Image x:Name="Imagen3" Source="Assets/Cars/3.jpg" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Stretch="Uniform" Width="300" Height="120"/>
-                    <Image x:Name="Imagen4" Source="Assets/Cars/4.jpg" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Stretch="Uniform" Width="300" Height="120"/>
-                    <Image x:Name="Imagen5" Source="Assets/Cars/5.jpg" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Stretch="Uniform" Width="300" Height="120"/>
-                    <Image x:Name="Imagen6" Source="Assets/Cars/6.jpg" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Stretch="Uniform" Width="300" Height="120"/>
-                    <Image x:Name="Imagen7" Source="Assets/Cars/7.jpg" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Stretch="Uniform" Width="300" Height="120"/>
-                </StackPanel>
+        <ScrollViewer x:Name="CochesImageScroller" Grid.Row="2" Grid.ColumnSpan="3" ZoomMode="Disabled" HorizontalScrollMode="Enabled"
+                      HorizontalScrollBarVisibility="Visible" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <ListView x:Name="listaCoches_" Grid.Row="2" Grid.ColumnSpan="3" SelectionChanged="ImageGridView_SelectionChanged">
+                <ListView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="Horizontal"></StackPanel>
+                    </ItemsPanelTemplate>
+                </ListView.ItemsPanel>
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="local:CarID">
+                        <Image Source="{x:Bind Source}" Width="160" Height="120"/>
+                   </DataTemplate>
+                </ListView.ItemTemplate>
             </ListView>
-
-
         </ScrollViewer>
 
         <!--botón de atrás-->
