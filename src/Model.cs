@@ -10,6 +10,8 @@ namespace ProyectoDSI
     {
         //Define si el logro está acabado o sin acabar
         public enum estados { bloqueado, desbloqueado };
+        //Define el color
+        public Windows.UI.Xaml.Media.Brush color { get; set; }
         //Posición en la lista
         public int Posicion { get; set; }
         //Nombre de los logros
@@ -17,7 +19,9 @@ namespace ProyectoDSI
         //Requisitos de los logros
         public string Requisitos { get; set; }
         //Recompensa por el logro
-        public string Recompensa { get; set; }
+        public int Dinero { get; set; }
+        //Recompensa por el logro
+        public int Fama { get; set; }
         //Estado actual
         public estados Estado { get; set; }
         public LogroID() { }
@@ -48,118 +52,121 @@ namespace ProyectoDSI
             {
                 Posicion = 0,
                 Nombre = "Rápido y Furioso",
-                Requisitos = "Alcanza el primer puesto en 5 carreras consecutivas.",
-                Recompensa = "Dinero: 6000€ Fama:100 Followers",
+                Requisitos = "Completa todos los demás logros",
+                Dinero = 100000,
+                Fama = 0,
                 Estado = LogroID.estados.bloqueado,
              },
 
             new LogroID()
             {
                 Posicion = 1,
-                Nombre = "Rápido y Furioso",
-                Requisitos = "Alcanza el primer puesto en 5 carreras consecutivas.",
-                Recompensa = "Dinero: 6000€ Fama:100 Followers",
+                Nombre = "Superando límites",
+                Requisitos = "Mejora al máximo 10 coches diferentes",
+                Dinero = 15000,
+                Fama = 300,
                 Estado = LogroID.estados.bloqueado,
              },
 
             new LogroID()
             {
                 Posicion = 2,
-                Nombre = "Rápido y Furioso",
-                Requisitos = "Alcanza el primer puesto en 5 carreras consecutivas.",
-                Recompensa = "Dinero: 6000€ Fama:100 Followers",
+                Nombre = "Ampliando fronteras",
+                Requisitos = "Desbloquea todos los mapas",
+                Recompensa = "Dinero: 20.000€ Fama: 100 Followers",
                 Estado = LogroID.estados.bloqueado,
              },
 
             new LogroID()
             {
                 Posicion = 3,
-                Nombre = "Rápido y Furioso",
-                Requisitos = "Alcanza el primer puesto en 5 carreras consecutivas.",
-                Recompensa = "Dinero: 6000€ Fama:100 Followers",
+                Nombre = "Paparazzis por doquier",
+                Requisitos = "Consigue llegar a los 10.000 followers",
+                Recompensa = "Dinero: 50.000€",
                 Estado = LogroID.estados.bloqueado,
              },
 
             new LogroID()
             {
                 Posicion = 4,
-                Nombre = "Rápido y Furioso",
-                Requisitos = "Alcanza el primer puesto en 5 carreras consecutivas.",
-                Recompensa = "Dinero: 6000€ Fama:100 Followers",
+                Nombre = "Hundido en la gloria",
+                Requisitos = "Llega a 5.000 followers",
+                Recompensa = "Dinero: 25.000€",
                 Estado = LogroID.estados.bloqueado,
              },
 
             new LogroID()
             {
                 Posicion = 5,
-                Nombre = "Rápido y Furioso",
+                Nombre = "El bueno, el feo y el rápido",
                 Requisitos = "Alcanza el primer puesto en 5 carreras consecutivas.",
-                Recompensa = "Dinero: 6000€ Fama:100 Followers",
-                Estado = LogroID.estados.bloqueado,
+                Recompensa = "Dinero: 25.000€ Fama: 100 Followers",
+                Estado = LogroID.estados.desbloqueado,
              },
 
             new LogroID()
             {
                 Posicion = 6,
-                Nombre = "Rápido y Furioso",
-                Requisitos = "Alcanza el primer puesto en 5 carreras consecutivas.",
-                Recompensa = "Dinero: 6000€ Fama:100 Followers",
+                Nombre = "Como un cohete",
+                Requisitos = "Supera los 400 km/h en menos de 3 segundos",
+                Recompensa = "Dinero: 10.000€ Fama: 30 Followers",
                 Estado = LogroID.estados.bloqueado,
              },
 
             new LogroID()
             {
                 Posicion = 7,
-                Nombre = "Rápido y Furioso",
-                Requisitos = "Alcanza el primer puesto en 5 carreras consecutivas.",
-                Recompensa = "Dinero: 6000€ Fama:100 Followers",
+                Nombre = "El comienzo de una leyenda",
+                Requisitos = "Gana tu primera carrera",
+                Recompensa = "Dinero: 5.000€ Fama: 10 Followers",
                 Estado = LogroID.estados.bloqueado,
              },
 
             new LogroID()
             {
                 Posicion = 8,
-                Nombre = "Rápido y Furioso",
-                Requisitos = "Alcanza el primer puesto en 5 carreras consecutivas.",
-                Recompensa = "Dinero: 6000€ Fama:100 Followers",
+                Nombre = "Como puercos en el oro",
+                Requisitos = "Supera todas las carreras callejeras con una medalla de oro",
+                Recompensa = "Dinero: 40.000€ Fama: 1.000 Followers",
                 Estado = LogroID.estados.bloqueado,
              },
 
             new LogroID()
             {
                 Posicion = 9,
-                Nombre = "Rápido y Furioso",
-                Requisitos = "Alcanza el primer puesto en 5 carreras consecutivas.",
-                Recompensa = "Dinero: 6000€ Fama:100 Followers",
+                Nombre = "Regresa por donde has venido",
+                Requisitos = "Provoca la descalificación de un adversario",
+                Recompensa = "Dinero: 500€ Fama: 50 Followers",
                 Estado = LogroID.estados.bloqueado,
              },
 
             new LogroID()
             {
                 Posicion = 10,
-                Nombre = "Rápido y Furioso",
-                Requisitos = "Alcanza el primer puesto en 5 carreras consecutivas.",
-                Recompensa = "Dinero: 6000€ Fama:100 Followers",
+                Nombre = "Quemando ruedas",
+                Requisitos = "Consigue 20 derrapes perfectos en una sola carrera",
+                Recompensa = "Dinero: 1.000€ Fama: 50 Followers",
                 Estado = LogroID.estados.bloqueado,
              },
 
             new LogroID()
             {
                 Posicion = 11,
-                Nombre = "Rápido y Furioso",
-                Requisitos = "Alcanza el primer puesto en 5 carreras consecutivas.",
-                Recompensa = "Dinero: 6000€ Fama:100 Followers",
+                Nombre = "El más listo de la clase",
+                Requisitos = "Arranca de forma perfecta en 5 carreras seguidas",
+                Recompensa = "Dinero: 1.000€ Fama: 60 Followers",
                 Estado = LogroID.estados.bloqueado,
              },
 
             new LogroID()
             {
                 Posicion = 12,
-                Nombre = "Rápido y Furioso",
-                Requisitos = "Alcanza el primer puesto en 5 carreras consecutivas.",
-                Recompensa = "Dinero: 6000€ Fama:100 Followers",
+                Nombre = "Caballos de fuego",
+                Requisitos = "Entra en el top 10 del ranking mundial",
+                Recompensa = "Dinero: 6.000€ Fama: 100 Followers",
                 Estado = LogroID.estados.bloqueado,
              },
+
           };
 
         public static List<RankingID> RankingList = new List<RankingID>() {

@@ -29,36 +29,47 @@ namespace ProyectoDSI
         {
             this.InitializeComponent();
         }
-        //Método para mostrar los atributos de los logros
-        private void MuestraLogro()
-        {
-            /*if (SelMos >= 0)
-            {
-                VMDron Sel = ListaDrones[SelMos];
-                nameInfo.Text = "Id: ," + Sel.Id + ", Nombre: " + Sel.Nombre + ", Estado: " + Sel.Estado.ToString()
-                    + ",\nREF: " + Sel.RX.ToString() + "," + Sel.RY.ToString() + " POS: " + Sel.X.ToString() + ", " + Sel.Y.ToString()
-                    + "\nExplicación: " + Sel.Explicacion;
-                imageDron.Source = Sel.Img.Source;
-            }*/
-        }
 
+        //Método para mostrar los atributos de los logros
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility =
                 AppViewBackButtonVisibility.Collapsed;
             // Carga la lista de ModelView a partir de la lista de Modelo
             if (ListaLogros != null)
+            {
+                //Primero se agregan los bloqueados
                 foreach (LogroID logro in Model.GetAllLogros())
                 {
                     VMLogro VMitem = new VMLogro(logro);
+                    if (VMitem.Estado == LogroID.estados.bloqueado)
+                    {
+                        ListaLogros.Add(VMitem);
+                    }
                     //VMitem.Nombre = logro.Nombre;
-                    ListaLogros.Add(VMitem);
                 }
+                //Después los desbloqueados
+                foreach (LogroID logro in Model.GetAllLogros())
+                {
+                    //Primero se agregan los bloqueados
+                    VMLogro VMitem = new VMLogro(logro);
+                    if (VMitem.Estado == LogroID.estados.desbloqueado)
+                    {
+                        ListaLogros.Add(VMitem);
+                    }
+                    //VMitem.Nombre = logro.Nombre;
+                }
+            }
             listaLogros_.ItemsSource = ListaLogros;
 
             base.OnNavigatedTo(e);
         }
-        private void back_Click(object sender, RoutedEventArgs e)
+        //Método para cobrar la recompensa
+        private void ChargeAward(object sender, RoutedEventArgs e) {
+            if (ListaLogros != null) {
+            }
+        }
+        private void Back_Click(object sender, RoutedEventArgs e)
         {
             On_BackRequested();
         }

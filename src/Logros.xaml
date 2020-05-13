@@ -48,7 +48,7 @@
                   Height="570" Width="1100">
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="local:VMLogro">
-                    <Border Background="Gray" BorderThickness="5" Margin="5, 0, 0, 0">
+                    <Border Background= "Gray" BorderThickness="5" Margin="5, 0, 0, 0">
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="400"/>
@@ -67,8 +67,8 @@
                                        Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                             <TextBlock Text="{x:Bind Recompensa}" Foreground="Black" FontSize="14" 
                                        Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                            <Button Content="Cobrar Recompensa" Grid.Column="2" Grid.RowSpan="2"
-                                    VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                            <Button x:Name="awardButton" Content="Cobrar Recompensa" Grid.Column="2" Grid.RowSpan="2"
+                                    VerticalAlignment="Center" HorizontalAlignment="Right" Click="ChargeAward"/>
                         </Grid>
                     </Border>
                 </DataTemplate>
