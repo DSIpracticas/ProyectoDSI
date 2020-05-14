@@ -170,6 +170,8 @@
     <Content Include="Assets\Mundo2.png" />
     <Content Include="Assets\Mundo3.png" />
     <Content Include="Assets\panel.png" />
+    <Content Include="Assets\panel2.png" />
+    <Content Include="Assets\panelTexto.PNG" />
     <Content Include="Assets\settingsBackgroud.jpg" />
     <Content Include="Assets\settingsBackgroud.png" />
     <Content Include="Assets\ZonaA.png" />
