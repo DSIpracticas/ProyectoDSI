@@ -43,6 +43,23 @@ namespace ProyectoDSI
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+            SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility =
+                AppViewBackButtonVisibility.Collapsed;
+            // Carga la lista de ModelView a partir de la lista de Modelo
+            if (ListaCoches != null)
+                foreach (CarID currCar in CarModel.GetAllCars())
+                {
+                    VMCar VMitem = new VMCar(currCar);
+                    //VMitem.Nombre = logro.Nombre;
+                    ListaCoches.Add(VMitem);
+                    if(VMitem.Estado == CarID.estados.bloqueado)
+                    {
+
+                    }
+                }
+
+            listaCoches_.ItemsSource = ListaCoches;
+
             if (e.Parameter is bool)
             {
                 permitirCompra = (bool)e.Parameter;
@@ -60,17 +77,6 @@ namespace ProyectoDSI
 
             DineroText.Text = "DINERO: " + Money.ToString() + "€";
 
-            SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility =
-                AppViewBackButtonVisibility.Collapsed;
-            // Carga la lista de ModelView a partir de la lista de Modelo
-            if (ListaCoches != null)
-                foreach (CarID currCar in CarModel.GetAllCars())
-                {
-                    VMCar VMitem = new VMCar(currCar);
-                    //VMitem.Nombre = logro.Nombre;
-                    ListaCoches.Add(VMitem);
-                }
-            listaCoches_.ItemsSource = ListaCoches;
 
             base.OnNavigatedTo(e);
         }
@@ -126,8 +132,6 @@ namespace ProyectoDSI
             VelocidadText.Text = ListaCoches.ElementAt(SelCar).Velocidad.ToString();
 
             //Actualiza Mejoras
-
-
             //Actualiza la foto mostrada (no funciona)
             //ImagenGrande.Source = ListaCoches.ElementAt(SelCar).Source;
             NombreCoche.Text = ListaCoches.ElementAt(SelCar).Nombre;
@@ -148,8 +152,12 @@ namespace ProyectoDSI
 
         private void ImagenesGrandes_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            //SelCar = ImagenesGrandes.SelectedIndex;
-            //ActualizaDatos();
+            if (ListaCoches.Count > 0)
+            {
+                SelCar = ImagenesGrandes.SelectedIndex;
+                listaCoches_.SelectedIndex = SelCar;
+                ActualizaDatos();
+            }
         }
     }
 }

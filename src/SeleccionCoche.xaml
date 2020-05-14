@@ -58,7 +58,7 @@
         <!--Coche-->
         <StackPanel Grid.Column="1" Grid.Row="1">
             <TextBlock x:Name="NombreCoche" Text="Ferrari 599XX Dogde Charger" Foreground="Black" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-            <FlipView x:Name="ImagenesGrandes" Height="400" SelectedIndex="0" SelectionChanged="ImagenesGrandes_SelectionChanged">
+            <FlipView x:Name="ImagenesGrandes" Height="400" SelectedIndex="1" SelectionChanged="ImagenesGrandes_SelectionChanged">
                 <Image x:Name="ImagenCoche1" Source="/Assets/Cars/Coche1.png"/>
                 <Image x:Name="ImagenCoche2" Source="/Assets/Cars/Coche2.png"/>
                 <Image x:Name="ImagenCoche3" Source="/Assets/Cars/Coche3.png"/>
@@ -89,7 +89,10 @@
                 </ListView.ItemsPanel>
                 <ListView.ItemTemplate>
                     <DataTemplate x:DataType="local:CarID">
-                        <Image Source="{x:Bind Source}" Width="160" Height="120"/>
+                        <RelativePanel x:Name="PanelCars">
+                            <Image x:Name="CarImage" Source="{x:Bind Source}" Width="160" Height="120"/>
+                            <Image x:Name="Candado" Source="/Assets/barraVerde.png" Visibility="Collapsed" Width="160" Height="120" RelativePanel.AlignVerticalCenterWith="CarImage" RelativePanel.AlignHorizontalCenterWith="CarImage"/>
+                        </RelativePanel>
                    </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>

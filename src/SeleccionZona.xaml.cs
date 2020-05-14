@@ -28,8 +28,8 @@ namespace ProyectoDSI
         }
         private void grarage_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(PostPartida));
-            /*this.Frame.Navigate(typeof(SeleccionCoche));*/
+            //this.Frame.Navigate(typeof(PostPartida));
+            this.Frame.Navigate(typeof(SeleccionCoche), false);
         }
         private void back_Click(object sender, RoutedEventArgs e)
         {

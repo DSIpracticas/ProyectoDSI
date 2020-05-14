@@ -33,7 +33,7 @@ namespace CocheDSI
     }
 }
 
-namespace LogroDSI
+namespace ProyectoDSI
 {
     public class VMLogro : LogroID
     {
@@ -48,10 +48,6 @@ namespace LogroDSI
             Imagen = logro.Imagen;
         }
     }
-}
-
-namespace RankingDSI
-{
     public class VMRanking : RankingID
     {
         public VMRanking(RankingID ranking)

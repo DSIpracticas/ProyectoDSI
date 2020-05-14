@@ -1,5 +1,4 @@
-﻿using LogroDSI;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
@@ -78,7 +77,7 @@ namespace ProyectoDSI
                 famaText_.Text = "Fama: " + fama + " Followers";
                 dineroText_.Text = "Dinero: " + dinero + " €";
             }
-            
+
             listaLogros_.ItemsSource = ListaLogros;
             base.OnNavigatedTo(e);
         }

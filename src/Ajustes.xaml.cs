@@ -33,7 +33,7 @@ namespace ProyectoDSI
         public Ajustes()
         {
             this.InitializeComponent();
-            
+
         }
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
@@ -96,3 +96,4 @@ namespace ProyectoDSI
     }
 
 }
+

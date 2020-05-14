@@ -369,7 +369,7 @@ namespace ProyectoDSI
                 Dinero = 100000,
                 Fama = 0,
                 Estado = LogroID.estados.bloqueado,
-            },
+             },
 
             new LogroID()
             {
@@ -378,7 +378,7 @@ namespace ProyectoDSI
                 Dinero = 15000,
                 Fama = 300,
                 Estado = LogroID.estados.bloqueado,
-            },
+             },
 
             new LogroID()
             {
@@ -387,7 +387,7 @@ namespace ProyectoDSI
                 Dinero = 20000,
                 Fama = 100,
                 Estado = LogroID.estados.bloqueado,
-            },
+             },
 
             new LogroID()
             {
@@ -396,7 +396,7 @@ namespace ProyectoDSI
                 Dinero = 50000,
                 Fama = 0,
                 Estado = LogroID.estados.bloqueado,
-            },
+             },
 
             new LogroID()
             {
@@ -405,7 +405,7 @@ namespace ProyectoDSI
                 Dinero = 25000,
                 Fama = 0,
                 Estado = LogroID.estados.bloqueado,
-            },
+             },
 
             new LogroID()
             {
@@ -414,7 +414,7 @@ namespace ProyectoDSI
                 Dinero = 25000,
                 Fama = 100,
                 Estado = LogroID.estados.bloqueado,
-            },
+             },
 
             new LogroID()
             {
@@ -441,7 +441,7 @@ namespace ProyectoDSI
                 Dinero = 40000,
                 Fama = 1000,
                 Estado = LogroID.estados.bloqueado,
-            },
+             },
 
             new LogroID()
             {
@@ -459,7 +459,7 @@ namespace ProyectoDSI
                 Dinero = 1000,
                 Fama = 50,
                 Estado = LogroID.estados.bloqueado,
-            },
+             },
 
             new LogroID()
             {
@@ -468,7 +468,7 @@ namespace ProyectoDSI
                 Dinero = 1000,
                 Fama = 60,
                 Estado = LogroID.estados.bloqueado,
-            },
+             },
 
             new LogroID()
             {
@@ -553,9 +553,19 @@ namespace ProyectoDSI
                 Estado = RankingID.estados.player,
             },
         };
+
+        public static IList<LogroID> GetAllLogros()
+        {
+            return Logros;
+        }
+
         public static IList<RankingID> GetAllRanking()
         {
-           return RankingList;
+            return RankingList;
+        }
+        public static LogroID GetLogroBy(int id)
+        {
+            return Logros[id];
         }
 
         public static IList<KeyID> GetKeyIDs()
@@ -564,5 +574,3 @@ namespace ProyectoDSI
         }
     }
 }
-
-
