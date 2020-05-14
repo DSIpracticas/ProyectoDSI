@@ -47,7 +47,8 @@ namespace ProyectoDSI
         }
         private void garage_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(SeleccionCoche));
+            //this.Frame.Navigate(typeof(SeleccionCoche));
+            this.Frame.Navigate(typeof(SeleccionCoche), true);
         }
         private void worldSelection_Click(object sender, RoutedEventArgs e)
         {

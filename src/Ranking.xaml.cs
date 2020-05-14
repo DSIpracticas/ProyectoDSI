@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RankingDSI;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
@@ -101,7 +102,7 @@ namespace ProyectoDSI
         }
         private void garage_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(SeleccionCoche));
+            this.Frame.Navigate(typeof(SeleccionCoche), false);
         }
         private void worldSelection_Click(object sender, RoutedEventArgs e)
         {

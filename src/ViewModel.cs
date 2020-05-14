@@ -4,7 +4,36 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProyectoDSI
+namespace CocheDSI
+{
+    public class VMCar : CarID
+    {
+        public VMCar(CarID car)
+        {
+            Posicion = car.Posicion;
+            Nombre = car.Nombre;
+            Source = car.Source;
+            Gama = car.Gama;
+            Coste = car.Coste;
+
+            Velocidad = car.Velocidad;
+            Agarre = car.Agarre;
+            Suspension = car.Suspension;
+            Aceleracion = car.Aceleracion;
+            Aerodinamica = car.Aerodinamica;
+
+            Turbo = car.Turbo;
+            Motor = car.Motor;
+            Amortiguador = car.Amortiguador;
+            Neumaticos = car.Neumaticos;
+            Carroceria = car.Carroceria;
+
+            Estado = car.Estado;
+        }
+    }
+}
+
+namespace LogroDSI
 {
     public class VMLogro : LogroID
     {
@@ -19,7 +48,10 @@ namespace ProyectoDSI
             Imagen = logro.Imagen;
         }
     }
+}
 
+namespace RankingDSI
+{
     public class VMRanking : RankingID
     {
         public VMRanking(RankingID ranking)
