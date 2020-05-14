@@ -12,6 +12,8 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Windows.Media.Playback;
+
 
 // La plantilla de elemento Página en blanco está documentada en https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -25,6 +27,10 @@ namespace ProyectoDSI
         public MenuPrincipal()
         {
             this.InitializeComponent();
+        }
+
+        private void btnOpenAudioFile_Click(object sender, RoutedEventArgs e)
+        {
         }
 
         private void settings_Click(object sender, RoutedEventArgs e)

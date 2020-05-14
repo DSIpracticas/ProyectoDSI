@@ -12,6 +12,10 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using System.Windows.Input;
+using System.Collections.ObjectModel;
+using Windows.UI.Core;
+
 
 // La plantilla de elemento Página en blanco está documentada en https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -22,9 +26,28 @@ namespace ProyectoDSI
     /// </summary>
     public sealed partial class Ajustes : Page
     {
+        //lista de teclas
+        public ObservableCollection<VMKey> ListaKey { get; } = new ObservableCollection<VMKey>();
+
+        public string[] keysChar = new string[] { "Q", "W", "E", "R", "T", "Y", "A", "S", "D", "F", "SPACE", "UP", "LEFT", "RIGTH", "DOWN" };
         public Ajustes()
         {
             this.InitializeComponent();
+            
+        }
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility =
+                AppViewBackButtonVisibility.Collapsed;
+            // Carga la lista de ModelView a partir de la lista de Modelo
+            if (ListaKey != null)
+                foreach (KeyID currKey in Model.GetKeyIDs())
+                {
+                    VMKey key = new VMKey(currKey);
+                    ListaKey.Add(key);
+                }
+            keyList.ItemsSource = ListaKey;
+            base.OnNavigatedTo(e);
         }
         private void back_Click(object sender, RoutedEventArgs e)
         {
@@ -39,5 +62,37 @@ namespace ProyectoDSI
             }
             return false;
         }
+
+        private void sounds_Click(object sender, RoutedEventArgs e)
+        {
+            keyPanel.Visibility = Visibility.Collapsed;
+            graphicPanel.Visibility = Visibility.Collapsed;
+            soundsPanel.Visibility = Visibility.Visible;
+        }
+
+        private void controls_Click(object sender, RoutedEventArgs e)
+        {
+            soundsPanel.Visibility = Visibility.Collapsed;
+            graphicPanel.Visibility = Visibility.Collapsed;
+            keyPanel.Visibility = Visibility.Visible;
+        }
+
+        private void graphic_Click(object sender, RoutedEventArgs e)
+        {
+            keyPanel.Visibility = Visibility.Collapsed;
+            soundsPanel.Visibility = Visibility.Collapsed;
+            graphicPanel.Visibility = Visibility.Visible;
+        }
+
+        private void initKeys()
+        {
+            //for (int i = 0; i < keysChar.Length; i++)
+            //{
+            //    Keys key = new Keys(keysChar[i]);
+            //    keys.Add(key);
+            //}
+            //DataContext = this;
+        }
     }
+
 }
