@@ -30,21 +30,71 @@ namespace ProyectoDSI
             this.InitializeComponent();
         }
 
+        private void MuestraInfo(VMRanking ranking)
+        {
+            ranking.FamaText = "Fama necesaria: " + ranking.Fama + " Followers";
+        }
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility =
                 AppViewBackButtonVisibility.Collapsed;
             // Carga la lista de ModelView a partir de la lista de Modelo
             if (ListaRanking != null)
+            {
+                int id = 0;
+                //Primero los incompletos
+                foreach (RankingID ranking in Model.GetAllRanking())
+                {
+                    VMRanking VMitem = new VMRanking(ranking);
+                    if (VMitem.Estado == RankingID.estados.incompleto)
+                    {
+                        VMitem.Id = id;
+                        VMitem.Imagen = "Assets/barraRoja.png";
+                        ListaRanking.Add(VMitem);
+                        MuestraInfo(VMitem);
+                        id++;
+                    }
+                }
+                //Después el siguiente contrincante
+                foreach (RankingID ranking in Model.GetAllRanking())
+                {
+                    VMRanking VMitem = new VMRanking(ranking);
+                    if (VMitem.Estado == RankingID.estados.siguiente)
+                    {
+                        VMitem.Id = id;
+                        VMitem.Imagen = "Assets/barraVerde.png";
+                        ListaRanking.Add(VMitem);
+                        MuestraInfo(VMitem);
+                        id++;
+                    }
+                }
+                //Después el player
                 foreach (RankingID ranking in Model.GetAllRanking())
                 {
                     VMRanking VMitem = new VMRanking(ranking);
                     if (VMitem.Estado == RankingID.estados.player)
                     {
+                        VMitem.Id = id;
+                        VMitem.FamaText = "Fama actual: " + VMitem.Fama + " Followers";
+                        VMitem.Imagen = "Assets/barraAmarilla.png";
+                        ListaRanking.Add(VMitem);
+                        id++;
                     }
-                    //VMitem.Nombre = logro.Nombre;
-                    ListaRanking.Add(VMitem);
                 }
+                //Por último los completados
+                foreach (RankingID ranking in Model.GetAllRanking())
+                {
+                    VMRanking VMitem = new VMRanking(ranking);
+                    if (VMitem.Estado == RankingID.estados.completado)
+                    {
+                        VMitem.Id = id;
+                        VMitem.FamaText = "Derrotado";
+                        VMitem.Imagen = "Assets/barraGris.png";
+                        ListaRanking.Add(VMitem);
+                        id++;
+                    }
+                }
+            }
             listaRanking_.ItemsSource = ListaRanking;
 
             base.OnNavigatedTo(e);

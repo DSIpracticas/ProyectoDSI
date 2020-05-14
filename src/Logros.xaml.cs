@@ -44,15 +44,38 @@ namespace ProyectoDSI
             if (ListaLogros != null)
             {
                 int id = 0;
-                //Primero se agregan los desbloqueados
+                //Primero se agregan los bloqueados
                 foreach (LogroID logro in Model.GetAllLogros())
                 {
                     VMLogro VMitem = new VMLogro(logro);
-                    VMitem.Id = id;
-                    ListaLogros.Add(VMitem);
-                    MuestraInfo(VMitem);
-                    id++;
+                    if (VMitem.Estado == LogroID.estados.bloqueado)
+                    {
+                        VMitem.Id = id;
+                        VMitem.Imagen = "Assets/barraGris.png";
+                        ListaLogros.Add(VMitem);
+                        MuestraInfo(VMitem);
+                        id++;
+                    }
                 }
+                //Después los cobrados
+                int fama = 1000;
+                int dinero = 0;
+                foreach (LogroID logro in Model.GetAllLogros())
+                {
+                    VMLogro VMitem = new VMLogro(logro);
+                    if (VMitem.Estado == LogroID.estados.cobrado)
+                    {
+                        VMitem.Id = id;
+                        fama += VMitem.Fama;
+                        dinero += VMitem.Dinero;
+                        VMitem.Imagen = "Assets/barraVerde.png";
+                        ListaLogros.Add(VMitem);
+                        MuestraInfo(VMitem);
+                        id++;
+                    }
+                }
+                famaText_.Text = "Fama: " + fama + " Followers";
+                dineroText_.Text = "Dinero: " + dinero + " €";
             }
             
             listaLogros_.ItemsSource = ListaLogros;

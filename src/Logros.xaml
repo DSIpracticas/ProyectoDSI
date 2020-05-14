@@ -24,21 +24,22 @@
         </Grid.RowDefinitions>
         <!--imagen de fondo-->
         <Image x:Name="backgroudImage" Source="Assets/mainMenuBackgroud.png" Stretch="Fill" Grid.ColumnSpan="6" Grid.RowSpan="3"></Image>
-        <!--Logros completados-->
+        <!--Fama completados-->
         <Image Source="Assets/mainButton.png" Stretch="Fill" Height="100" Width="400" Grid.ColumnSpan="2"/>
-        <TextBlock x:Name="logrosText_" Grid.ColumnSpan="2" Text="Fama: 10.000 Followers"
+        <TextBlock x:Name="famaText_" Grid.ColumnSpan="2" Text="Fama: 0 Followers"
                     FontSize="25" VerticalAlignment="Center" 
-                    HorizontalAlignment="Center" Foreground="#FFC71A1A"/>
-        <!--Fama total-->
+                    HorizontalAlignment="Center" Foreground="White"/>
+        <!--Logros total-->
         <Image Source="Assets/mainButton.png" Stretch="Fill" Height="100" Width="400"
                Grid.Column="2" Grid.ColumnSpan="2"/>
-        <TextBlock x:Name="famaText_" Grid.Column="2" Grid.ColumnSpan="2" Text="Completados: 0/40"
+        <TextBlock x:Name="logrosText_" Grid.Column="2" Grid.ColumnSpan="2" Text="Completados: 0/40"
                     FontSize="25" VerticalAlignment="Center"
-                    HorizontalAlignment="Center" Foreground="#FFC71A1A"/>
+                    HorizontalAlignment="Center" Foreground="White" FocusVisualPrimaryBrush="White"/>
         <!--Dinero total-->
         <Image Source="Assets/mainButton.png" Stretch="Fill" Height="100" Width="400" Grid.Column="4" Grid.ColumnSpan="2"/>
-        <TextBlock x:Name="dineroText_" Grid.Column="4" Grid.ColumnSpan="2" Text="Dinero: 999.999 €"
-                    FontSize="25" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#FFC71A1A"/>
+        <TextBlock x:Name="dineroText_" Grid.Column="4" Grid.ColumnSpan="2" Text="Dinero: 0 €"
+                    FontSize="25" VerticalAlignment="Center"
+                   HorizontalAlignment="Center" Foreground="White"/>
         <!--botón de atrás-->
         <StackPanel x:Name="downLeft" Grid.Row="2" HorizontalAlignment="Center">
             <Button x:Name="back" Width="120" Height="90" Background="Transparent" 
@@ -51,10 +52,10 @@
         </StackPanel>
 
         <ListView x:Name="listaLogros_" Grid.Row="1" Grid.ColumnSpan="6" VerticalAlignment="Center" HorizontalAlignment="Center"
-                  Height="570" Width="1100">
+                  Height="570" Width="1150" SelectionMode="None">
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="local:VMLogro">
-                    <Border x:Name="borderList_" Background= "Gray" BorderThickness="5" Margin="5, 0, 0, 0">
+                    <Border x:Name="borderList_" Background= "Transparent" BorderThickness="5" Margin="5, 0, 0, 0">
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="400"/>
@@ -65,16 +66,17 @@
                                 <RowDefinition Height="30"/>
                                 <RowDefinition/>
                             </Grid.RowDefinitions>
+                            <Image Source="{x:Bind Imagen}" Stretch="Fill" Height="60" Width="1150" Grid.RowSpan="2" Grid.ColumnSpan="3"/>
                             <TextBlock Text="{x:Bind Nombre}" Foreground="Black" FontSize="14" 
-                                        VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                                        VerticalAlignment="Center" HorizontalAlignment="Left" Margin="20,0,0,0"/>
                             <TextBlock Text="{x:Bind Requisitos}" Foreground="Black" FontSize="14" 
-                                       Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                                       Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="20,0,0,0"/>
                             <TextBlock Text="Recompensas: " Foreground="Black" FontSize="14" 
                                        Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                             <TextBlock Text="{x:Bind Recompensa}" Foreground="Black" FontSize="14" 
                                        Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                             <Button x:Name="awardButton" Content="Cobrar Recompensa" Grid.Column="2" Grid.RowSpan="2"
-                                    VerticalAlignment="Center" HorizontalAlignment="Right" IsEnabled="False"/>
+                                    VerticalAlignment="Center" HorizontalAlignment="Right" IsEnabled="False" Margin="0,0,30,0"/>
                         </Grid>
                     </Border>
                 </DataTemplate>

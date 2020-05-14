@@ -16,6 +16,7 @@ namespace ProyectoDSI
             Dinero = logro.Dinero;
             Fama = logro.Fama;
             Estado = logro.Estado;
+            Imagen = logro.Imagen;
         }
     }
 
@@ -28,6 +29,8 @@ namespace ProyectoDSI
             Coche = ranking.Coche;
             Fama = ranking.Fama;
             Estado = ranking.Estado;
+            Imagen = ranking.Imagen;
+            FamaText = ranking.FamaText;
         }
     }
 }
