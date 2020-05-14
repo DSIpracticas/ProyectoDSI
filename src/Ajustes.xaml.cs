@@ -39,5 +39,26 @@ namespace ProyectoDSI
             }
             return false;
         }
+
+        private void sounds_Click(object sender, RoutedEventArgs e)
+        {
+            keyPanel.Visibility = Visibility.Collapsed;
+            graphicPanel.Visibility = Visibility.Collapsed;
+            soundsPanel.Visibility = Visibility.Visible;
+        }
+
+        private void controls_Click(object sender, RoutedEventArgs e)
+        {
+            soundsPanel.Visibility = Visibility.Collapsed;
+            graphicPanel.Visibility = Visibility.Collapsed;
+            keyPanel.Visibility = Visibility.Visible;
+        }
+
+        private void graphic_Click(object sender, RoutedEventArgs e)
+        {
+            keyPanel.Visibility = Visibility.Collapsed;
+            soundsPanel.Visibility = Visibility.Collapsed;
+            graphicPanel.Visibility = Visibility.Visible;
+        }
     }
 }
