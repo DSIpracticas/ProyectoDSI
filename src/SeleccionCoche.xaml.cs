@@ -29,7 +29,7 @@ namespace ProyectoDSI
         bool permitirCompra = true;
 
         //Coche seleccionado (0-12)
-        private int SelCar = 0;
+        private int SelCar = 1;
 
         //Dinero
         private int Money = 3000;
@@ -102,24 +102,14 @@ namespace ProyectoDSI
             } 
         }
 
-        private void ImageGridView_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            //Image item = e.ClickedItem as Image;
-        }
-
         private void ImageGridView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            //VMCar selectCar = e.AddedItems as VMCar;
             foreach (VMCar selectCar in e.AddedItems)
             {
                 SelCar = selectCar.Posicion;
+                ImagenesGrandes.SelectedIndex = SelCar;
             }
             ActualizaDatos();
-        }
-
-        private void FlipView_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
         }
 
         private void ActualizaDatos()
@@ -154,6 +144,12 @@ namespace ProyectoDSI
                 BotonComprar.Visibility = Visibility.Collapsed;
                 CosteCompra.Visibility = Visibility.Collapsed;
             }
+        }
+
+        private void ImagenesGrandes_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            //SelCar = ImagenesGrandes.SelectedIndex;
+            //ActualizaDatos();
         }
     }
 }

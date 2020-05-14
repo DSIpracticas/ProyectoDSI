@@ -57,7 +57,8 @@
 
         <!--Coche-->
         <StackPanel Grid.Column="1" Grid.Row="1">
-            <!--<FlipView Height="400" SelectionChanged="FlipView_SelectionChanged">
+            <TextBlock x:Name="NombreCoche" Text="Ferrari 599XX Dogde Charger" Foreground="Black" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            <FlipView x:Name="ImagenesGrandes" Height="400" SelectedIndex="0" SelectionChanged="ImagenesGrandes_SelectionChanged">
                 <Image x:Name="ImagenCoche1" Source="/Assets/Cars/Coche1.png"/>
                 <Image x:Name="ImagenCoche2" Source="/Assets/Cars/Coche2.png"/>
                 <Image x:Name="ImagenCoche3" Source="/Assets/Cars/Coche3.png"/>
@@ -71,9 +72,8 @@
                 <Image x:Name="ImagenCoche11" Source="/Assets/Cars/Coche11.png"/>
                 <Image x:Name="ImagenCoche12" Source="/Assets/Cars/Coche12.png"/>
                 <Image x:Name="ImagenCoche13" Source="/Assets/Cars/Coche13.png"/>
-            </FlipView>-->
-            <TextBlock x:Name="NombreCoche" Text="Ferrari 599XX Dogde Charger" Foreground="Black" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-            <Image x:Name="ImagenGrande" Height="400" Source="/Assets/Cars/Coche1.png"/>
+            </FlipView>
+            <!--<Image x:Name="ImagenGrande" Height="400" Source="/Assets/Cars/Coche1.png"/>-->
             <TextBox x:Name="CosteCompra" Text="COSTE: XXXX€" Visibility="Collapsed" FontSize="20" Margin="20" TextAlignment="Center" Background="Chocolate" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="382"/>
             <Button x:Name="BotonComprar" Content="Comprar" Visibility="Collapsed" Click="Comprar" Grid.Row="3" Grid.Column="2" Height="50" Width="250" Background="Yellow" HorizontalAlignment="Center"/>
         </StackPanel>
