@@ -29,35 +29,59 @@ namespace ProyectoDSI
         {
             this.InitializeComponent();
         }
-        //Método para mostrar los atributos de los logros
-        private void MuestraLogro()
+
+        private void MuestraInfo(VMLogro logro)
         {
-            /*if (SelMos >= 0)
-            {
-                VMDron Sel = ListaDrones[SelMos];
-                nameInfo.Text = "Id: ," + Sel.Id + ", Nombre: " + Sel.Nombre + ", Estado: " + Sel.Estado.ToString()
-                    + ",\nREF: " + Sel.RX.ToString() + "," + Sel.RY.ToString() + " POS: " + Sel.X.ToString() + ", " + Sel.Y.ToString()
-                    + "\nExplicación: " + Sel.Explicacion;
-                imageDron.Source = Sel.Img.Source;
-            }*/
+            logro.Recompensa = "Dinero: " + logro.Dinero + "€ Fama: " + logro.Fama;
         }
 
+        //Método para mostrar los atributos de los logros
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility =
                 AppViewBackButtonVisibility.Collapsed;
             // Carga la lista de ModelView a partir de la lista de Modelo
             if (ListaLogros != null)
+            {
+                int id = 0;
+                //Primero se agregan los bloqueados
                 foreach (LogroID logro in Model.GetAllLogros())
                 {
                     VMLogro VMitem = new VMLogro(logro);
-                    //VMitem.Nombre = logro.Nombre;
-                    ListaLogros.Add(VMitem);
+                    if (VMitem.Estado == LogroID.estados.bloqueado)
+                    {
+                        VMitem.Id = id;
+                        VMitem.Imagen = "Assets/barraGris.png";
+                        ListaLogros.Add(VMitem);
+                        MuestraInfo(VMitem);
+                        id++;
+                    }
                 }
+                //Después los cobrados
+                int fama = 1000;
+                int dinero = 0;
+                foreach (LogroID logro in Model.GetAllLogros())
+                {
+                    VMLogro VMitem = new VMLogro(logro);
+                    if (VMitem.Estado == LogroID.estados.cobrado)
+                    {
+                        VMitem.Id = id;
+                        fama += VMitem.Fama;
+                        dinero += VMitem.Dinero;
+                        VMitem.Imagen = "Assets/barraVerde.png";
+                        ListaLogros.Add(VMitem);
+                        MuestraInfo(VMitem);
+                        id++;
+                    }
+                }
+                famaText_.Text = "Fama: " + fama + " Followers";
+                dineroText_.Text = "Dinero: " + dinero + " €";
+            }
+            
             listaLogros_.ItemsSource = ListaLogros;
-
             base.OnNavigatedTo(e);
         }
+
         private void back_Click(object sender, RoutedEventArgs e)
         {
             On_BackRequested();

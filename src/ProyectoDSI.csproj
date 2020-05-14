@@ -161,7 +161,12 @@
   <ItemGroup>
     <Content Include="Assets\AridWasteland.wav" />
     <Content Include="Assets\backButton.png" />
+    <Content Include="Assets\barraAmarilla.png" />
+    <Content Include="Assets\barraGris.png" />
+    <Content Include="Assets\barraRoja.png" />
+    <Content Include="Assets\barraVerde.png" />
     <Content Include="Assets\carIcon.png" />
+    <Content Include="Assets\fondoLista.jpg" />
     <Content Include="Assets\gold.png" />
     <Content Include="Assets\mainButton.png" />
     <Content Include="Assets\mainButtonSelected.png" />
