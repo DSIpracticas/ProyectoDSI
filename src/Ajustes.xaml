@@ -75,6 +75,7 @@
             <Viewbox RelativePanel.AlignHorizontalCenterWithPanel="True" Width="auto" Height="auto" Margin="15,0,15,0" MinWidth="250" MaxWidth="500" >
                 <TextBlock x:Name="panelTxt" Text="Key configuration" Foreground="White" TextWrapping="Wrap" TextAlignment="Center"/>
             </Viewbox>
+
         </RelativePanel>
 
         <!--Configuración de sonido-->

@@ -12,6 +12,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using System.Windows.Input;
 
 // La plantilla de elemento Página en blanco está documentada en https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -22,9 +23,13 @@ namespace ProyectoDSI
     /// </summary>
     public sealed partial class Ajustes : Page
     {
+        //lista de teclas
+        public List<Keys> keys { get; set; }
+        public string[] keysChar = new string[] { "Q", "W", "E", "R", "T", "Y", "A", "S", "D", "F", "SPACE", "UP", "LEFT", "RIGTH", "DOWN" };
         public Ajustes()
         {
             this.InitializeComponent();
+            initKeys();
         }
         private void back_Click(object sender, RoutedEventArgs e)
         {
@@ -59,6 +64,25 @@ namespace ProyectoDSI
             keyPanel.Visibility = Visibility.Collapsed;
             soundsPanel.Visibility = Visibility.Collapsed;
             graphicPanel.Visibility = Visibility.Visible;
+        }
+
+        private void initKeys()
+        {
+            //for (int i = 0; i < keysChar.Length; i++)
+            //{
+            //    Keys key = new Keys(keysChar[i]);
+            //    keys.Add(key);
+            //}
+            //DataContext = this;
+        }
+    }
+
+    public sealed partial class Keys
+    {
+        string key_ = "";
+        public Keys(string key)
+        {
+            key_ = key;
         }
     }
 }
