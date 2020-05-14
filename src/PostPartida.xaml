@@ -20,7 +20,56 @@
         </Grid.RowDefinitions>
 
         <!--Primera columna-->
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+        <!--Información de la zona-->
+        <RelativePanel Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Image x:Name="DescriptionImage" Source="Assets/panelTexto.png" Stretch="Fill" MaxWidth="450" MaxHeight="800"/>
+            <Viewbox RelativePanel.AlignVerticalCenterWith="DescriptionImage" RelativePanel.AlignHorizontalCenterWith="DescriptionImage" 
+                     MaxWidth="400" MaxHeight="60" Margin="15,0,15,625">
+                <TextBlock Text="Clasificación" TextDecorations="Underline" Foreground="White" TextWrapping="Wrap" TextAlignment="Center"/>
+            </Viewbox>
+            <Viewbox RelativePanel.AlignVerticalCenterWith="DescriptionImage" RelativePanel.AlignHorizontalCenterWith="DescriptionImage" 
+                     MaxWidth="400" MaxHeight="50" Margin="15,0,15,500">
+                <TextBlock Text=" 1º  Nombre jugador" Foreground="White" TextWrapping="Wrap" TextAlignment="Center"/>
+            </Viewbox>
+            <Viewbox RelativePanel.AlignVerticalCenterWith="DescriptionImage" RelativePanel.AlignHorizontalCenterWith="DescriptionImage" 
+                     MaxWidth="400" MaxHeight="50" Margin="15,0,15,375" >
+                <TextBlock Text=" 2º  Nombre" Foreground="White" TextWrapping="Wrap" TextAlignment="Center"/>
+            </Viewbox>
+            <Viewbox RelativePanel.AlignVerticalCenterWith="DescriptionImage" RelativePanel.AlignHorizontalCenterWith="DescriptionImage" 
+                     MaxWidth="400" MaxHeight="50" Margin="15,0,15,250" >
+                <TextBlock Text=" 3º  Nombre" Foreground="White" TextWrapping="Wrap" TextAlignment="Center"/>
+            </Viewbox>
+            <Viewbox RelativePanel.AlignVerticalCenterWith="DescriptionImage" RelativePanel.AlignHorizontalCenterWith="DescriptionImage" 
+                     MaxWidth="400" MaxHeight="50" Margin="15,0,15,125">
+                <TextBlock Text=" 4º  Nombre" Foreground="White" TextWrapping="Wrap" TextAlignment="Center"/>
+            </Viewbox>
+            <Viewbox RelativePanel.AlignVerticalCenterWith="DescriptionImage" RelativePanel.AlignHorizontalCenterWith="DescriptionImage" 
+                     MaxWidth="400" MaxHeight="50" Margin="15,0,15,0">
+                <TextBlock Text=" 5º  Nombre" Foreground="White" TextWrapping="Wrap" TextAlignment="Center"/>
+            </Viewbox>
+            <Viewbox RelativePanel.AlignVerticalCenterWith="DescriptionImage" RelativePanel.AlignHorizontalCenterWith="DescriptionImage" 
+                     MaxWidth="400" MaxHeight="50" Margin="15,125,15,0" >
+                <TextBlock Text=" 6º  Nombre" Foreground="White" TextWrapping="Wrap" TextAlignment="Center"/>
+            </Viewbox>
+            <Viewbox RelativePanel.AlignVerticalCenterWith="DescriptionImage" RelativePanel.AlignHorizontalCenterWith="DescriptionImage" 
+                     MaxWidth="400" MaxHeight="50" Margin="15,250,15,0" >
+                <TextBlock Text=" 7º  Nombre" Foreground="White" TextWrapping="Wrap" TextAlignment="Center"/>
+            </Viewbox>
+            <Viewbox RelativePanel.AlignVerticalCenterWith="DescriptionImage" RelativePanel.AlignHorizontalCenterWith="DescriptionImage" 
+                     MaxWidth="400" MaxHeight="50" Margin="15,375,15,0" >
+                <TextBlock Text=" 8º  Nombre" Foreground="White" TextWrapping="Wrap" TextAlignment="Center"/>
+            </Viewbox>
+            <Viewbox RelativePanel.AlignVerticalCenterWith="DescriptionImage" RelativePanel.AlignHorizontalCenterWith="DescriptionImage" 
+                     MaxWidth="400" MaxHeight="50" Margin="15,500,15,0" >
+                <TextBlock Text=" 9º  Nombre" Foreground="White" TextWrapping="Wrap" TextAlignment="Center"/>
+            </Viewbox>
+            <Viewbox RelativePanel.AlignVerticalCenterWith="DescriptionImage" RelativePanel.AlignHorizontalCenterWith="DescriptionImage" 
+                     MaxWidth="400" MaxHeight="50" Margin="15,625,15,0" >
+                <TextBlock Text="10º  Nombre" Foreground="White" TextWrapping="Wrap" TextAlignment="Center"/>
+            </Viewbox>
+        </RelativePanel>
+        
+        <!--<StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
             <TextBlock FontSize="50" Text="Clasificación" TextDecorations="Underline" TextAlignment="Center" TextWrapping="Wrap" Margin="0,80,0,0"/>
             <TextBlock Text=" 1º  Nombre jugador" FontSize="40" Margin="0,5,0,0"/>
             <TextBlock Text=" 2º  Nombre"  FontSize="40" Margin="0,5,0,0"/>
@@ -32,26 +81,79 @@
             <TextBlock Text=" 8º  Nombre"  FontSize="40" Margin="0,5,0,0"/>
             <TextBlock Text=" 9º  Nombre" FontSize="40" Margin="0,5,0,0"/>
             <TextBlock Text="10º Nombre" FontSize="40" Margin="0,5,0,0"/>
-        </StackPanel>
+        </StackPanel>-->
+        
        <!--botón de atrás-->
-        <StackPanel x:Name="downLeft" Grid.Row="3">
-            <Button x:Name="back" Width="120" Height="90" Background="Transparent"  HorizontalAlignment="Center" Margin="-275,-39,0,0" Click="back_Click"  >
-                <Canvas x:Name="backCanvas">
-                    <Image Source="Assets/backButton.png" Stretch="Fill" Height="100" Width="150" Margin="-70,-45,0,0"/>
-                </Canvas>
-            </Button>
-        </StackPanel>
+        <RelativePanel x:Name="downLeft" Grid.Row="3" Margin="0,0,200,0" >
+            <Image x:Name="BackImage" Source="Assets/backButton.png" Stretch="Fill" MaxWidth="150" MaxHeight="100"
+                    RelativePanel.AlignVerticalCenterWith="BackButton" RelativePanel.AlignHorizontalCenterWith="BackButton"/>
+
+            <Button x:Name="BackButton" Background="Transparent" Width="100" Height="80" Click="back_Click"
+                    RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True"/>
+        </RelativePanel>
 
         <!--Segunda columna-->
-        <Image x:Name="MedalImage" Grid.Column="1" Source="Assets/gold.png" Margin="0,200,0,0"/>
-        <TextBlock FontSize="50" Text="Tiempo: 05:18.26" Grid.Column="1" HorizontalAlignment="Center" Margin="0,100,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <Button Content="Volver a jugar" FontSize="50" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <RelativePanel Grid.Column="1" Margin="0,200,0,0" HorizontalAlignment="Center">
+            <Image x:Name="MedalImage" Source="Assets/gold.png"/>
+        </RelativePanel>
 
+        <RelativePanel Grid.Column="1" Margin="0,80,0,0" HorizontalAlignment="Center" VerticalAlignment="Top">
+            <Image x:Name="TimeImage" Source="Assets/panel2.png" Stretch="Fill" MaxWidth="450" MaxHeight="100"/>
+            <Viewbox RelativePanel.AlignVerticalCenterWith="TimeImage" RelativePanel.AlignHorizontalCenterWith="TimeImage" 
+                     MaxWidth="280" MaxHeight="75" Margin="15,0,15,0">
+                <TextBlock x:Name="MoneyText" Text="Tiempo: 05:18.26" Foreground="White" TextWrapping="Wrap" TextAlignment="Center"/>
+            </Viewbox>
+        </RelativePanel>
+
+        <RelativePanel x:Name="PlayAgain" Grid.Row="1" Grid.Column="1" Margin="25,0,25,0">
+            <Image x:Name="PlayAgainImage" Source="Assets/mainButton.png" Stretch="Fill" MaxWidth="300" MaxHeight="100"
+                    RelativePanel.AlignVerticalCenterWith="PlayAgainButton" RelativePanel.AlignHorizontalCenterWith="PlayAgainButton"/>
+            <Viewbox RelativePanel.AlignVerticalCenterWith="PlayAgainButton" RelativePanel.AlignHorizontalCenterWith="PlayAgainButton" 
+                        MaxWidth="250" MaxHeight="75" Margin="15,0,15,0" >
+                <TextBlock x:Name="PlayAgainTxt" Text="VOLVER A JUGAR" Foreground="White" TextWrapping="Wrap" TextAlignment="Center"/>
+            </Viewbox>
+            <Button x:Name="PlayAgainButton" Background="Transparent" Width="300" Height="100"
+                    RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True"/>
+        </RelativePanel>
+        
         <!--Tercera columna-->
-        <TextBlock FontSize="50" Text="Recompensa conseguida" TextDecorations="Underline" Grid.Column="2" HorizontalAlignment="Center" Margin="50,100,50,0" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <TextBlock FontSize="40" Text="150 puntos de fama" Grid.Column="2" HorizontalAlignment="Center" Margin="0,350,0,0" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <TextBlock FontSize="40" Text="300 euros" Grid.Column="2" HorizontalAlignment="Center" Margin="0,450,0,0" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <TextBlock FontSize="40" Text="Nueva zona desbloqueada" Grid.Column="2" HorizontalAlignment="Center" Margin="100,550,100,0" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <Button Content="Nueva carrera" FontSize="50" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <RelativePanel x:Name="Description" Grid.Column="2" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Image x:Name="RewardImage" Source="Assets/panelTexto.png" Stretch="Fill" MaxWidth="450" MaxHeight="800"/>
+            <Viewbox RelativePanel.AlignVerticalCenterWith="RewardImage" RelativePanel.AlignHorizontalCenterWith="RewardImage" 
+                     MaxWidth="400" MaxHeight="75" Margin="15,0,15,400">
+                <TextBlock Text="Recompensa" TextDecorations="Underline" Foreground="White" TextWrapping="Wrap" TextAlignment="Center"/>
+            </Viewbox>
+            <Viewbox RelativePanel.AlignVerticalCenterWith="RewardImage" RelativePanel.AlignHorizontalCenterWith="RewardImage" 
+                     MaxWidth="400" MaxHeight="75" Margin="15,0,15,250">
+                <TextBlock Text="conseguida" TextDecorations="Underline" Foreground="White" TextWrapping="Wrap" TextAlignment="Center"/>
+            </Viewbox>
+            <Viewbox RelativePanel.AlignVerticalCenterWith="RewardImage" RelativePanel.AlignHorizontalCenterWith="RewardImage" 
+                     MaxWidth="400" MaxHeight="60" Margin="15,0,15,50">
+                <TextBlock Text="150 puntos de fama" Foreground="White" TextWrapping="Wrap" TextAlignment="Center"/>
+            </Viewbox>
+            <Viewbox RelativePanel.AlignVerticalCenterWith="RewardImage" RelativePanel.AlignHorizontalCenterWith="RewardImage" 
+                     MaxWidth="400" MaxHeight="60" Margin="15,100,15,0" >
+                <TextBlock Text="300 euros" Foreground="White" TextWrapping="Wrap" TextAlignment="Center"/>
+            </Viewbox>
+            <Viewbox RelativePanel.AlignVerticalCenterWith="RewardImage" RelativePanel.AlignHorizontalCenterWith="RewardImage" 
+                     MaxWidth="400" MaxHeight="60" Margin="15,250,15,0" >
+                <TextBlock Text="Nueva zona" Foreground="White" TextWrapping="Wrap" TextAlignment="Center"/>
+            </Viewbox>
+            <Viewbox RelativePanel.AlignVerticalCenterWith="RewardImage" RelativePanel.AlignHorizontalCenterWith="RewardImage" 
+                     MaxWidth="400" MaxHeight="60" Margin="15,350,15,0" >
+                <TextBlock Text="desbloqueada" Foreground="White" TextWrapping="Wrap" TextAlignment="Center"/>
+            </Viewbox>
+        </RelativePanel>
+
+        <RelativePanel x:Name="NewRace" Grid.Row="1" Grid.Column="2" Margin="25,0,25,0">
+            <Image x:Name="NewRaceImage" Source="Assets/mainButton.png" Stretch="Fill" MaxWidth="300" MaxHeight="100"
+                    RelativePanel.AlignVerticalCenterWith="NewRaceButton" RelativePanel.AlignHorizontalCenterWith="NewRaceButton"/>
+            <Viewbox RelativePanel.AlignVerticalCenterWith="NewRaceButton" RelativePanel.AlignHorizontalCenterWith="NewRaceButton" 
+                        MaxWidth="250" MaxHeight="75" Margin="15,0,15,0" >
+                <TextBlock x:Name="NewRaceTxt" Text="NUEVA CARRERA" Foreground="White" TextWrapping="Wrap" TextAlignment="Center"/>
+            </Viewbox>
+            <Button x:Name="NewRaceButton" Background="Transparent" Width="300" Height="100" Click="worldSelection_Click"
+                    RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True"/>
+        </RelativePanel>
     </Grid>
 </Page>

@@ -41,12 +41,8 @@ namespace ProyectoDSI
         }
         private bool On_BackRequested()
         {
-            if (this.Frame.CanGoBack)
-            {
-                this.Frame.GoBack();
-                return true;
-            }
-            return false;
+            this.Frame.Navigate(typeof(MenuPrincipal));
+            return true;
         }
         private void World_Click(object sender, PointerRoutedEventArgs e)
         {
