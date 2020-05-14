@@ -10,38 +10,58 @@
 
     <Grid x:Name="mainGrid_">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="10*"/>
-            <RowDefinition Height="1*"/>
+            <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
-        <StackPanel x:Name="downLeft" Grid.Row="3">
-            <Button x:Name="back" Width="120" Height="90" Background="Transparent"  HorizontalAlignment="Center" Margin="-275,-39,0,0" Click="back_Click"  >
+        <!--imagen de fondo-->
+        <Image x:Name="backgroudImage" Source="Assets/fondoLista.jpg" Stretch="Fill" Grid.RowSpan="3" Grid.ColumnSpan="5"></Image>
+        <!--botón volver-->
+        <StackPanel x:Name="backPanel" Grid.Row="3">
+            <Button x:Name="back" Width="120" Height="90" Background="Transparent"
+                    HorizontalAlignment="Center" VerticalAlignment="Center" Click="back_Click"  >
                 <Canvas x:Name="backCanvas">
                     <Image Source="Assets/backButton.png" Stretch="Fill" Height="100" Width="150" Margin="-70,-45,0,0"/>
                 </Canvas>
             </Button>
         </StackPanel>
-        <HyperlinkButton x:Name="callejeras_" Click="worldSelection_Click"
-                    Content="Carreras Callejeras" Background="AliceBlue" Foreground="Black"
-                    Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" Width="220" FontSize="25"/>
-        <HyperlinkButton x:Name="desafio_" Click="garage_Click"
-                    Content="Desafío" Background="AliceBlue" Foreground="Black"
-                    Grid.Row="2" Grid.Column="3" HorizontalAlignment="Center"
-                    VerticalAlignment="Center" Width="100" FontSize="25"/>
-        <ListView x:Name="listaRanking_" Grid.Row="1" Grid.ColumnSpan="4" VerticalAlignment="Center" HorizontalAlignment="Center"
-                  Height="570" Width="1100">
+        <!--botón de carreras cellejeras-->
+        <RelativePanel x:Name="callejerasPanel" Margin="25,0,25,0" Grid.Column="2" Grid.Row="2">
+            <Image x:Name="callejerasImg" Source="Assets/mainButton.png" Stretch="Fill" MaxWidth="300" MaxHeight="100"
+                    RelativePanel.AlignVerticalCenterWith ="callejerasButton"  RelativePanel.AlignHorizontalCenterWith="callejerasButton"/>
+            <Viewbox RelativePanel.AlignVerticalCenterWith="callejerasButton" RelativePanel.AlignHorizontalCenterWith="callejerasButton" 
+                     MaxWidth="250" MaxHeight="75" Margin="15,0,15,0" >
+                <TextBlock x:Name="callejerasText" Text="CARRERAS CALLEJERAS" Foreground="White" TextWrapping="Wrap" TextAlignment="Center"/>
+            </Viewbox>
+            <Button x:Name="callejerasButton" Background="Transparent" Width="300" Height="100" Click ="worldSelection_Click"
+                    RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True"/>
+        </RelativePanel>
+        <!--botón de desafío-->
+        <RelativePanel x:Name="desafioPanel" Margin="25,0,25,0" Grid.Column="3" Grid.ColumnSpan="2" Grid.Row="2">
+            <Image x:Name="desafioImg" Source="Assets/mainButton.png" Stretch="Fill" MaxWidth="300" MaxHeight="100"
+                    RelativePanel.AlignVerticalCenterWith ="desafioButton"  RelativePanel.AlignHorizontalCenterWith="desafioButton"/>
+            <Viewbox RelativePanel.AlignVerticalCenterWith="desafioButton" RelativePanel.AlignHorizontalCenterWith="desafioButton" 
+                     MaxWidth="250" MaxHeight="75" Margin="15,0,15,0" >
+                <TextBlock x:Name="desafioText" Text= "DESAFIO" Foreground="White" TextWrapping="Wrap" TextAlignment="Center"/>
+            </Viewbox>
+            <Button x:Name="desafioButton" Background="Transparent" Width="300" Height="100" Click ="garage_Click"
+                    RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True"/>
+        </RelativePanel>
+        <ListView x:Name="listaRanking_" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center"
+                  Height="250" Width="1000" Grid.Column="1" Grid.ColumnSpan="3">
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="local:VMRanking">
                     <Border x:Name="borderRanking_" Background="Gray" BorderThickness="5" Margin="5, 0, 0, 0">
                         <Grid>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="400"/>
+                                <ColumnDefinition Width="500"/>
                                 <ColumnDefinition Width="500"/>
                                 <ColumnDefinition/>
                             </Grid.ColumnDefinitions>
@@ -50,7 +70,7 @@
                             <TextBlock Text="{x:Bind Coche}" Foreground="Black" FontSize="14" 
                                        Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left"/>
                             <TextBlock Text="{x:Bind Fama}" Foreground="Black" FontSize="14" 
-                                       Grid.Column="2" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                       Grid.Column="2" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Right"/>
                         </Grid>
                     </Border>
                 </DataTemplate>

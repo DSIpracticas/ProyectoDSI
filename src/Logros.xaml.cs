@@ -30,6 +30,11 @@ namespace ProyectoDSI
             this.InitializeComponent();
         }
 
+        private void MuestraInfo(VMLogro logro)
+        {
+            logro.Recompensa = "Dinero: " + logro.Dinero + "€ Fama: " + logro.Fama;
+        }
+
         //Método para mostrar los atributos de los logros
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
@@ -38,38 +43,23 @@ namespace ProyectoDSI
             // Carga la lista de ModelView a partir de la lista de Modelo
             if (ListaLogros != null)
             {
-                //Primero se agregan los bloqueados
+                int id = 0;
+                //Primero se agregan los desbloqueados
                 foreach (LogroID logro in Model.GetAllLogros())
                 {
                     VMLogro VMitem = new VMLogro(logro);
-                    if (VMitem.Estado == LogroID.estados.bloqueado)
-                    {
-                        ListaLogros.Add(VMitem);
-                    }
-                    //VMitem.Nombre = logro.Nombre;
-                }
-                //Después los desbloqueados
-                foreach (LogroID logro in Model.GetAllLogros())
-                {
-                    //Primero se agregan los bloqueados
-                    VMLogro VMitem = new VMLogro(logro);
-                    if (VMitem.Estado == LogroID.estados.desbloqueado)
-                    {
-                        ListaLogros.Add(VMitem);
-                    }
-                    //VMitem.Nombre = logro.Nombre;
+                    VMitem.Id = id;
+                    ListaLogros.Add(VMitem);
+                    MuestraInfo(VMitem);
+                    id++;
                 }
             }
+            
             listaLogros_.ItemsSource = ListaLogros;
-
             base.OnNavigatedTo(e);
         }
-        //Método para cobrar la recompensa
-        private void ChargeAward(object sender, RoutedEventArgs e) {
-            if (ListaLogros != null) {
-            }
-        }
-        private void Back_Click(object sender, RoutedEventArgs e)
+
+        private void back_Click(object sender, RoutedEventArgs e)
         {
             On_BackRequested();
         }

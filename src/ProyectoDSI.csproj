@@ -161,6 +161,7 @@
   <ItemGroup>
     <Content Include="Assets\backButton.png" />
     <Content Include="Assets\carIcon.png" />
+    <Content Include="Assets\fondoLista.jpg" />
     <Content Include="Assets\gold.png" />
     <Content Include="Assets\mainButton.png" />
     <Content Include="Assets\mainButtonSelected.png" />

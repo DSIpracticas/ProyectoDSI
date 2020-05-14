@@ -10,10 +10,11 @@ namespace ProyectoDSI
     {
         public VMLogro(LogroID logro)
         {
-            Posicion = logro.Posicion;
+            Id = logro.Id;
             Nombre = logro.Nombre;
             Requisitos = logro.Requisitos;
-            Recompensa = logro.Recompensa;
+            Dinero = logro.Dinero;
+            Fama = logro.Fama;
             Estado = logro.Estado;
         }
     }
@@ -22,7 +23,7 @@ namespace ProyectoDSI
     {
         public VMRanking(RankingID ranking)
         {
-            Posicion = ranking.Posicion;
+            Id = ranking.Id;
             Nombre = ranking.Nombre;
             Coche = ranking.Coche;
             Fama = ranking.Fama;

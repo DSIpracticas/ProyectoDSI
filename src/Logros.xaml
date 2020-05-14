@@ -10,45 +10,51 @@
 
     <Grid x:Name="mainGrid_">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="1*"/>
+            <RowDefinition Height="2*"/>
             <RowDefinition Height="10*"/>
-            <RowDefinition Height="1*"/>
+            <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
-        <TextBlock x:Name="logrosText_" Grid.Column="1" Text="Completados: 0/40"
-                    FontSize="25"
-                    VerticalAlignment="Center"
-                    HorizontalAlignment="Left"/>
-        <TextBlock x:Name="famaText_"
-                    Grid.Column="2"
-                    Text="Fama: 10000 Followers"
-                    FontSize="25"
-                    VerticalAlignment="Center"
-                    HorizontalAlignment="Left"/>
-        <TextBlock x:Name="dineroText_"
-                    Grid.Column="3"
-                    Text="Dinero: 9999999 €"
-                    FontSize="25"
-                    VerticalAlignment="Center"
-                    HorizontalAlignment="Left"/>
+        <!--imagen de fondo-->
+        <Image x:Name="backgroudImage" Source="Assets/mainMenuBackgroud.png" Stretch="Fill" Grid.ColumnSpan="6" Grid.RowSpan="3"></Image>
+        <!--Logros completados-->
+        <Image Source="Assets/mainButton.png" Stretch="Fill" Height="100" Width="400" Grid.ColumnSpan="2"/>
+        <TextBlock x:Name="logrosText_" Grid.ColumnSpan="2" Text="Fama: 10.000 Followers"
+                    FontSize="25" VerticalAlignment="Center" 
+                    HorizontalAlignment="Center" Foreground="#FFC71A1A"/>
+        <!--Fama total-->
+        <Image Source="Assets/mainButton.png" Stretch="Fill" Height="100" Width="400"
+               Grid.Column="2" Grid.ColumnSpan="2"/>
+        <TextBlock x:Name="famaText_" Grid.Column="2" Grid.ColumnSpan="2" Text="Completados: 0/40"
+                    FontSize="25" VerticalAlignment="Center"
+                    HorizontalAlignment="Center" Foreground="#FFC71A1A"/>
+        <!--Dinero total-->
+        <Image Source="Assets/mainButton.png" Stretch="Fill" Height="100" Width="400" Grid.Column="4" Grid.ColumnSpan="2"/>
+        <TextBlock x:Name="dineroText_" Grid.Column="4" Grid.ColumnSpan="2" Text="Dinero: 999.999 €"
+                    FontSize="25" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#FFC71A1A"/>
         <!--botón de atrás-->
-        <StackPanel x:Name="downLeft" Grid.Row="3">
-            <Button x:Name="back" Width="120" Height="90" Background="Transparent"  HorizontalAlignment="Center" Margin="-275,-39,0,0" Click="back_Click"  >
-                <Canvas x:Name="backCanvas">
-                    <Image Source="Assets/backButton.png" Stretch="Fill" Height="100" Width="150" Margin="-70,-45,0,0"/>
+        <StackPanel x:Name="downLeft" Grid.Row="2" HorizontalAlignment="Center">
+            <Button x:Name="back" Width="120" Height="90" Background="Transparent" 
+                    VerticalAlignment="Center" HorizontalAlignment="Center" Click="back_Click"  >
+                <Canvas x:Name="backCanvas" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Image Source="Assets/backButton.png" Stretch="Fill"
+                           Height="100" Width="150" Canvas.Left ="-70"  Canvas.Top="-50"/>
                 </Canvas>
             </Button>
         </StackPanel>
-        <ListView x:Name="listaLogros_" Grid.Row="1" Grid.ColumnSpan="4" VerticalAlignment="Center" HorizontalAlignment="Center"
+
+        <ListView x:Name="listaLogros_" Grid.Row="1" Grid.ColumnSpan="6" VerticalAlignment="Center" HorizontalAlignment="Center"
                   Height="570" Width="1100">
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="local:VMLogro">
-                    <Border Background= "Gray" BorderThickness="5" Margin="5, 0, 0, 0">
+                    <Border x:Name="borderList_" Background= "Gray" BorderThickness="5" Margin="5, 0, 0, 0">
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="400"/>
@@ -68,7 +74,7 @@
                             <TextBlock Text="{x:Bind Recompensa}" Foreground="Black" FontSize="14" 
                                        Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                             <Button x:Name="awardButton" Content="Cobrar Recompensa" Grid.Column="2" Grid.RowSpan="2"
-                                    VerticalAlignment="Center" HorizontalAlignment="Right" Click="ChargeAward"/>
+                                    VerticalAlignment="Center" HorizontalAlignment="Right" IsEnabled="False"/>
                         </Grid>
                     </Border>
                 </DataTemplate>
