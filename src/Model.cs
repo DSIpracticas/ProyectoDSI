@@ -40,8 +40,75 @@ namespace ProyectoDSI
         public RankingID() { }
     }
 
+    public class KeyID
+    {
+        public string keyComand_ { get; set; }
+        public string keyName_ { get; set; }
+        public KeyID() { }
+    }
+
     public class Model
     {
+
+        public static List<KeyID> keys = new List<KeyID>()
+        {
+            new KeyID()
+            {
+                keyName_ = "Q",
+                keyComand_ = "Unassign"
+            },
+            new KeyID()
+            {
+                keyName_ = "W",
+                keyComand_ = "Accelerate"
+            },
+            new KeyID()
+            {
+                keyName_ = "E",
+                keyComand_ = "Gear down"
+            },
+            new KeyID()
+            {
+                keyName_ = "R",
+                keyComand_ = "Gear up"
+            },
+            new KeyID()
+            {
+                keyName_ = "T",
+                keyComand_ = "Unassign"
+            },
+            new KeyID()
+            {
+                keyName_ = "Y",
+                keyComand_ = "Unassign"
+            },
+            new KeyID()
+            {
+                keyName_ = "S",
+                keyComand_ = "Decelerate"
+            },
+            new KeyID()
+            {
+                keyName_ = "UP",
+                keyComand_ = "Up movement"
+            },
+            new KeyID()
+            {
+                keyName_ = "LEFT",
+                keyComand_ = "Left movement"
+            },
+            new KeyID()
+            {
+                keyName_ = "DOWN",
+                keyComand_ = "Down movement"
+            },
+            new KeyID()
+            {
+                keyName_ = "RIGHT",
+                keyComand_ = "Right movement"
+            },
+        };
+
         public static List<LogroID> Logros = new List<LogroID>()
         {
             new LogroID()
@@ -257,6 +324,11 @@ namespace ProyectoDSI
         public static LogroID GetLogroBy(int id)
         {
             return Logros[id];
+        }
+
+        public static IList<KeyID> GetKeyIDs()
+        {
+            return keys;
         }
     }
 }

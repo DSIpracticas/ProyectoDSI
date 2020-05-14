@@ -13,6 +13,9 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using System.Windows.Input;
+using System.Collections.ObjectModel;
+using Windows.UI.Core;
+
 
 // La plantilla de elemento Página en blanco está documentada en https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -24,12 +27,27 @@ namespace ProyectoDSI
     public sealed partial class Ajustes : Page
     {
         //lista de teclas
-        public List<Keys> keys { get; set; }
+        public ObservableCollection<VMKey> ListaKey { get; } = new ObservableCollection<VMKey>();
+
         public string[] keysChar = new string[] { "Q", "W", "E", "R", "T", "Y", "A", "S", "D", "F", "SPACE", "UP", "LEFT", "RIGTH", "DOWN" };
         public Ajustes()
         {
             this.InitializeComponent();
-            initKeys();
+            
+        }
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility =
+                AppViewBackButtonVisibility.Collapsed;
+            // Carga la lista de ModelView a partir de la lista de Modelo
+            if (ListaKey != null)
+                foreach (KeyID currKey in Model.GetKeyIDs())
+                {
+                    VMKey key = new VMKey(currKey);
+                    ListaKey.Add(key);
+                }
+            keyList.ItemsSource = ListaKey;
+            base.OnNavigatedTo(e);
         }
         private void back_Click(object sender, RoutedEventArgs e)
         {
@@ -77,12 +95,4 @@ namespace ProyectoDSI
         }
     }
 
-    public sealed partial class Keys
-    {
-        string key_ = "";
-        public Keys(string key)
-        {
-            key_ = key;
-        }
-    }
 }

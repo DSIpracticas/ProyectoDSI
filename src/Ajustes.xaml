@@ -70,11 +70,56 @@
         
         <!--configuración de teclas-->
         <RelativePanel x:Name="keyPanel" Grid.Row="1" Grid.ColumnSpan="3" Margin="100,0,100,0" Width="auto" Height="auto">
+            <!--panel de fondo-->
             <Image x:Name="panelImage" Source="Assets/panel.png" Grid.Row="1" Grid.ColumnSpan="3" Stretch="Fill" 
                    Opacity="0.8" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True"></Image>
-            <Viewbox RelativePanel.AlignHorizontalCenterWithPanel="True" Width="auto" Height="auto" Margin="15,0,15,0" MinWidth="250" MaxWidth="500" >
-                <TextBlock x:Name="panelTxt" Text="Key configuration" Foreground="White" TextWrapping="Wrap" TextAlignment="Center"/>
+            <!--Texto de configuración-->
+            <Viewbox RelativePanel.AlignHorizontalCenterWithPanel="True" Width="auto" Height="auto" Margin="15,0,15,0" MinWidth="250" MaxWidth="500">
+                <Border x:Name="configBorder" BorderBrush="Turquoise" MaxWidth="700" MinWidth="500" Background="DarkCyan" BorderThickness="3">
+                    <TextBlock x:Name="panelTxt" Text="Key configuration" FontSize="40" MinWidth="500" Foreground="White" TextWrapping="Wrap" TextAlignment="Center"/>
+                </Border>
             </Viewbox>
+            <!--lista de teclas-->
+            <ListView x:Name="keyList" RelativePanel.AlignHorizontalCenterWithPanel="True" Margin="20,100,20,20">
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="local:VMKey">
+                        <Border x:Name="keyBorder" BorderBrush="Turquoise" Width="auto" MaxWidth="500" Background="DarkCyan" BorderThickness="3" 
+                                Margin="5, 0, 5, 0" Opacity="0.65">
+                            <RelativePanel HorizontalAlignment="Center" MaxWidth="500">
+                                <TextBox x:Name="textBoxKey" Text="{x:Bind keyName_}"  Foreground="Black" FontWeight="Bold" TextAlignment="Center">
+                                </TextBox>
+                                <!--Texto con el comando-->
+                                <TextBlock Text="{x:Bind keyComand_}" Foreground="Black" FontWeight="Bold"  MinWidth="150" 
+                                          TextAlignment="Center" RelativePanel.RightOf="textBoxKey"></TextBlock>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="auto" MinWidth="100" MaxWidth="200"/>
+                                        <ColumnDefinition Width="auto" MinWidth="200" MaxWidth="320"/>
+                                    </Grid.ColumnDefinitions>
+                                    <!--Caja de texto con modificador-->
+ 
+
+                                </Grid>
+                            </RelativePanel>
+                            <!--
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto" MinWidth="100" MaxWidth="200"/>
+                                    <ColumnDefinition Width="auto" MinWidth="200" MaxWidth="320"/>
+                                </Grid.ColumnDefinitions>
+                                Caja de texto con modificador
+                                <TextBox Text="{x:Bind keyName_}"  Foreground="Black" FontSize="20" FontWeight="Bold" TextWrapping="Wrap"
+                                        TextAlignment="Center">
+                                </TextBox>
+                                Texto con el comando
+                                <TextBlock Text="{x:Bind keyComand_}" Foreground="Black" FontSize="20" FontWeight="Bold" Grid.Column="1" TextWrapping="Wrap"
+                                          TextAlignment="Center" ></TextBlock>
+
+                            </Grid>-->
+                        </Border>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
 
         </RelativePanel>
 

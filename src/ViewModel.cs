@@ -29,4 +29,13 @@ namespace ProyectoDSI
             Estado = ranking.Estado;
         }
     }
+
+    public class VMKey : KeyID
+    {
+        public VMKey(KeyID key)
+        {
+            keyName_ = key.keyName_;
+            keyComand_ = key.keyComand_;
+        }
+    }
 }
