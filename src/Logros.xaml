@@ -32,7 +32,7 @@
         <!--Logros total-->
         <Image Source="Assets/mainButton.png" Stretch="Fill" Height="100" Width="400"
                Grid.Column="2" Grid.ColumnSpan="2"/>
-        <TextBlock x:Name="logrosText_" Grid.Column="2" Grid.ColumnSpan="2" Text="Completados: 0/40"
+        <TextBlock x:Name="logrosText_" Grid.Column="2" Grid.ColumnSpan="2" Text="Completados: 3/40"
                     FontSize="25" VerticalAlignment="Center"
                     HorizontalAlignment="Center" Foreground="White" FocusVisualPrimaryBrush="White"/>
         <!--Dinero total-->
