@@ -41,7 +41,7 @@
                     RelativePanel.AlignVerticalCenterWith="sounds" RelativePanel.AlignHorizontalCenterWith="sounds"/>
             <Viewbox RelativePanel.AlignVerticalCenterWith="sounds" RelativePanel.AlignHorizontalCenterWith="sounds" 
                      MaxWidth="250" MaxHeight="75" Margin="15,0,15,0" >
-                <TextBlock x:Name="soundsTxt" Text="SOUNDS" Foreground="White" TextWrapping="Wrap" TextAlignment="Center"/>
+                <TextBlock x:Name="soundsTxt" Text="AUDIO" Foreground="White" TextWrapping="Wrap" TextAlignment="Center"/>
             </Viewbox>
             <Button x:Name="sounds" Background="Transparent" Width="300" Height="100" Click="sounds_Click"
                     RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True"/>
@@ -95,40 +95,28 @@
                                         <ColumnDefinition Width="auto" MinWidth="100" MaxWidth="200"/>
                                         <ColumnDefinition Width="auto" MinWidth="200" MaxWidth="320"/>
                                     </Grid.ColumnDefinitions>
-                                    <!--Caja de texto con modificador-->
-
-
                                 </Grid>
                             </RelativePanel>
-                            <!--
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="auto" MinWidth="100" MaxWidth="200"/>
-                                    <ColumnDefinition Width="auto" MinWidth="200" MaxWidth="320"/>
-                                </Grid.ColumnDefinitions>
-                                Caja de texto con modificador
-                                <TextBox Text="{x:Bind keyName_}"  Foreground="Black" FontSize="20" FontWeight="Bold" TextWrapping="Wrap"
-                                        TextAlignment="Center">
-                                </TextBox>
-                                Texto con el comando
-                                <TextBlock Text="{x:Bind keyComand_}" Foreground="Black" FontSize="20" FontWeight="Bold" Grid.Column="1" TextWrapping="Wrap"
-                                          TextAlignment="Center" ></TextBlock>
-
-                            </Grid>-->
                         </Border>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-
         </RelativePanel>
 
         <!--Configuración de sonido-->
-        <RelativePanel x:Name="soundsPanel" Grid.Row="1" Grid.ColumnSpan="3" Margin="100,0,100,0" Width="auto" Height="auto" Visibility="Collapsed">
+        <RelativePanel x:Name="soundsPanel" Grid.Row="1" Grid.ColumnSpan="3" Margin="100,0,100,0" Width="auto" Height="auto" Visibility="Visible">
             <Image x:Name="soundsPanelImage" Source="Assets/panel.png" Grid.Row="1" Grid.ColumnSpan="3" Stretch="Fill" 
                    Opacity="0.8" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True"></Image>
-            <Viewbox RelativePanel.AlignHorizontalCenterWithPanel="True" Width="auto" Height="auto" Margin="15,0,15,0" MinWidth="250" MaxWidth="500" >
-                <TextBlock x:Name="soundsPanelTxt" Text="Sounds configuration" Foreground="White" TextWrapping="Wrap" TextAlignment="Center"/>
+            <!--Texto de configuración de sonidos-->
+            <Viewbox x:Name="audioConfigTitle" RelativePanel.AlignHorizontalCenterWithPanel="True" Width="auto" Height="auto" Margin="15,0,15,0" MinWidth="250" MaxWidth="500">
+                <Border x:Name="soundsBorder" BorderBrush="Turquoise" MaxWidth="700" MinWidth="500" Background="DarkCyan" BorderThickness="3">
+                    <TextBlock x:Name="soundsTextPanel" Text="Audio configuration" FontSize="40" MinWidth="500" Foreground="White" TextWrapping="Wrap" TextAlignment="Center"/>
+                </Border>
             </Viewbox>
+            <RelativePanel RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="audioConfigTitle" Width="auto" Height="auto">
+                <Slider x:Name="masterSlider" BorderBrush="Turquoise" MinWidth="250" RelativePanel.AlignHorizontalCenterWithPanel="True" Header="Master" Width="auto"  Value="75" Maximum="100" Background="White"></Slider>
+                <Slider x:Name="musicSlider" MinWidth="250" RelativePanel.AlignHorizontalCenterWithPanel="True"  RelativePanel.Below="masterSlider" Header="Music" Width="auto" Value="91" Maximum="100" Background="White"></Slider>
+            </RelativePanel>
         </RelativePanel>
 
         <!--Configuración de gráficos-->
