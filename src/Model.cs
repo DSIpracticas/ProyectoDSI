@@ -108,8 +108,8 @@ namespace CocheDSI
                 //Caracteristicas
                 Velocidad = 24, Aceleracion = 22, Aerodinamica = 28, Agarre = 26, Suspension = 24,
                 //Nivel de las mejoras
-                Turbo = 0, Motor = 0, Carroceria = 0, Neumaticos = 0, Amortiguador = 0,
-                Estado = CarID.estados.bloqueado,
+                Turbo = 3, Motor = 0, Carroceria = 2, Neumaticos = 1, Amortiguador = 0,
+                Estado = CarID.estados.desbloqueado,
             },
             new CarID()
             {
@@ -226,13 +226,13 @@ namespace CocheDSI
             new CarID()
             {
                 Posicion = 12,
-                Nombre = "Batmovil",
+                Nombre = "BATMOVIL",
                 Source = "/Assets/Cars/Coche13.png",
                 //Gama
                 Gama = 5,
                 Coste = 1300,
                 //Caracteristicas
-                Velocidad = 28, Aceleracion = 35, Aerodinamica = 11, Agarre = 16, Suspension = 24,
+                Velocidad = 75, Aceleracion = 75, Aerodinamica = 75, Agarre = 75, Suspension = 75,
                 //Nivel de las mejoras
                 Turbo = 0, Motor = 0, Carroceria = 0, Neumaticos = 0, Amortiguador = 0,
                 Estado = CarID.estados.bloqueado,

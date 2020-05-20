@@ -180,6 +180,9 @@
     <Content Include="Assets\Cars\Coche7.png" />
     <Content Include="Assets\Cars\Coche8.png" />
     <Content Include="Assets\Cars\Coche9.png" />
+    <Content Include="Assets\Garage.jpg" />
+    <Content Include="Assets\Garage2.jpg" />
+    <Content Include="Assets\Garage3.jpg" />
     <Content Include="Assets\gold.png" />
     <Content Include="Assets\mainButton.png" />
     <Content Include="Assets\mainButtonSelected.png" />
@@ -193,6 +196,7 @@
     <Content Include="Assets\panelTexto.PNG" />
     <Content Include="Assets\settingsBackgroud.jpg" />
     <Content Include="Assets\settingsBackgroud.png" />
+    <Content Include="Assets\upgradeButton.png" />
     <Content Include="Assets\ZonaA.png" />
     <Content Include="Assets\ZonaB.png" />
     <Content Include="Properties\Default.rd.xml" />
