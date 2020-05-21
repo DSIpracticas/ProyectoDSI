@@ -87,9 +87,6 @@ namespace ProyectoDSI
 
         private void fullscreenSwitch_Toggled(object sender, RoutedEventArgs e)
         {
-            //Application.Current.
-
-            //ApplicationView.TryUnsnapToFullscreen();
             var view = ApplicationView.GetForCurrentView();
             if (view.IsFullScreenMode)
             {
