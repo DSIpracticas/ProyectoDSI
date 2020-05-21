@@ -26,6 +26,11 @@ namespace ProyectoDSI
         {
             this.InitializeComponent();
         }
+        private void ranking_Click(object sender, RoutedEventArgs e)
+        {
+            On_BackRequested();
+            this.Frame.Navigate(typeof(Ranking));
+        }
         private void grarage_Click(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(PostPartida));

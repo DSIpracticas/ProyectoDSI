@@ -13,13 +13,37 @@
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="4*"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
 
-        <RelativePanel VerticalAlignment="Bottom" Margin="0,0,30,60" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True">
+        <RelativePanel VerticalAlignment="Center" Grid.ColumnSpan="6" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True">
+            <Image x:Name="World" Source="Assets/fondoAzul.png" Stretch="Fill" PointerPressed="World_Click"/>
+        </RelativePanel>
+
+        <RelativePanel VerticalAlignment="Center" Grid.ColumnSpan="2" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True">
+            <Image x:Name="World1" Source="Assets/fondoInvisible.png" Stretch="Fill" PointerPressed="World_Click"/>
+        </RelativePanel>
+
+        <RelativePanel VerticalAlignment="Center" Grid.Column="2" Grid.ColumnSpan="2">
+            <Image x:Name="World2" Source="Assets/fondoInvisible.png" Stretch="Fill" PointerPressed="World_Click"/>
+            <Image x:Name="Lock1" Source="Assets/candado.png" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True" MaxWidth="100" MaxHeight="100"/>
+        </RelativePanel>
+
+        <RelativePanel VerticalAlignment="Center" Grid.Column="4" Grid.ColumnSpan="2">
+            <Image x:Name="World3" Source="Assets/fondoInvisible.png" Stretch="Fill" PointerPressed="World_Click"/>
+            <Image x:Name="Lock2" Source="Assets/candado.png" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True" MaxWidth="100" MaxHeight="100"/>
+        </RelativePanel>
+
+        <!--<RelativePanel VerticalAlignment="Bottom" Margin="0,0,30,60" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True">
             <Image x:Name="World1" Source="Assets/Mundo1.png" PointerPressed="World_Click" MaxWidth="198" MaxHeight="260.7"/>
         </RelativePanel>
 
@@ -29,13 +53,13 @@
 
         <RelativePanel Grid.Column="2" VerticalAlignment="Top" Margin="0,100,50,0" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True">
             <Image x:Name="World3" Source="Assets/Mundo3.png" PointerPressed="World_Click" MaxWidth="217.8" MaxHeight="158.4"/>
-        </RelativePanel>
+        </RelativePanel>-->
 
         <!--Descripciones de los mundos-->
-        <RelativePanel x:Name="Description" Grid.Column="2" Margin="0,250,0,0" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Image x:Name="DescriptionImage" Source="Assets/panelTexto.png" Stretch="Fill" MaxWidth="450" MaxHeight="350"/>
+        <RelativePanel x:Name="Description" Grid.Column="6" Grid.ColumnSpan="3" Margin="0,250,0,0" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Image x:Name="DescriptionImage" Source="Assets/panelTexto.png" Stretch="Fill" MaxWidth="450" MaxHeight="450"/>
             <Viewbox RelativePanel.AlignVerticalCenterWith="DescriptionImage" RelativePanel.AlignHorizontalCenterWith="DescriptionImage" 
-                     MaxWidth="400" MaxHeight="75" Margin="15,0,15,150">
+                     MaxWidth="400" MaxHeight="75" Margin="15,0,15,200">
                 <TextBlock x:Name="Info" Text="Información" TextDecorations="Underline" Foreground="White" TextWrapping="Wrap" TextAlignment="Center"/>
             </Viewbox>
             <Viewbox RelativePanel.AlignVerticalCenterWith="DescriptionImage" RelativePanel.AlignHorizontalCenterWith="DescriptionImage" 
@@ -43,14 +67,14 @@
                 <TextBlock x:Name="Difficulty" Text="Dificultad" Foreground="White" TextWrapping="Wrap" TextAlignment="Center"/>
             </Viewbox>
             <Viewbox RelativePanel.AlignVerticalCenterWith="DescriptionImage" RelativePanel.AlignHorizontalCenterWith="DescriptionImage" 
-                     MaxWidth="400" MaxHeight="60" Margin="15,120,15,0" >
+                     MaxWidth="400" MaxHeight="60" Margin="15,180,15,0" >
                 <TextBlock x:Name="Races" Text="Nº carreras" Foreground="White" TextWrapping="Wrap" TextAlignment="Center"/>
             </Viewbox>
         </RelativePanel>
 
         <!--Última fila de botones-->
         <!--botón de atrás-->
-        <RelativePanel x:Name="downLeft" Grid.Row="3" Margin="0,0,200,0" >
+        <RelativePanel x:Name="downLeft" Grid.ColumnSpan="3" Grid.Row="3" Margin="0,0,200,0" >
             <Image x:Name="BackImage" Source="Assets/backButton.png" Stretch="Fill" MaxWidth="150" MaxHeight="100"
                     RelativePanel.AlignVerticalCenterWith="BackButton" RelativePanel.AlignHorizontalCenterWith="BackButton"/>
 
@@ -59,7 +83,7 @@
         </RelativePanel>
 
         <!--botón de ranking-->
-        <RelativePanel x:Name="Ranking" Grid.Row="1" Grid.Column="1" Margin="25,0,25,0">
+        <RelativePanel x:Name="Ranking" Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="3" Margin="25,0,25,0">
             <Image x:Name="RankingImage" Source="Assets/mainButton.png" Stretch="Fill" MaxWidth="300" MaxHeight="100"
                     RelativePanel.AlignVerticalCenterWith="RankingButton" RelativePanel.AlignHorizontalCenterWith="RankingButton"/>
             <Viewbox RelativePanel.AlignVerticalCenterWith="RankingButton" RelativePanel.AlignHorizontalCenterWith="RankingButton" 
@@ -71,7 +95,7 @@
         </RelativePanel>
 
         <!--botón de acceso-->
-        <RelativePanel x:Name="MapAccess" Visibility="Collapsed" Grid.Row="1" Grid.Column="2" Margin="25,0,25,0">
+        <RelativePanel x:Name="MapAccess" Visibility="Collapsed" Grid.Row="1" Grid.Column="6" Grid.ColumnSpan="3" Margin="25,0,25,0">
             <Image x:Name="MapAccessImage" Source="Assets/mainButton.png" Stretch="Fill" MaxWidth="300" MaxHeight="100"
                     RelativePanel.AlignVerticalCenterWith="MapAccessButton" RelativePanel.AlignHorizontalCenterWith="MapAccessButton"/>
             <Viewbox RelativePanel.AlignVerticalCenterWith="MapAccessButton" RelativePanel.AlignHorizontalCenterWith="MapAccessButton" 
@@ -82,7 +106,7 @@
                     RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True"/>
         </RelativePanel>
 
-        <RelativePanel x:Name="Unlock" Visibility="Collapsed" Grid.Row="1" Grid.Column="2" Margin="0,10,0,10" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <RelativePanel x:Name="Unlock" Visibility="Collapsed" Grid.Row="1" Grid.Column="6" Grid.ColumnSpan="3" Margin="0,10,0,10" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Image x:Name="UnlockImage" Source="Assets/panelTexto.png" Stretch="Fill" MaxWidth="450" MaxHeight="350"/>
             <Viewbox RelativePanel.AlignVerticalCenterWith="UnlockImage" RelativePanel.AlignHorizontalCenterWith="UnlockImage" 
                         MaxWidth="300" MaxHeight="75" Margin="15,0,15,50">
