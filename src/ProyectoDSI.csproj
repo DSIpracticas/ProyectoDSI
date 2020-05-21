@@ -132,6 +132,9 @@
       <DependentUpon>MenuPrincipal.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model.cs" />
+    <Compile Include="PantallaInicial.xaml.cs">
+      <DependentUpon>PantallaInicial.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pausa.xaml.cs">
       <DependentUpon>Pausa.xaml</DependentUpon>
     </Compile>
@@ -189,6 +192,7 @@
     <Content Include="Assets\mainButtonSelected.png" />
     <Content Include="Assets\mainMenuBackgroud.jpg" />
     <Content Include="Assets\mainMenuBackgroud.png" />
+    <Content Include="Assets\menuInicialBg.png" />
     <Content Include="Assets\Mundo1.png" />
     <Content Include="Assets\Mundo2.png" />
     <Content Include="Assets\Mundo3.png" />
@@ -227,6 +231,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="MenuPrincipal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PantallaInicial.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
