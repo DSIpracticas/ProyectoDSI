@@ -226,7 +226,7 @@ namespace CocheDSI
             new CarID()
             {
                 Posicion = 12,
-                Nombre = "BATMOVIL",
+                Nombre = "LEGO BATMOVIL",
                 Source = "/Assets/Cars/Coche13.png",
                 //Gama
                 Gama = 5,
