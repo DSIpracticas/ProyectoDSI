@@ -166,6 +166,7 @@
     <Content Include="Assets\barraRoja.png" />
     <Content Include="Assets\barraVerde.png" />
     <Content Include="Assets\carIcon.png" />
+    <Content Include="Assets\estrellaGama.png" />
     <Content Include="Assets\fondoLista.jpg" />
     <Content Include="Assets\Cars\Coche1.png" />
     <Content Include="Assets\Cars\Coche10.png" />

@@ -176,7 +176,7 @@ namespace CocheDSI
                 Gama = 4,
                 Coste = 900,
                 //Caracteristicas
-                Velocidad = 28, Aceleracion = 35, Aerodinamica = 11, Agarre = 16, Suspension = 24,
+                Velocidad = 48, Aceleracion = 45, Aerodinamica = 41, Agarre = 46, Suspension = 44,
                 //Nivel de las mejoras
                 Turbo = 0, Motor = 0, Carroceria = 0, Neumaticos = 0, Amortiguador = 0,
                 Estado = CarID.estados.bloqueado,
@@ -190,7 +190,7 @@ namespace CocheDSI
                 Gama = 4,
                 Coste = 1000,
                 //Caracteristicas
-                Velocidad = 28, Aceleracion = 35, Aerodinamica = 11, Agarre = 16, Suspension = 24,
+                Velocidad = 42, Aceleracion = 43, Aerodinamica = 49, Agarre = 41, Suspension = 47,
                 //Nivel de las mejoras
                 Turbo = 0, Motor = 0, Carroceria = 0, Neumaticos = 0, Amortiguador = 0,
                 Estado = CarID.estados.bloqueado,
@@ -204,7 +204,7 @@ namespace CocheDSI
                 Gama = 4,
                 Coste = 1100,
                 //Caracteristicas
-                Velocidad = 28, Aceleracion = 35, Aerodinamica = 11, Agarre = 16, Suspension = 24,
+                Velocidad = 46, Aceleracion = 42, Aerodinamica = 43, Agarre = 47, Suspension = 43,
                 //Nivel de las mejoras
                 Turbo = 0, Motor = 0, Carroceria = 0, Neumaticos = 0, Amortiguador = 0,
                 Estado = CarID.estados.bloqueado,
@@ -218,7 +218,7 @@ namespace CocheDSI
                 Gama = 5,
                 Coste = 1200,
                 //Caracteristicas
-                Velocidad = 28, Aceleracion = 35, Aerodinamica = 11, Agarre = 16, Suspension = 24,
+                Velocidad = 58, Aceleracion = 53, Aerodinamica = 55, Agarre = 59, Suspension = 58,
                 //Nivel de las mejoras
                 Turbo = 0, Motor = 0, Carroceria = 0, Neumaticos = 0, Amortiguador = 0,
                 Estado = CarID.estados.bloqueado,

@@ -124,8 +124,20 @@ namespace ProyectoDSI
             //Dinero
             DineroText.Text = "DINERO: " + Money.ToString() + "€";
 
+            //Muestra estrellas según la gama
+            Estrella1.Visibility = Visibility.Collapsed;
+            Estrella2.Visibility = Visibility.Collapsed;
+            Estrella3.Visibility = Visibility.Collapsed;
+            Estrella4.Visibility = Visibility.Collapsed;
+            Estrella5.Visibility = Visibility.Collapsed;
+            if (ListaCoches.ElementAt(SelCar).Gama >= 1) Estrella1.Visibility = Visibility.Visible;
+            if (ListaCoches.ElementAt(SelCar).Gama >= 2) Estrella2.Visibility = Visibility.Visible;
+            if (ListaCoches.ElementAt(SelCar).Gama >= 3) Estrella3.Visibility = Visibility.Visible;
+            if (ListaCoches.ElementAt(SelCar).Gama >= 4) Estrella4.Visibility = Visibility.Visible;
+            if (ListaCoches.ElementAt(SelCar).Gama == 5) Estrella5.Visibility = Visibility.Visible;
+
             //Actualiza Características
-            GamaText.Text = ListaCoches.ElementAt(SelCar).Gama.ToString();
+            //GamaText.Text = ListaCoches.ElementAt(SelCar).Gama.ToString();
             AceleracionText.Text = ListaCoches.ElementAt(SelCar).Aceleracion.ToString();
             AgarreText.Text = ListaCoches.ElementAt(SelCar).Agarre.ToString();
             AerodinamicaText.Text = ListaCoches.ElementAt(SelCar).Aerodinamica.ToString();
