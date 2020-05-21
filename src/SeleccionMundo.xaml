@@ -25,6 +25,11 @@
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
 
+        <!--Fondo-->
+        <RelativePanel Grid.ColumnSpan="9" Grid.RowSpan="3" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Image x:Name="Fondo" Source="Assets/fondo.png" Stretch="Fill"/>
+        </RelativePanel>
+
         <RelativePanel VerticalAlignment="Center" Grid.ColumnSpan="6" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True">
             <Image x:Name="World" Source="Assets/fondoAzul.png" Stretch="Fill" PointerPressed="World_Click"/>
         </RelativePanel>

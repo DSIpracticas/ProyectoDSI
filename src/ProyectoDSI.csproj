@@ -162,6 +162,7 @@
     <Content Include="Assets\backButton.png" />
     <Content Include="Assets\candado.png" />
     <Content Include="Assets\carIcon.png" />
+    <Content Include="Assets\fondo.png" />
     <Content Include="Assets\fondoAzul.png" />
     <Content Include="Assets\fondoInvisible.png" />
     <Content Include="Assets\fondoZona.png" />
