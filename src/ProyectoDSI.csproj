@@ -168,7 +168,12 @@
     <Content Include="Assets\barraGris.png" />
     <Content Include="Assets\barraRoja.png" />
     <Content Include="Assets\barraVerde.png" />
+    <Content Include="Assets\candado.png" />
     <Content Include="Assets\carIcon.png" />
+    <Content Include="Assets\fondo.png" />
+    <Content Include="Assets\fondoAzul.png" />
+    <Content Include="Assets\fondoInvisible.png" />
+    <Content Include="Assets\fondoZona.png" />
     <Content Include="Assets\estrellaGama.png" />
     <Content Include="Assets\fondoLista.jpg" />
     <Content Include="Assets\Cars\Coche1.png" />
@@ -199,6 +204,8 @@
     <Content Include="Assets\panel.png" />
     <Content Include="Assets\panel2.png" />
     <Content Include="Assets\panelTexto.PNG" />
+    <Content Include="Assets\seleccionA.png" />
+    <Content Include="Assets\seleccionB.png" />
     <Content Include="Assets\settingsBackgroud.jpg" />
     <Content Include="Assets\settingsBackgroud.png" />
     <Content Include="Assets\upgradeButton.png" />

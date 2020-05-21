@@ -20,6 +20,11 @@
             <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
 
+        <!--Fondo-->
+        <RelativePanel Grid.ColumnSpan="3" Grid.RowSpan="3" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Image x:Name="Fondo" Source="Assets/fondo.png" Stretch="Fill"/>
+        </RelativePanel>
+
         <!--Primera fila-->
         <RelativePanel Grid.Column="1" Margin="0,5,0,0" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Image x:Name="MoneyImage" Source="Assets/panel2.png" Stretch="Fill" MaxWidth="450" MaxHeight="350"/>
@@ -39,26 +44,26 @@
 
         <!--Imagen del mundo-->
         <RelativePanel Grid.ColumnSpan="2" Grid.Row="1" VerticalAlignment="Center" Margin="0,0,0,0" HorizontalAlignment="Center" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True">
-            <Image x:Name="worldImage" Source="Assets/Mundo1.png" PointerPressed="Zone_Click" MaxWidth="531.65" MaxHeight="700"/>
+            <Image x:Name="worldImage" Source="Assets/fondoZona.png" PointerPressed="Zone_Click" MaxWidth="531.65" MaxHeight="700"/>
             <Viewbox RelativePanel.AlignHorizontalCenterWith="worldImage" RelativePanel.AlignVerticalCenterWith="worldImage"
-                     MaxWidth="80" MaxHeight="80" Margin="0,0,0,500">
-                <Image x:Name="ZoneA" Source="Assets/ZonaA.png" PointerPressed="Zone_Click"/>
+                     MaxWidth="80" MaxHeight="80" Margin="0,0,200,550">
+                <Image x:Name="ZoneA" Source="Assets/seleccionA.png" PointerPressed="Zone_Click"/>
             </Viewbox>
             <Viewbox RelativePanel.AlignHorizontalCenterWith="worldImage" RelativePanel.AlignVerticalCenterWith="worldImage"
                      MaxWidth="80" MaxHeight="80" Margin="200,0,0,300">
-                <Image x:Name="ZoneAA" Source="Assets/ZonaA.png" PointerPressed="Zone_Click"/>
+                <Image x:Name="ZoneAA" Source="Assets/seleccionA.png" PointerPressed="Zone_Click"/>
             </Viewbox>
             <Viewbox RelativePanel.AlignHorizontalCenterWith="worldImage" RelativePanel.AlignVerticalCenterWith="worldImage"
-                     MaxWidth="80" MaxHeight="80" Margin="0,0,300,200">
-                <Image x:Name="ZoneB" Source="Assets/ZonaB.png" PointerPressed="Zone_Click"/>
+                     MaxWidth="80" MaxHeight="80" Margin="0,0,100,200">
+                <Image x:Name="ZoneB" Source="Assets/seleccionB.png" PointerPressed="Zone_Click"/>
             </Viewbox>
             <Viewbox RelativePanel.AlignHorizontalCenterWith="worldImage" RelativePanel.AlignVerticalCenterWith="worldImage"
-                     MaxWidth="80" MaxHeight="80" Margin="0,30,100,0">
-                <Image x:Name="ZoneBB" Source="Assets/ZonaB.png" PointerPressed="Zone_Click"/>
+                     MaxWidth="80" MaxHeight="80" Margin="150,200,0,0">
+                <Image x:Name="ZoneBB" Source="Assets/seleccionB.png" PointerPressed="Zone_Click"/>
             </Viewbox>
             <Viewbox RelativePanel.AlignHorizontalCenterWith="worldImage" RelativePanel.AlignVerticalCenterWith="worldImage"
-                     MaxWidth="80" MaxHeight="80" Margin="100,550,0,0">
-                <Image x:Name="ZoneBBB" Source="Assets/ZonaB.png" PointerPressed="Zone_Click"/>
+                     MaxWidth="80" MaxHeight="80" Margin="200,520,0,0">
+                <Image x:Name="ZoneBBB" Source="Assets/seleccionB.png" PointerPressed="Zone_Click"/>
             </Viewbox>
         </RelativePanel>
 
@@ -113,6 +118,18 @@
                     RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True"/>
         </RelativePanel>
 
+        <!--botón de ranking-->
+        <RelativePanel x:Name="Ranking" Grid.Row="2" Grid.Column="1" Margin="25,0,25,0">
+            <Image x:Name="RankingImage" Source="Assets/mainButton.png" Stretch="Fill" MaxWidth="300" MaxHeight="100"
+                    RelativePanel.AlignVerticalCenterWith="RankingButton" RelativePanel.AlignHorizontalCenterWith="RankingButton"/>
+            <Viewbox RelativePanel.AlignVerticalCenterWith="RankingButton" RelativePanel.AlignHorizontalCenterWith="RankingButton" 
+                     MaxWidth="250" MaxHeight="75" Margin="15,0,15,0" >
+                <TextBlock x:Name="RankingTxt" Text="RANKING MUNDIAL" Foreground="White" TextWrapping="Wrap" TextAlignment="Center"/>
+            </Viewbox>
+            <Button x:Name="RankingButton" Background="Transparent" Width="300" Height="100" Click="ranking_Click"
+                    RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True"/>
+        </RelativePanel>
+        
         <!--botón de acceso-->
         <RelativePanel x:Name="Challenge" Visibility="Collapsed" Grid.Row="8" Grid.Column="2" Margin="25,0,25,0">
             <Image x:Name="ChallengeImage" Source="Assets/mainButton.png" Stretch="Fill" MaxWidth="300" MaxHeight="100"
