@@ -8,6 +8,48 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
+    <Page.Resources>
+        <!--Estilos-->
+        <Style TargetType="ToggleSwitch">
+            <Setter Property="Background" Value="Transparent"></Setter>
+            <Setter Property="FontSize" Value="25"></Setter>
+            <Setter Property="Foreground" Value="White"></Setter>
+        </Style>
+
+        <Style TargetType="Button" x:Key="scaleableButton">
+            <Setter Property="Background" Value="Transparent"></Setter>
+        </Style>
+
+        <Style TargetType="Slider" x:Key="gameSlider">
+            <Setter Property="Foreground" Value="DarkCyan"></Setter>
+            <Setter Property="MinWidth" Value="250"></Setter>
+            <Setter Property="Width" Value="auto"></Setter>
+            <Setter Property="Background" Value="White"></Setter>
+            <Setter Property="RelativePanel.AlignHorizontalCenterWithPanel" Value="True"></Setter>
+        </Style>
+        <!--templates-->
+            <!--BotonPrincipal-->
+        <DataTemplate x:Key="botonEscalable" x:DataType="RelativePanel">
+            <RelativePanel x:Name="panel" Margin="25,0,25,0" Width="auto" Height="auto" MinHeight="75">
+                <Image x:Uid="image" Source="Assets/mainButton.png" Stretch="Fill" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True"/>
+                <Viewbox x:Name="butonViewBox" MaxWidth="250" MaxHeight="75" Margin="15,0,15,0" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True" >
+                    <TextBlock Text="No has puesto nombre al botón" Foreground="White" TextWrapping="Wrap" TextAlignment="Center"/>
+                </Viewbox>
+                <Button x:Name="cuerpoBoton" Background="Transparent" Width="auto" MinWidth="600" Height="100"/>
+            </RelativePanel>
+        </DataTemplate>
+            <!--botón atrás-->
+        <DataTemplate x:Key="botonAtras" x:DataType="RelativePanel">
+            <RelativePanel x:Name="panel" Margin="10,20,20,10" >
+                <Image x:Name="backImage" Source="Assets/backButton.png" Stretch="Fill" Width="90" Height="70"
+                    RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True"/>
+                <Button x:Name="backButton" Background="Transparent" Width="90" Height="70"
+                     Click="back_Click" RelativePanel.AlignLeftWithPanel="True"/>
+            </RelativePanel>
+        </DataTemplate>
+        
+    </Page.Resources>
+    
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -41,7 +83,7 @@
                     RelativePanel.AlignVerticalCenterWith="sounds" RelativePanel.AlignHorizontalCenterWith="sounds"/>
             <Viewbox RelativePanel.AlignVerticalCenterWith="sounds" RelativePanel.AlignHorizontalCenterWith="sounds" 
                      MaxWidth="250" MaxHeight="75" Margin="15,0,15,0" >
-                <TextBlock x:Name="soundsTxt" Text="SOUNDS" Foreground="White" TextWrapping="Wrap" TextAlignment="Center"/>
+                <TextBlock x:Name="soundsTxt" Text="AUDIO" Foreground="White" TextWrapping="Wrap" TextAlignment="Center"/>
             </Viewbox>
             <Button x:Name="sounds" Background="Transparent" Width="300" Height="100" Click="sounds_Click"
                     RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True"/>
@@ -59,27 +101,24 @@
                     RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True"/>
         </RelativePanel>
 
-        <!--botón de atrás-->
-        <RelativePanel x:Name="downLeft" Grid.Row="2" Margin="20,20,20,20" Width="auto" Height="auto" >
-            <Image x:Name="backImage" Source="Assets/backButton.png" Stretch="Fill" 
-                    RelativePanel.AlignVerticalCenterWith="backButton" RelativePanel.AlignHorizontalCenterWith="backButton"/>
-            <Button x:Name="backButton" Background="Transparent" Width="90" Height="70"
-                     Click="back_Click" RelativePanel.AlignLeftWithPanel="True"/>
+        <RelativePanel Grid.Row="2">
+            <ContentControl ContentTemplate="{StaticResource botonAtras}">
+            </ContentControl>
         </RelativePanel>
 
         <!--configuración de teclas-->
-        <RelativePanel x:Name="keyPanel" Grid.Row="1" Grid.ColumnSpan="3" Margin="100,0,100,0" Width="auto" Height="auto">
+        <RelativePanel x:Name="keyPanel" Grid.Row="1" Grid.ColumnSpan="3" Margin="100,0,100,0" Width="auto" Height="auto" Visibility="Collapsed">
             <!--panel de fondo-->
             <Image x:Name="panelImage" Source="Assets/panel.png" Grid.Row="1" Grid.ColumnSpan="3" Stretch="Fill" 
                    Opacity="0.8" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True"></Image>
             <!--Texto de configuración-->
-            <Viewbox RelativePanel.AlignHorizontalCenterWithPanel="True" Width="auto" Height="auto" Margin="15,0,15,0" MinWidth="250" MaxWidth="500">
+            <Viewbox x:Name="keyTitle" RelativePanel.AlignHorizontalCenterWithPanel="True" Width="auto" Height="auto" Margin="15,0,15,0" MinWidth="250" MaxWidth="500">
                 <Border x:Name="configBorder" BorderBrush="Turquoise" MaxWidth="700" MinWidth="500" Background="DarkCyan" BorderThickness="3">
                     <TextBlock x:Name="panelTxt" Text="Key configuration" FontSize="40" MinWidth="500" Foreground="White" TextWrapping="Wrap" TextAlignment="Center"/>
                 </Border>
             </Viewbox>
             <!--lista de teclas-->
-            <ListView x:Name="keyList" RelativePanel.AlignHorizontalCenterWithPanel="True" Margin="20,100,20,20">
+            <ListView x:Name="keyList" RelativePanel.AlignHorizontalCenterWithPanel="True" Margin="0,0,0,20" RelativePanel.Below="keyTitle">
                 <ListView.ItemTemplate>
                     <DataTemplate x:DataType="local:VMKey">
                         <Border x:Name="keyBorder" BorderBrush="Turquoise" Width="auto" MaxWidth="500" Background="DarkCyan" BorderThickness="3" 
@@ -95,50 +134,95 @@
                                         <ColumnDefinition Width="auto" MinWidth="100" MaxWidth="200"/>
                                         <ColumnDefinition Width="auto" MinWidth="200" MaxWidth="320"/>
                                     </Grid.ColumnDefinitions>
-                                    <!--Caja de texto con modificador-->
-
-
                                 </Grid>
                             </RelativePanel>
-                            <!--
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="auto" MinWidth="100" MaxWidth="200"/>
-                                    <ColumnDefinition Width="auto" MinWidth="200" MaxWidth="320"/>
-                                </Grid.ColumnDefinitions>
-                                Caja de texto con modificador
-                                <TextBox Text="{x:Bind keyName_}"  Foreground="Black" FontSize="20" FontWeight="Bold" TextWrapping="Wrap"
-                                        TextAlignment="Center">
-                                </TextBox>
-                                Texto con el comando
-                                <TextBlock Text="{x:Bind keyComand_}" Foreground="Black" FontSize="20" FontWeight="Bold" Grid.Column="1" TextWrapping="Wrap"
-                                          TextAlignment="Center" ></TextBlock>
-
-                            </Grid>-->
                         </Border>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-
         </RelativePanel>
 
         <!--Configuración de sonido-->
         <RelativePanel x:Name="soundsPanel" Grid.Row="1" Grid.ColumnSpan="3" Margin="100,0,100,0" Width="auto" Height="auto" Visibility="Collapsed">
             <Image x:Name="soundsPanelImage" Source="Assets/panel.png" Grid.Row="1" Grid.ColumnSpan="3" Stretch="Fill" 
                    Opacity="0.8" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True"></Image>
-            <Viewbox RelativePanel.AlignHorizontalCenterWithPanel="True" Width="auto" Height="auto" Margin="15,0,15,0" MinWidth="250" MaxWidth="500" >
-                <TextBlock x:Name="soundsPanelTxt" Text="Sounds configuration" Foreground="White" TextWrapping="Wrap" TextAlignment="Center"/>
+            <!--Texto de configuración de sonidos-->
+            <Viewbox x:Name="audioConfigTitle" RelativePanel.AlignHorizontalCenterWithPanel="True" Width="auto" Height="auto" Margin="15,0,15,0" MinWidth="250" MaxWidth="500">
+                <Border x:Name="soundsBorder" BorderBrush="Turquoise" MaxWidth="700" MinWidth="500" Background="DarkCyan" BorderThickness="3">
+                    <TextBlock x:Name="soundsTextPanel" Text="Audio configuration" FontSize="40" MinWidth="500" Foreground="White" TextWrapping="Wrap" TextAlignment="Center"/>
+                </Border>
             </Viewbox>
+            <!--Sliders-->
+            <ListView Background="Transparent" RelativePanel.AlignHorizontalCenterWithPanel="True" Margin="0,0,0,25" RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.Below="audioConfigTitle">
+                <RelativePanel RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="audioConfigTitle" Width="auto" Height="auto">
+                    <TextBlock x:Name="masterText" Text="Master" Foreground="White" FontSize="20"></TextBlock>
+                    <Slider x:Name="masterSlider" Foreground="DarkTurquoise" MinWidth="250" RelativePanel.AlignHorizontalCenterWithPanel="True"
+                        Width="auto"  Value="75" Maximum="100" Background="White" RelativePanel.Below="masterText"></Slider>
+                    <!--Music-->
+                    <TextBlock x:Name="musicText" Text="Music" Foreground="White" FontSize="20" RelativePanel.Below="masterSlider"></TextBlock>
+                    <Slider x:Name="musicSlider" Foreground="DarkTurquoise" MinWidth="250" RelativePanel.AlignHorizontalCenterWithPanel="True"
+                        Width="auto"  Value="82" Maximum="100" Background="White" RelativePanel.Below="musicText"></Slider>
+                    <!--Effects-->
+                    <TextBlock x:Name="effectsText" Text="Effects" Foreground="White" FontSize="20" RelativePanel.Below="musicSlider"></TextBlock>
+                    <Slider x:Name="effectsSlider" Foreground="DarkTurquoise" MinWidth="250" RelativePanel.AlignHorizontalCenterWithPanel="True"
+                        Width="auto"  Value="31" Maximum="100" Background="White" RelativePanel.Below="effectsText"></Slider>
+                    <!--voice-->
+                    <TextBlock x:Name="voiceText" Text="Voice" Foreground="White" FontSize="20" RelativePanel.Below="effectsSlider"></TextBlock>
+                    <Slider x:Name="voiceSlider" Foreground="DarkTurquoise" MinWidth="250" RelativePanel.AlignHorizontalCenterWithPanel="True"
+                        Width="auto"  Value="52" Maximum="100" Background="White" RelativePanel.Below="voiceText"></Slider>
+                    <!--Ambience-->
+                    <TextBlock x:Name="ambienceText" Text="Ambience" Foreground="White" FontSize="20" RelativePanel.Below="voiceSlider"></TextBlock>
+                    <Slider x:Name="ambienceSldier" Foreground="DarkTurquoise" MinWidth="250" RelativePanel.AlignHorizontalCenterWithPanel="True"
+                        Width="auto"  Value="12" Maximum="100" Background="White" RelativePanel.Below="ambienceText"></Slider>
+                    <!--NPC-->
+                    <TextBlock x:Name="npcText" Text="NPC effects" Foreground="White" FontSize="20" RelativePanel.Below="ambienceSldier"></TextBlock>
+                    <Slider x:Name="npcSlider" Foreground="DarkTurquoise" MinWidth="250" RelativePanel.AlignHorizontalCenterWithPanel="True"
+                        Width="auto"  Value="47" Maximum="100" Background="White" RelativePanel.Below="npcText"></Slider>
+                    <!--HUD-->
+                    <TextBlock x:Name="hudText" Text="HUD effects" Foreground="White" FontSize="20" RelativePanel.Below="npcSlider"></TextBlock>
+                    <Slider x:Name="hudSlider" Foreground="DarkTurquoise" MinWidth="250" RelativePanel.AlignHorizontalCenterWithPanel="True"
+                        Width="auto"  Value="92" Maximum="100" Background="White" RelativePanel.Below="hudText"></Slider>
+                    <!--Notifications-->
+                    <TextBlock x:Name="notificationsText" Text="Notifications" Foreground="White" FontSize="20" RelativePanel.Below="hudSlider"></TextBlock>
+                    <Slider x:Name="notificationsSlider" Foreground="DarkTurquoise" MinWidth="250" RelativePanel.AlignHorizontalCenterWithPanel="True"
+                        Width="auto"  Value="100" Maximum="100" Background="White" RelativePanel.Below="notificationsText"></Slider>
+                </RelativePanel>
+            </ListView>
         </RelativePanel>
 
         <!--Configuración de gráficos-->
-        <RelativePanel x:Name="graphicPanel" Grid.Row="1" Grid.ColumnSpan="3" Margin="100,0,100,0" Width="auto" Height="auto" Visibility="Collapsed">
+        <RelativePanel x:Name="graphicPanel" Grid.Row="1" Grid.ColumnSpan="3" Margin="100,0,100,0" Width="auto" Height="auto" Visibility="Visible">
             <Image x:Name="graphicPanelImage" Source="Assets/panel.png" Grid.Row="1" Grid.ColumnSpan="3" Stretch="Fill" 
                    Opacity="0.8" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True"></Image>
-            <Viewbox RelativePanel.AlignHorizontalCenterWithPanel="True" Width="auto" Height="auto" Margin="15,0,15,0" MinWidth="250" MaxWidth="500" >
-                <TextBlock x:Name="graphicPanelTxt" Text="Graphic configuration" Foreground="White" TextWrapping="Wrap" TextAlignment="Center"/>
+            <!--Texto de configuración de sonidos-->
+            <Viewbox x:Name="graphicTitle" RelativePanel.AlignHorizontalCenterWithPanel="True" Width="auto" Height="auto" Margin="15,0,15,0" MinWidth="250" MaxWidth="500">
+                <Border x:Name="graphicBorder" BorderBrush="Turquoise" MaxWidth="700" MinWidth="500" Background="DarkCyan" BorderThickness="3">
+                    <TextBlock x:Name="graphicText" Text="Graphics configuration" FontSize="40" MinWidth="500" Foreground="White" TextWrapping="Wrap" TextAlignment="Center"/>
+                </Border>
             </Viewbox>
+            <!--Sliders-->
+            <ListView Background="Transparent" RelativePanel.AlignHorizontalCenterWithPanel="True" Margin="0,0,0,25" RelativePanel.AlignVerticalCenterWithPanel="True" 
+                      RelativePanel.Below="graphicTitle">
+                <RelativePanel RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.Below="graphicTitle" Width="auto" Height="auto">
+                    <!--Resolution-->
+                    <TextBlock x:Name="resolutionText" Text="Resolution" Foreground="White" FontSize="20"></TextBlock>
+                    <Slider x:Name="resolutionSlider" Style="{StaticResource gameSlider}" TickFrequency="300" TickPlacement="Outside" Value="1200" Maximum="2600" Minimum="600"
+                            RelativePanel.Below="resolutionText"></Slider>
+                    <!--FPS-->
+                    <TextBlock x:Name="fpsText" Text="FPS" Foreground="White" FontSize="20" RelativePanel.Below="resolutionSlider"></TextBlock>
+                    <Slider x:Name="fpsSlider" Style="{StaticResource gameSlider}" Minimum="20" Value="30" Maximum="60" RelativePanel.Below="fpsText"></Slider>
+                    <!--shadows-->
+                    <TextBlock x:Name="shadowText" Text="Shadow quality" Foreground="White" FontSize="20" RelativePanel.Below="fpsSlider"></TextBlock>
+                    <Slider x:Name="shadowSlider" Style="{StaticResource gameSlider}" Minimum="0" Value="30" Maximum="100" RelativePanel.Below="shadowText"></Slider>
+                    
+                    <!--Windowed-->
+                    <TextBlock x:Name="windowedText" RelativePanel.Below="shadowSlider" Text="Windowed" Foreground="White" FontSize="20"></TextBlock>
+                    <ToggleSwitch x:Name="windowedSwitch" IsOn="True" RelativePanel.Below="windowedText"></ToggleSwitch>
+                    <!--fullscreen-->
+                    <TextBlock x:Name="fullscreenText" RelativePanel.Below="windowedSwitch" Text="fullscreen" Foreground="White" FontSize="20"></TextBlock>
+                    <ToggleSwitch x:Name="fullscreenSwitch" RelativePanel.Below="fullscreenText" Toggled="fullscreenSwitch_Toggled"></ToggleSwitch>
+                </RelativePanel>
+            </ListView>
         </RelativePanel>
-
     </Grid>
 </Page>

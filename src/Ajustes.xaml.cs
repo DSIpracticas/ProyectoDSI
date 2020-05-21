@@ -16,6 +16,8 @@ using System.Windows.Input;
 using System.Collections.ObjectModel;
 using Windows.UI.Core;
 
+using Windows.UI.ViewManagement;
+
 
 // La plantilla de elemento Página en blanco está documentada en https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -29,7 +31,6 @@ namespace ProyectoDSI
         //lista de teclas
         public ObservableCollection<VMKey> ListaKey { get; } = new ObservableCollection<VMKey>();
 
-        public string[] keysChar = new string[] { "Q", "W", "E", "R", "T", "Y", "A", "S", "D", "F", "SPACE", "UP", "LEFT", "RIGTH", "DOWN" };
         public Ajustes()
         {
             this.InitializeComponent();
@@ -84,14 +85,27 @@ namespace ProyectoDSI
             graphicPanel.Visibility = Visibility.Visible;
         }
 
-        private void initKeys()
+        private void fullscreenSwitch_Toggled(object sender, RoutedEventArgs e)
         {
-            //for (int i = 0; i < keysChar.Length; i++)
-            //{
-            //    Keys key = new Keys(keysChar[i]);
-            //    keys.Add(key);
-            //}
-            //DataContext = this;
+            var view = ApplicationView.GetForCurrentView();
+            if (view.IsFullScreenMode)
+            {
+                view.ExitFullScreenMode();
+                ApplicationView.PreferredLaunchWindowingMode = ApplicationViewWindowingMode.Auto;
+                windowedSwitch.IsOn = true;
+                // The SizeChanged event will be raised when the exit from full-screen mode is complete.
+            }
+            else
+            {
+                if (view.TryEnterFullScreenMode())
+                {
+                    ApplicationView.PreferredLaunchWindowingMode = ApplicationViewWindowingMode.FullScreen;
+                    windowedSwitch.IsOn = false;
+                    // The SizeChanged event will be raised when the entry to full-screen mode is complete.
+                }
+            }
+
+            InitializeComponent();
         }
     }
 
