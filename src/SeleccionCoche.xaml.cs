@@ -97,7 +97,7 @@ namespace ProyectoDSI
         }
         private void Jugar(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(PostPartida));
+            this.Frame.Navigate(typeof(gameHUD));
         }
         private void Comprar(object sender, RoutedEventArgs e)
         {

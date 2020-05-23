@@ -20,29 +20,16 @@ namespace ProyectoDSI
     /// <summary>
     /// Una página vacía que se puede usar de forma independiente o a la que se puede navegar dentro de un objeto Frame.
     /// </summary>
-    public sealed partial class PostPartida : Page
+    public sealed partial class gameHUD : Page
     {
-        public PostPartida()
+        public gameHUD()
         {
             this.InitializeComponent();
         }
-        private void back_Click(object sender, RoutedEventArgs e)
-        {
-            On_BackRequested();
-        }
-        private bool On_BackRequested()
-        {
-            this.Frame.Navigate(typeof(MenuPrincipal));
-            return true;
-        }
-        private void worldSelection_Click(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(SeleccionMundo));
-        }
 
-        private void PlayAgainButton_Click(object sender, RoutedEventArgs e)
+        private void simular_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(SeleccionCoche));
+            this.Frame.Navigate(typeof(PostPartida));
         }
     }
 }

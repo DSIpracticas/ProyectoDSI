@@ -122,6 +122,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="gameHUD.xaml.cs">
+      <DependentUpon>gameHUD.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Logros.xaml.cs">
       <DependentUpon>Logros.xaml</DependentUpon>
     </Compile>
@@ -170,6 +173,7 @@
     <Content Include="Assets\barraVerde.png" />
     <Content Include="Assets\candado.png" />
     <Content Include="Assets\carIcon.png" />
+    <Content Include="Assets\gameHud.png" />
     <Content Include="Assets\fondo.png" />
     <Content Include="Assets\fondoAzul.png" />
     <Content Include="Assets\fondoInvisible.png" />
@@ -193,6 +197,7 @@
     <Content Include="Assets\Garage2.jpg" />
     <Content Include="Assets\Garage3.jpg" />
     <Content Include="Assets\gold.png" />
+    <Content Include="Assets\gps.png" />
     <Content Include="Assets\mainButton.png" />
     <Content Include="Assets\mainButtonSelected.png" />
     <Content Include="Assets\mainMenuBackgroud.jpg" />
@@ -226,6 +231,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Page Include="Ajustes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="gameHUD.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
