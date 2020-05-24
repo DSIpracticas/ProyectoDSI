@@ -69,11 +69,6 @@ namespace ProyectoDSI
             {
                 BotonJugar.Visibility = Visibility.Collapsed;
             }
-            //else
-            //{
-            //    BotonComprar.Visibility = Visibility.Collapsed;
-            //    CosteCompra.Visibility = Visibility.Collapsed;
-            //}
 
             DineroText.Text = "DINERO: " + Money.ToString() + "€";
 
@@ -239,6 +234,7 @@ namespace ProyectoDSI
             if (permitirCompra && ListaCoches.ElementAt(SelCar).Estado == CarID.estados.bloqueado)
             {
                 ImagenComprar.Visibility = Visibility.Visible;
+                Candado.Visibility = Visibility.Visible;
                 BotonComprar.Visibility = Visibility.Visible;
                 CosteCompra.Visibility = Visibility.Visible;
                 CosteCompra.Text = "COMPRAR: " + ListaCoches.ElementAt(SelCar).Coste.ToString() + "€";
@@ -246,6 +242,7 @@ namespace ProyectoDSI
             //Si está desbloqueado no se ven
             else
             {
+                Candado.Visibility = Visibility.Collapsed;
                 ImagenComprar.Visibility = Visibility.Collapsed;
                 BotonComprar.Visibility = Visibility.Collapsed;
                 CosteCompra.Visibility = Visibility.Collapsed;

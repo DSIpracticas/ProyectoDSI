@@ -63,7 +63,6 @@
                 <Image x:Name="Estrella4" Source="/Assets/estrellaGama.PNG" Width="40"/>
                 <Image x:Name="Estrella5" Source="/Assets/estrellaGama.PNG" Width="40"/>
             </StackPanel>
-            <!--<TextBlock Style="{StaticResource Propiedades}" x:Name="GamaText" Text="XX" />-->
             <TextBlock Style="{StaticResource Propiedades}" Text="ACELERACION"/>
             <TextBlock Style="{StaticResource Propiedades}" x:Name="AceleracionText" Text="XX"/>
             <TextBlock Style="{StaticResource Propiedades}" Text="VELOCIDAD"/>
@@ -80,48 +79,48 @@
         <Image Source="/Assets/panelTexto.PNG" Stretch="Fill" Grid.Row="1" Grid.Column="2" Margin="30, 0, 30, 15"/>
         <StackPanel Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" Margin="0,60,0,0" Orientation="Horizontal">
             <StackPanel>
-                <TextBlock Style="{StaticResource Propiedades}" Text="PANEL DE MEJORAS" FontWeight="Bold"/>
-                <TextBlock Style="{StaticResource Propiedades}" x:Name="Turbo" Text="XX"/>
-                <TextBlock Style="{StaticResource Propiedades}" x:Name="MejoraAceleracion" Text="XX"/>
-                <TextBlock Style="{StaticResource Propiedades}" x:Name="Motor" Text="XX"/>
-                <TextBlock Style="{StaticResource Propiedades}" x:Name="MejoraVelocidad" Text="XX"/>
-                <TextBlock Style="{StaticResource Propiedades}" x:Name="Amortiguadores" Text="XX"/>
-                <TextBlock Style="{StaticResource Propiedades}" x:Name="MejoraSuspension" Text="XX"/>
-                <TextBlock Style="{StaticResource Propiedades}" x:Name="Neumaticos" Text="XX"/>
-                <TextBlock Style="{StaticResource Propiedades}" x:Name="MejoraAgarre" Text="XX"/>
-                <TextBlock Style="{StaticResource Propiedades}" x:Name="Carroceria" Text="XX"/>
-                <TextBlock Style="{StaticResource Propiedades}" x:Name="MejoraAerodinamica" Text="XX"/>
+                <TextBlock Style="{StaticResource Propiedades}" Text="PANEL DE MEJORAS" FontWeight="Bold" Margin="0,10,0,10"/>
+                <TextBlock Style="{StaticResource Propiedades}" x:Name="Turbo" Text="XX" Margin="0,10,0,10"/>
+                <TextBlock Style="{StaticResource Propiedades}" x:Name="MejoraAceleracion" Text="XX" Margin="0,10,0,10"/>
+                <TextBlock Style="{StaticResource Propiedades}" x:Name="Motor" Text="XX" Margin="0,10,0,10"/>
+                <TextBlock Style="{StaticResource Propiedades}" x:Name="MejoraVelocidad" Text="XX" Margin="0,10,0,10"/>
+                <TextBlock Style="{StaticResource Propiedades}" x:Name="Amortiguadores" Text="XX" Margin="0,10,0,10"/>
+                <TextBlock Style="{StaticResource Propiedades}" x:Name="MejoraSuspension" Text="XX" Margin="0,10,0,10"/>
+                <TextBlock Style="{StaticResource Propiedades}" x:Name="Neumaticos" Text="XX" Margin="0,10,0,10"/>
+                <TextBlock Style="{StaticResource Propiedades}" x:Name="MejoraAgarre" Text="XX" Margin="0,10,0,10"/>
+                <TextBlock Style="{StaticResource Propiedades}" x:Name="Carroceria" Text="XX" Margin="0,10,0,10"/>
+                <TextBlock Style="{StaticResource Propiedades}" x:Name="MejoraAerodinamica" Text="XX" Margin="0,10,0,10"/>
             </StackPanel>
-            <StackPanel x:Name="PanelBotonesMejorar" Margin="0, 30, 0,0">
-                <RelativePanel Width="100" Height="72">
+            <StackPanel x:Name="PanelBotonesMejorar" Margin="0, 40, 0,0">
+                <RelativePanel Width="100" Height="72" Margin="0,6,0,6">
                     <Image x:Name="ImagenMejoraAce" Source="Assets/upgradeButton.png" Stretch="Fill"/>
                     <Viewbox>
                         <TextBlock Style="{StaticResource Mejoras}" x:Name="TextoMejoraAce" Text="XXXXX" TextWrapping="Wrap" TextAlignment="Center"/>
                     </Viewbox>
                     <Button x:Name="BotonMejoraAce" Background="Transparent" Width="100" Height="72" HorizontalAlignment="Center" Click="BotonMejoraAce_Click"/>
                 </RelativePanel>
-                <RelativePanel Width="100" Height="72">
+                <RelativePanel Width="100" Height="72" Margin="0,6,0,6">
                     <Image x:Name="ImagenMejoraVel" Source="Assets/upgradeButton.png" Stretch="Fill"/>
                     <Viewbox>
                         <TextBlock Style="{StaticResource Mejoras}" x:Name="TextoMejoraVel" Text="XXXXX" TextWrapping="Wrap" TextAlignment="Center"/>
                     </Viewbox>
                     <Button x:Name="BotonMejoraVel" Background="Transparent" Width="100" Height="72" HorizontalAlignment="Center" Click="BotonMejoraVel_Click"/>
                 </RelativePanel>
-                <RelativePanel Width="100" Height="72">
+                <RelativePanel Width="100" Height="72" Margin="0,6,0,6">
                     <Image x:Name="ImagenMejoraSus" Source="Assets/upgradeButton.png" Stretch="Fill"/>
                     <Viewbox>
                         <TextBlock Style="{StaticResource Mejoras}" x:Name="TextoMejoraSus" Text="XXXXX" TextWrapping="Wrap" TextAlignment="Center"/>
                     </Viewbox>
                     <Button x:Name="BotonMejoraSus" Background="Transparent" Width="100" Height="72" HorizontalAlignment="Center" Click="BotonMejoraSus_Click"/>
                 </RelativePanel>
-                <RelativePanel Width="100" Height="72">
+                <RelativePanel Width="100" Height="72" Margin="0,6,0,6">
                     <Image x:Name="ImagenMejoraAga" Source="Assets/upgradeButton.png" Stretch="Fill"/>
                     <Viewbox>
                         <TextBlock Style="{StaticResource Mejoras}" x:Name="TextoMejoraAga" Text="XXXXX" TextWrapping="Wrap" TextAlignment="Center"/>
                     </Viewbox>
                     <Button x:Name="BotonMejoraAga" Background="Transparent" Width="100" Height="72" HorizontalAlignment="Center" Click="BotonMejoraAga_Click"/>
                 </RelativePanel>
-                <RelativePanel Width="100" Height="72">
+                <RelativePanel Width="100" Height="72" Margin="0,6,0,6">
                     <Image x:Name="ImagenMejoraAer" Source="Assets/upgradeButton.png" Stretch="Fill"/>
                     <Viewbox>
                         <TextBlock Style="{StaticResource Mejoras}" x:Name="TextoMejoraAer" Text="XXXXX" TextWrapping="Wrap" TextAlignment="Center"/>
@@ -130,28 +129,31 @@
                 </RelativePanel>
             </StackPanel>
         </StackPanel>
-        
+
         <!--Coche-->
         <StackPanel Grid.Column="1" Grid.Row="1">
             <RelativePanel Height="50" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="80,0,80,0">
                 <Image Source="/Assets/panel.png" Stretch="Fill"/>
                 <TextBlock x:Name="NombreCoche" Text="Ferrari 599XX Dogde Charger" Foreground="#02FEFE" FontSize="24" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True" FontWeight="Bold"/>
             </RelativePanel>
-            <FlipView x:Name="ImagenesGrandes" Height="400" SelectedIndex="0" SelectionChanged="ImagenesGrandes_SelectionChanged">
-                <Image x:Name="ImagenCoche1" Source="/Assets/Cars/Coche1.png"/>
-                <Image x:Name="ImagenCoche2" Source="/Assets/Cars/Coche2.png"/>
-                <Image x:Name="ImagenCoche3" Source="/Assets/Cars/Coche3.png"/>
-                <Image x:Name="ImagenCoche4" Source="/Assets/Cars/Coche4.png"/>
-                <Image x:Name="ImagenCoche5" Source="/Assets/Cars/Coche5.png"/>
-                <Image x:Name="ImagenCoche6" Source="/Assets/Cars/Coche6.png"/>
-                <Image x:Name="ImagenCoche7" Source="/Assets/Cars/Coche7.png"/>
-                <Image x:Name="ImagenCoche8" Source="/Assets/Cars/Coche8.png"/>
-                <Image x:Name="ImagenCoche9" Source="/Assets/Cars/Coche9.png"/>
-                <Image x:Name="ImagenCoche10" Source="/Assets/Cars/Coche10.png"/>
-                <Image x:Name="ImagenCoche11" Source="/Assets/Cars/Coche11.png"/>
-                <Image x:Name="ImagenCoche12" Source="/Assets/Cars/Coche12.png"/>
-                <Image x:Name="ImagenCoche13" Source="/Assets/Cars/Coche13.png"/>
-            </FlipView>
+            <RelativePanel Height="auto" MaxHeight="400">
+                <FlipView x:Name="ImagenesGrandes" Height="auto" SelectedIndex="0" SelectionChanged="ImagenesGrandes_SelectionChanged">
+                    <Image x:Name="ImagenCoche1" Source="/Assets/Cars/Coche1.png"/>
+                    <Image x:Name="ImagenCoche2" Source="/Assets/Cars/Coche2.png"/>
+                    <Image x:Name="ImagenCoche3" Source="/Assets/Cars/Coche3.png"/>
+                    <Image x:Name="ImagenCoche4" Source="/Assets/Cars/Coche4.png"/>
+                    <Image x:Name="ImagenCoche5" Source="/Assets/Cars/Coche5.png"/>
+                    <Image x:Name="ImagenCoche6" Source="/Assets/Cars/Coche6.png"/>
+                    <Image x:Name="ImagenCoche7" Source="/Assets/Cars/Coche7.png"/>
+                    <Image x:Name="ImagenCoche8" Source="/Assets/Cars/Coche8.png"/>
+                    <Image x:Name="ImagenCoche9" Source="/Assets/Cars/Coche9.png"/>
+                    <Image x:Name="ImagenCoche10" Source="/Assets/Cars/Coche10.png"/>
+                    <Image x:Name="ImagenCoche11" Source="/Assets/Cars/Coche11.png"/>
+                    <Image x:Name="ImagenCoche12" Source="/Assets/Cars/Coche12.png"/>
+                    <Image x:Name="ImagenCoche13" Source="/Assets/Cars/Coche13.png"/>
+                </FlipView>
+                <Image x:Name="Candado" Source="/Assets/candado.png" Height="100" Width="100" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True"/>
+            </RelativePanel>
             <RelativePanel Height="80" Width="400">
                 <Image x:Name="ImagenComprar" Source="Assets/upgradeButton.png" Stretch="Fill"/>
                 <Viewbox RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True">
@@ -176,7 +178,7 @@
                             <Image x:Name="CarImage" Source="{x:Bind Source}" Width="160" Height="120"/>
                             <Image x:Name="Candado" Source="/Assets/barraVerde.png" Visibility="Collapsed" Width="160" Height="120" RelativePanel.AlignVerticalCenterWith="CarImage" RelativePanel.AlignHorizontalCenterWith="CarImage"/>
                         </RelativePanel>
-                   </DataTemplate>
+                    </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
         </ScrollViewer>
