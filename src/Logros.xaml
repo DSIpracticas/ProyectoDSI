@@ -100,9 +100,15 @@
                                     <TextBlock Text="{x:Bind Recompensa}" Foreground="Black"  TextWrapping="Wrap"
                                             VerticalAlignment="Center" HorizontalAlignment="Center" Margin="20,10,20,10"/>
                                 </Viewbox>
-                                <Button x:Name="awardButton" Content="Cobrar Recompensa" Grid.Column="2" Grid.RowSpan="2"
-                                   RelativePanel.AlignHorizontalCenterWith="listaRanking_" RelativePanel.AlignVerticalCenterWith ="listaRanking_"
-                                        IsEnabled="False" Margin="30,0,30,0"/>
+                                <RelativePanel x:Name="awardPanel" Grid.Column="2" Grid.RowSpan="2" MaxWidth="200" MaxHeight="60" Margin="30,0,30,0"
+                                            RelativePanel.AlignVerticalCenterWith ="listaRanking_" RelativePanel.AlignHorizontalCenterWith="listaRanking_">
+                                    <Viewbox MaxWidth="200" MaxHeight="60" RelativePanel.AlignVerticalCenterWith ="awardButton"
+                                         RelativePanel.AlignHorizontalCenterWith="awardButton" Grid.Column="2" Grid.Row="1">
+                                        <TextBlock Text= "Cobrar Recompensa" Foreground="Black" Margin="10,0,10,0" TextWrapping="Wrap"/>
+                                    </Viewbox>
+                                    <Button x:Name="awardButton" Background="Transparent" Width="200" Height="60" IsEnabled="False"
+                                        RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True"/>
+                                </RelativePanel>
                             </Grid>
                         </Border>
                     </DataTemplate>
