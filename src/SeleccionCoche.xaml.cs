@@ -151,15 +151,13 @@ namespace ProyectoDSI
             Carroceria.Text = "NIVEL CAROCERÍA " + ListaCoches.ElementAt(SelCar).Carroceria.ToString();
             MejoraAerodinamica.Text = "AERODINÁMCA + " + ListaCoches.ElementAt(SelCar).Gama.ToString();
 
-            //Actualiza botones mejoras
-            int mejorasCompletadas = 0;
+
             //Boton Turbo
-            if (ListaCoches.ElementAt(SelCar).Turbo.ToString() == "5")
+            if (ListaCoches.ElementAt(SelCar).Turbo.ToString() == "5" || ListaCoches.ElementAt(SelCar).Estado == CarID.estados.bloqueado)
             {
                 BotonMejoraAce.Visibility = Visibility.Collapsed;
                 ImagenMejoraAce.Visibility = Visibility.Collapsed;
                 TextoMejoraAce.Text = "";
-                mejorasCompletadas++;
             }
             else
             {
@@ -168,12 +166,11 @@ namespace ProyectoDSI
                 TextoMejoraAce.Text = (ListaCoches.ElementAt(SelCar).Gama * (ListaCoches.ElementAt(SelCar).Turbo + 1) * 100).ToString();
             }
             //Boton Motor
-            if (ListaCoches.ElementAt(SelCar).Motor.ToString() == "5")
+            if (ListaCoches.ElementAt(SelCar).Motor.ToString() == "5" || ListaCoches.ElementAt(SelCar).Estado == CarID.estados.bloqueado)
             {
                 BotonMejoraVel.Visibility = Visibility.Collapsed;
                 ImagenMejoraVel.Visibility = Visibility.Collapsed;
                 TextoMejoraVel.Text = "";
-                mejorasCompletadas++;
             }
             else
             {
@@ -182,12 +179,11 @@ namespace ProyectoDSI
                 TextoMejoraVel.Text = (ListaCoches.ElementAt(SelCar).Gama * (ListaCoches.ElementAt(SelCar).Motor + 1) * 100).ToString();
             }
             //Boton Amortiguador
-            if (ListaCoches.ElementAt(SelCar).Amortiguador.ToString() == "5")
+            if (ListaCoches.ElementAt(SelCar).Amortiguador.ToString() == "5" || ListaCoches.ElementAt(SelCar).Estado == CarID.estados.bloqueado)
             {
                 BotonMejoraSus.Visibility = Visibility.Collapsed;
                 ImagenMejoraSus.Visibility = Visibility.Collapsed;
                 TextoMejoraSus.Text = "";
-                mejorasCompletadas++;
             }
             else
             {
@@ -196,12 +192,11 @@ namespace ProyectoDSI
                 TextoMejoraSus.Text = (ListaCoches.ElementAt(SelCar).Gama * (ListaCoches.ElementAt(SelCar).Amortiguador + 1) * 100).ToString();
             }
             //Boton Neumaticos
-            if (ListaCoches.ElementAt(SelCar).Neumaticos.ToString() == "5")
+            if (ListaCoches.ElementAt(SelCar).Neumaticos.ToString() == "5" || ListaCoches.ElementAt(SelCar).Estado == CarID.estados.bloqueado)
             {
                 BotonMejoraAga.Visibility = Visibility.Collapsed;
                 ImagenMejoraAga.Visibility = Visibility.Collapsed;
                 TextoMejoraAga.Text = "";
-                mejorasCompletadas++;
             }
             else
             {
@@ -210,12 +205,11 @@ namespace ProyectoDSI
                 TextoMejoraAga.Text = (ListaCoches.ElementAt(SelCar).Gama * (ListaCoches.ElementAt(SelCar).Neumaticos + 1) * 100).ToString();
             }
             //Boton Carroceria
-            if (ListaCoches.ElementAt(SelCar).Carroceria.ToString() == "5")
+            if (ListaCoches.ElementAt(SelCar).Carroceria.ToString() == "5" || ListaCoches.ElementAt(SelCar).Estado == CarID.estados.bloqueado)
             {
                 BotonMejoraAer.Visibility = Visibility.Collapsed;
                 ImagenMejoraAer.Visibility = Visibility.Collapsed;
                 TextoMejoraAer.Text = "";
-                mejorasCompletadas++;
             }
             else
             {
@@ -223,15 +217,15 @@ namespace ProyectoDSI
                 ImagenMejoraAer.Visibility = Visibility.Visible;
                 TextoMejoraAer.Text = (ListaCoches.ElementAt(SelCar).Gama * (ListaCoches.ElementAt(SelCar).Carroceria + 1) * 100).ToString();
             }
-            //Si no hay NINGUN boton de mejorar, se desactiva el panel
-            if (mejorasCompletadas == 5 || ListaCoches.ElementAt(SelCar).Estado == CarID.estados.bloqueado) PanelBotonesMejorar.Visibility = Visibility.Collapsed;
-            else PanelBotonesMejorar.Visibility = Visibility.Visible;
+            ////Si no hay NINGUN boton de mejorar, se desactiva el panel
+            //if (mejorasCompletadas == 5 || ListaCoches.ElementAt(SelCar).Estado == CarID.estados.bloqueado) PanelBotonesMejorar.Visibility = Visibility.Collapsed;
+            //else PanelBotonesMejorar.Visibility = Visibility.Visible;
             //PanelBotonesMejorar.Margin = new Thickness(0, 30.0 + desactivados * 72.0, 0, 0);
 
             //Actualiza el nombre del vehiculo
             NombreCoche.Text = ListaCoches.ElementAt(SelCar).Nombre;
             //Si está bloqueado se muestra el precio de compra, y un botón para desbloquearlo
-            if (permitirCompra && ListaCoches.ElementAt(SelCar).Estado == CarID.estados.bloqueado)
+            if (ListaCoches.ElementAt(SelCar).Estado == CarID.estados.bloqueado)
             {
                 ImagenComprar.Visibility = Visibility.Visible;
                 Candado.Visibility = Visibility.Visible;
@@ -246,6 +240,20 @@ namespace ProyectoDSI
                 ImagenComprar.Visibility = Visibility.Collapsed;
                 BotonComprar.Visibility = Visibility.Collapsed;
                 CosteCompra.Visibility = Visibility.Collapsed;
+            }
+
+            //Boton Jugar
+            if (!permitirCompra && ListaCoches.ElementAt(SelCar).Estado == CarID.estados.desbloqueado)
+            {
+                BotonJugar.Visibility = Visibility.Visible;
+                TextoJugar.Text = "JUGAR";
+                ImagenJugar.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                BotonJugar.Visibility = Visibility.Collapsed;
+                TextoJugar.Text = "";
+                ImagenJugar.Visibility = Visibility.Collapsed;
             }
         }
 
