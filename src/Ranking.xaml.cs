@@ -49,7 +49,7 @@ namespace ProyectoDSI
                     if (VMitem.Estado == RankingID.estados.incompleto)
                     {
                         VMitem.Id = id;
-                        VMitem.Imagen = "Assets/barraRoja.png";
+                        VMitem.Imagen = "Assets/barraAqua.jpg";
                         ListaRanking.Add(VMitem);
                         MuestraInfo(VMitem);
                         id++;
@@ -75,8 +75,8 @@ namespace ProyectoDSI
                     if (VMitem.Estado == RankingID.estados.player)
                     {
                         VMitem.Id = id;
-                        VMitem.FamaText = "Fama actual: " + VMitem.Fama + " Followers";
-                        VMitem.Imagen = "Assets/barraAmarilla.png";
+                        VMitem.FamaText = "Fama actual: " + VMitem.Fama + " Seguidores";
+                        VMitem.Imagen = "Assets/barraTurquesa.png";
                         ListaRanking.Add(VMitem);
                         id++;
                     }
@@ -89,7 +89,7 @@ namespace ProyectoDSI
                     {
                         VMitem.Id = id;
                         VMitem.FamaText = "Derrotado";
-                        VMitem.Imagen = "Assets/barraGris.png";
+                        VMitem.Imagen = "Assets/barraSlateGray.jpg";
                         ListaRanking.Add(VMitem);
                         id++;
                     }

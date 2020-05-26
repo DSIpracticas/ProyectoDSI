@@ -168,8 +168,11 @@
     <Content Include="Assets\AridWasteland.wav" />
     <Content Include="Assets\backButton.png" />
     <Content Include="Assets\barraAmarilla.png" />
+    <Content Include="Assets\barraAqua.jpg" />
     <Content Include="Assets\barraGris.png" />
     <Content Include="Assets\barraRoja.png" />
+    <Content Include="Assets\barraSlateGray.jpg" />
+    <Content Include="Assets\barraTurquesa.png" />
     <Content Include="Assets\barraVerde.png" />
     <Content Include="Assets\candado.png" />
     <Content Include="Assets\carIcon.png" />
