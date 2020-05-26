@@ -175,6 +175,7 @@
     <Content Include="Assets\carIcon.png" />
     <Content Include="Assets\carretera3.png" />
     <Content Include="Assets\carretera4.png" />
+    <Content Include="Assets\fondoAzul2.png" />
     <Content Include="Assets\fondoCoches.png" />
     <Content Include="Assets\gameHud.png" />
     <Content Include="Assets\fondo.png" />

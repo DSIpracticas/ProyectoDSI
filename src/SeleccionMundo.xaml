@@ -31,7 +31,7 @@
         </RelativePanel>
 
         <RelativePanel VerticalAlignment="Center" Grid.ColumnSpan="6" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True">
-            <Image x:Name="World" Source="Assets/fondoAzul.png" Stretch="Fill" PointerPressed="World_Click"/>
+            <Image x:Name="World" Source="Assets/fondoAzul2.png" Stretch="Fill" PointerPressed="World_Click"/>
         </RelativePanel>
 
         <RelativePanel VerticalAlignment="Center" Grid.ColumnSpan="2" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True">
