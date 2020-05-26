@@ -100,12 +100,17 @@ namespace ProyectoDSI
                 if (view.TryEnterFullScreenMode())
                 {
                     ApplicationView.PreferredLaunchWindowingMode = ApplicationViewWindowingMode.FullScreen;
-                    windowedSwitch.IsOn = false;
                     // The SizeChanged event will be raised when the entry to full-screen mode is complete.
                 }
+                windowedSwitch.IsOn = false;
             }
 
             InitializeComponent();
+        }
+
+        private void windowedSwitch_Toggled(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 

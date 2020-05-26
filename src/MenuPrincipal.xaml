@@ -30,7 +30,7 @@
                     RelativePanel.AlignVerticalCenterWith="streetRacing" RelativePanel.AlignHorizontalCenterWith="streetRacing"/>
             <Viewbox RelativePanel.AlignVerticalCenterWith="streetRacing" RelativePanel.AlignHorizontalCenterWith="streetRacing" 
                      MaxWidth="250" MaxHeight="75" Margin="15,0,15,0" >
-                <TextBlock x:Name="streetRacingTxt" Text="STREET RACING" Foreground="White" TextWrapping="Wrap" TextAlignment="Center"/>
+                <TextBlock x:Name="streetRacingTxt" Text="CARRERAS CALLEJERAS" Foreground="White" TextWrapping="Wrap" TextAlignment="Center"/>
             </Viewbox>
             <Button x:Name="streetRacing" Background="Transparent" Click="worldSelection_Click" Width="300" Height="100"
                     RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True"/>
@@ -42,7 +42,7 @@
                     RelativePanel.AlignVerticalCenterWith="streetRanking" RelativePanel.AlignHorizontalCenterWith="streetRanking"/>
             <Viewbox RelativePanel.AlignVerticalCenterWith="streetRanking" RelativePanel.AlignHorizontalCenterWith="streetRanking" 
                      MaxWidth="250" MaxHeight="75" Margin="15,0,15,0" >
-                <TextBlock x:Name="worldRankingText" Text="WORLD RANKING" Foreground="White" TextWrapping="Wrap" TextAlignment="Center"/>
+                <TextBlock x:Name="worldRankingText" Text="RANKING MUNDIAL" Foreground="White" TextWrapping="Wrap" TextAlignment="Center"/>
             </Viewbox>
             <Button x:Name="streetRanking" Background="Transparent" Click="ranking_Click" Width="300" Height="100"
                     RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True"/>
@@ -54,7 +54,7 @@
                     RelativePanel.AlignVerticalCenterWith="settings" RelativePanel.AlignHorizontalCenterWith="settings"/>
             <Viewbox RelativePanel.AlignVerticalCenterWith="settings" RelativePanel.AlignHorizontalCenterWith="settings" 
                      MaxWidth="250" MaxHeight="75" Margin="15,0,15,0" >
-                <TextBlock x:Name="settingsText" Text="SETTINGS" Foreground="White" TextWrapping="Wrap" TextAlignment="Center"/>
+                <TextBlock x:Name="settingsText" Text="AJUSTES" Foreground="White" TextWrapping="Wrap" TextAlignment="Center"/>
             </Viewbox>
             <Button x:Name="settings" Background="Transparent" Click="settings_Click" Width="300" Height="100"
                     RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True"/>
@@ -66,7 +66,7 @@
                     RelativePanel.AlignVerticalCenterWith="garage" RelativePanel.AlignHorizontalCenterWith="garage"/>
             <Viewbox RelativePanel.AlignVerticalCenterWith="garage" RelativePanel.AlignHorizontalCenterWith="garage" 
                      MaxWidth="250" MaxHeight="75" Margin="5,15,5,15" >
-                <TextBlock x:Name="garageText" Text="GARAGE" Foreground="White" TextWrapping="Wrap" TextAlignment="Center"/>
+                <TextBlock x:Name="garageText" Text="GARAJE" Foreground="White" TextWrapping="Wrap" TextAlignment="Center"/>
             </Viewbox>
             <Button x:Name="garage" Background="Transparent" Click="garage_Click" Width="300" Height="100"
                     RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True"/>
@@ -78,7 +78,7 @@
                     RelativePanel.AlignVerticalCenterWith="achievements" RelativePanel.AlignHorizontalCenterWith="achievements"/>
             <Viewbox RelativePanel.AlignVerticalCenterWith="achievements" RelativePanel.AlignHorizontalCenterWith="achievements" 
                      MaxWidth="250" MaxHeight="75" Margin="15,0,15,0" >
-                <TextBlock x:Name="achievementsText" Text="ACHIEVEMENTS" Foreground="White" TextWrapping="Wrap" TextAlignment="Center"/>
+                <TextBlock x:Name="achievementsText" Text="LOGROS" Foreground="White" TextWrapping="Wrap" TextAlignment="Center"/>
             </Viewbox>
             <Button x:Name="achievements" Background="Transparent"  Width="300" Height="100"
                     RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True" Click="achievements_Click"/>
@@ -90,7 +90,7 @@
                     RelativePanel.AlignVerticalCenterWith="exit" RelativePanel.AlignHorizontalCenterWith="exit"/>
             <Viewbox RelativePanel.AlignVerticalCenterWith="exit" RelativePanel.AlignHorizontalCenterWith="exit" 
                      MaxWidth="250" MaxHeight="50" Margin="5,15,5,15"  >
-                <TextBlock x:Name="exitText" Text="EXIT" Foreground="White" TextWrapping="Wrap" TextAlignment="Center"/>
+                <TextBlock x:Name="exitText" Text="SALIR" Foreground="White" TextWrapping="Wrap" TextAlignment="Center"/>
             </Viewbox>
             <Button x:Name="exit" Background="Transparent" Click="exit_Click" Width="300" Height="100"
                     RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True"/>

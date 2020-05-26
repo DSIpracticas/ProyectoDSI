@@ -306,57 +306,57 @@ namespace ProyectoDSI
             new KeyID()
             {
                 keyName_ = "Q",
-                keyComand_ = "Unassign"
+                keyComand_ = "Sin asignar"
             },
             new KeyID()
             {
                 keyName_ = "W",
-                keyComand_ = "Accelerate"
+                keyComand_ = "Acelerar"
             },
             new KeyID()
             {
                 keyName_ = "E",
-                keyComand_ = "Gear down"
+                keyComand_ = "Marcha abajo"
             },
             new KeyID()
             {
                 keyName_ = "R",
-                keyComand_ = "Gear up"
+                keyComand_ = "Marcha arriba"
             },
             new KeyID()
             {
                 keyName_ = "T",
-                keyComand_ = "Unassign"
+                keyComand_ = "Sin asignar"
             },
             new KeyID()
             {
                 keyName_ = "Y",
-                keyComand_ = "Unassign"
+                keyComand_ = "Sin asignar"
             },
             new KeyID()
             {
                 keyName_ = "S",
-                keyComand_ = "Decelerate"
+                keyComand_ = "Desacelerar"
             },
             new KeyID()
             {
                 keyName_ = "UP",
-                keyComand_ = "Up movement"
+                keyComand_ = "Movimiento arriba"
             },
             new KeyID()
             {
                 keyName_ = "LEFT",
-                keyComand_ = "Left movement"
+                keyComand_ = "Movimiento izquierda"
             },
             new KeyID()
             {
                 keyName_ = "DOWN",
-                keyComand_ = "Down movement"
+                keyComand_ = "Movimiento abajo"
             },
             new KeyID()
             {
                 keyName_ = "RIGHT",
-                keyComand_ = "Right movement"
+                keyComand_ = "Movimiento derecha"
             },
         };
 
