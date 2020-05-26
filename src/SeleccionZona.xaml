@@ -33,7 +33,7 @@
                 <TextBlock x:Name="MoneyText" Text="Dinero: 60000€" Foreground="White" TextWrapping="Wrap" TextAlignment="Center"/>
             </Viewbox>
         </RelativePanel>
-        
+
         <RelativePanel Grid.Column="2" Margin="0,5,0,0" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Image x:Name="FameImage" Source="Assets/panel2.png" Stretch="Fill" MaxWidth="450" MaxHeight="350"/>
             <Viewbox RelativePanel.AlignVerticalCenterWith="FameImage" RelativePanel.AlignHorizontalCenterWith="FameImage" 
@@ -43,28 +43,57 @@
         </RelativePanel>
 
         <!--Imagen del mundo-->
-        <RelativePanel Grid.ColumnSpan="2" Grid.Row="1" VerticalAlignment="Center" Margin="0,0,0,0" HorizontalAlignment="Center" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True">
-            <Image x:Name="worldImage" Source="Assets/fondoZona.png" PointerPressed="Zone_Click" MaxWidth="531.65" MaxHeight="700"/>
-            <Viewbox RelativePanel.AlignHorizontalCenterWith="worldImage" RelativePanel.AlignVerticalCenterWith="worldImage"
-                     MaxWidth="80" MaxHeight="80" Margin="0,0,200,550">
-                <Image x:Name="ZoneA" Source="Assets/seleccionA.png" PointerPressed="Zone_Click"/>
-            </Viewbox>
-            <Viewbox RelativePanel.AlignHorizontalCenterWith="worldImage" RelativePanel.AlignVerticalCenterWith="worldImage"
-                     MaxWidth="80" MaxHeight="80" Margin="200,0,0,300">
-                <Image x:Name="ZoneAA" Source="Assets/seleccionA.png" PointerPressed="Zone_Click"/>
-            </Viewbox>
-            <Viewbox RelativePanel.AlignHorizontalCenterWith="worldImage" RelativePanel.AlignVerticalCenterWith="worldImage"
-                     MaxWidth="80" MaxHeight="80" Margin="0,0,100,200">
-                <Image x:Name="ZoneB" Source="Assets/seleccionB.png" PointerPressed="Zone_Click"/>
-            </Viewbox>
-            <Viewbox RelativePanel.AlignHorizontalCenterWith="worldImage" RelativePanel.AlignVerticalCenterWith="worldImage"
-                     MaxWidth="80" MaxHeight="80" Margin="150,200,0,0">
-                <Image x:Name="ZoneBB" Source="Assets/seleccionB.png" PointerPressed="Zone_Click"/>
-            </Viewbox>
-            <Viewbox RelativePanel.AlignHorizontalCenterWith="worldImage" RelativePanel.AlignVerticalCenterWith="worldImage"
-                     MaxWidth="80" MaxHeight="80" Margin="200,520,0,0">
-                <Image x:Name="ZoneBBB" Source="Assets/seleccionB.png" PointerPressed="Zone_Click"/>
-            </Viewbox>
+        <RelativePanel x:Uid="panelMundo" x:Name="panelMundo" Grid.ColumnSpan="2" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <!--Mapa-->
+            <!--Width="{x:Bind panelMundo.Width}" Height="{x:Bind panelMundo.Height}"-->
+            <Image x:Name="worldImage" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True" 
+                   Source="Assets/fondoZona.png" PointerPressed="Zone_Click" MaxWidth="531.65" MaxHeight="700"/>
+            <Grid x:Name="americaGrid" Background="AliceBlue" RelativePanel.AlignHorizontalCenterWithPanel="True" 
+                  RelativePanel.AlignVerticalCenterWithPanel="True" Width="{x:Bind panelMundo.Width}" Height="{x:Bind panelMundo.Height}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" ></RowDefinition>
+                    <RowDefinition Height="*" ></RowDefinition>
+                    <RowDefinition Height="*" ></RowDefinition>
+                    <RowDefinition Height="*" ></RowDefinition>
+                    <RowDefinition Height="*" ></RowDefinition>
+                    <RowDefinition Height="*" ></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <!--Alaska-->
+                <RelativePanel>
+                    <Viewbox Width="auto" Height="auto" MaxWidth="80" MaxHeight="80" >
+                        <Image x:Name="ZoneA" Source="Assets/seleccionA.png" PointerPressed="Zone_Click"/>
+                    </Viewbox>
+                </RelativePanel>
+                <!--Canadá-->
+                <RelativePanel Grid.Column="2">
+                    <Viewbox Grid.Column="3" Width="auto" Height="auto" MaxWidth="80" MaxHeight="80" MinHeight="25" MinWidth="25">
+                        <Image x:Name="ZoneAA" Source="Assets/seleccionA.png" PointerPressed="Zone_Click"/>
+                    </Viewbox>
+                </RelativePanel>
+                <!--México-->
+                <RelativePanel Grid.Row="3" Grid.Column="1">
+                    <Viewbox Width="auto" Height="auto" MaxWidth="80" MaxHeight="80" MinHeight="25" MinWidth="25">
+                        <Image x:Name="ZoneB" Source="Assets/seleccionB.png" PointerPressed="Zone_Click"/>
+                    </Viewbox>
+                </RelativePanel>
+                <!--Colombia-->
+                <RelativePanel Grid.Row="4" Grid.Column="1">
+                    <Viewbox Width="auto" Height="auto" MaxWidth="80" MaxHeight="80" MinHeight="25" MinWidth="25">
+                        <Image x:Name="ZoneBB" Source="Assets/seleccionB.png" PointerPressed="Zone_Click"/>
+                    </Viewbox>
+                </RelativePanel>
+                <!--Chile-->
+                <RelativePanel Grid.Row="5" Grid.Column="2">
+                    <Viewbox  Width="auto" Height="auto" MaxWidth="80" MaxHeight="80" MinHeight="25" MinWidth="25">
+                        <Image x:Name="ZoneBBB" Source="Assets/seleccionB.png" PointerPressed="Zone_Click"/>
+                    </Viewbox>
+                </RelativePanel>
+            </Grid>
         </RelativePanel>
 
         <!--Información de la zona-->
@@ -129,7 +158,7 @@
             <Button x:Name="RankingButton" Background="Transparent" Width="300" Height="100" Click="ranking_Click"
                     RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True"/>
         </RelativePanel>
-        
+
         <!--botón de acceso-->
         <RelativePanel x:Name="Challenge" Visibility="Collapsed" Grid.Row="8" Grid.Column="2" Margin="25,0,25,0">
             <Image x:Name="ChallengeImage" Source="Assets/mainButton.png" Stretch="Fill" MaxWidth="300" MaxHeight="100"
