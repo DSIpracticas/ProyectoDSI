@@ -74,7 +74,7 @@ namespace ProyectoDSI
                         id++;
                     }
                 }
-                famaText_.Text = "Fama: " + fama + " Followers";
+                famaText_.Text = "Fama: " + fama + " Seguidores";
                 dineroText_.Text = "Dinero: " + dinero + " €";
             }
 
