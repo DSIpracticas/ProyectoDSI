@@ -31,5 +31,10 @@ namespace ProyectoDSI
         {
             this.Frame.Navigate(typeof(PostPartida));
         }
+
+        private void pausa_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(Pausa));
+        }
     }
 }

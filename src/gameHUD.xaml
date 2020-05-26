@@ -40,5 +40,17 @@
                     RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True" Click="simular_Click"/>
         </RelativePanel>
 
+        <!--Pausa-->
+        <RelativePanel Grid.Column="2" Margin="10,25,10,25">
+            <Image Source="Assets/mainButton.png" Stretch="Fill" MaxWidth="300" MaxHeight="100"
+                    RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True"/>
+            <Viewbox RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True" 
+                     MaxWidth="250" MaxHeight="75" Margin="15,0,15,0" >
+                <TextBlock Text="PAUSA" Foreground="White" TextWrapping="Wrap" TextAlignment="Center"/>
+            </Viewbox>
+            <Button Background="Transparent" Width="300" Height="100"
+                    RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True" Click="pausa_Click"/>
+        </RelativePanel>
+
     </Grid>
 </Page>

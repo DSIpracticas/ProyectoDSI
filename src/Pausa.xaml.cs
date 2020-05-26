@@ -33,23 +33,15 @@ namespace ProyectoDSI
         }
         private void Reiniciar(object sender, RoutedEventArgs e)
         {
-
+            On_BackRequested();
         }
         private void Ajustes(object sender, RoutedEventArgs e)
         {
-
+            this.Frame.Navigate(typeof(Ajustes));
         }
         private void Salir(object sender, RoutedEventArgs e)
         {
-
-        }
-        private void Ganar(object sender, RoutedEventArgs e)
-        {
-
-        }
-        private void Perder(object sender, RoutedEventArgs e)
-        {
-
+            this.Frame.Navigate(typeof(MenuPrincipal));
         }
         private bool On_BackRequested()
         {

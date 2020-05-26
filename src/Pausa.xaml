@@ -22,22 +22,50 @@
         </Grid.RowDefinitions>
 
         <!--Fondo-->
-        <Image x:Name="ImagenSel" Source="Assets/Backgrounds/FondoInGame.jpg" Stretch="Fill" Grid.ColumnSpan="3" Grid.RowSpan="3"/>
+        <Image x:Name="ImagenSel" Source="/Assets/gameHud.png" Stretch="Fill" Grid.ColumnSpan="3" Grid.RowSpan="3"/>
 
         <!--Botones del menú-->
-        <ListView Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Width="200">
-            <Button Content="REANUDAR" Click="Reanudar" Width="175" Background="Yellow"/>
-            <Button Content="REINICIAR" Click="Reiniciar" Width="175" Background="Yellow"/>
-            <Button Content="AJUSTES" Click="Ajustes" Width="175" Background="Yellow"/>
-            <Button Content="SALIR" Click="Salir" Width="175" Background="Yellow"/>
-        </ListView>
+        <Grid Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="auto">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
 
-        <!--Botones de simular carrera-->
-        <ListView Grid.Column="1"  VerticalAlignment="Center" HorizontalAlignment="Center" Width="200">
-            <Button Content="GANAR" Click="Ganar" Width="175" Background="Yellow"/>
-            <Button Content="PERDER" Click="Perder" Width="175" Background="Yellow"/>
-        </ListView>
-
-
+            <!-- Botones de pausa-->
+            <RelativePanel Margin="0,10,30,10" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" MaxWidth="175" MaxHeight="100">
+                <Image Source="Assets/upgradeButton.png" Stretch="Fill" MaxHeight="100" MaxWidth="300" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True"/>
+                <Viewbox RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True" Margin="20,0,20,0">
+                    <TextBlock Text="REANUDAR" TextWrapping="Wrap" TextAlignment="Center"/>
+                </Viewbox>
+                <Button  Background="Transparent" Width="175" Height="72" HorizontalAlignment="Center" Click="Reanudar"
+                            RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True"/>
+            </RelativePanel>
+            <RelativePanel Margin="0,10,30,10" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" MaxWidth="175" MaxHeight="100">
+                <Image Source="Assets/upgradeButton.png" Stretch="Fill" MaxHeight="100" MaxWidth="300" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True"/>
+                <Viewbox RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True" Margin="20,0,20,0">
+                    <TextBlock Text="REINICIAR" TextWrapping="Wrap" TextAlignment="Center"/>
+                </Viewbox>
+                <Button  Background="Transparent" Width="175" Height="72" HorizontalAlignment="Center" Click="Reiniciar"
+                            RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True"/>
+            </RelativePanel>
+            <RelativePanel Margin="0,10,30,10" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" MaxWidth="175" MaxHeight="100">
+                <Image Source="Assets/upgradeButton.png" Stretch="Fill" MaxHeight="100" MaxWidth="300" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True"/>
+                <Viewbox RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True" Margin="20,0,20,0">
+                    <TextBlock Text="AJUSTES" TextWrapping="Wrap" TextAlignment="Center"/>
+                </Viewbox>
+                <Button  Background="Transparent" Width="175" Height="72" HorizontalAlignment="Center" Click="Ajustes"
+                            RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True"/>
+            </RelativePanel>
+            <RelativePanel Margin="0,10,30,10" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" MaxWidth="175" MaxHeight="100">
+                <Image Source="Assets/upgradeButton.png" Stretch="Fill" MaxHeight="100" MaxWidth="300" RelativePanel.AlignHorizontalCenterWithPanel="True"  RelativePanel.AlignVerticalCenterWithPanel="True"/>
+                <Viewbox RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True" Margin="20,0,20,0">
+                    <TextBlock Text="SALIR" TextWrapping="Wrap" TextAlignment="Center"/>
+                </Viewbox>
+                <Button  Background="Transparent" Width="175" Height="72" HorizontalAlignment="Center" Click="Salir"
+                            RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True"/>
+            </RelativePanel>
+        </Grid>
     </Grid>
 </Page>
