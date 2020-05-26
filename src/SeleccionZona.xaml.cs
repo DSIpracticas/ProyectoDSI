@@ -112,5 +112,10 @@ namespace ProyectoDSI
                 Unlock.Visibility = Visibility.Visible;
             }
         }
+
+        private void Info_SelectionChanged(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

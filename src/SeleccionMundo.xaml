@@ -65,15 +65,15 @@
             <Image x:Name="DescriptionImage" Source="Assets/panelTexto.png" Stretch="Fill" MaxWidth="450" MaxHeight="450"/>
             <Viewbox RelativePanel.AlignVerticalCenterWith="DescriptionImage" RelativePanel.AlignHorizontalCenterWith="DescriptionImage" 
                      MaxWidth="400" MaxHeight="75" Margin="15,0,15,200">
-                <TextBlock x:Name="Info" Text="Información" TextDecorations="Underline" Foreground="White" TextWrapping="Wrap" TextAlignment="Center"/>
+                <TextBlock x:Name="Info" FontFamily="Modern No. 20" Text="Información" TextDecorations="Underline" Foreground="#02FEFE" TextWrapping="Wrap" TextAlignment="Center"/>
             </Viewbox>
             <Viewbox RelativePanel.AlignVerticalCenterWith="DescriptionImage" RelativePanel.AlignHorizontalCenterWith="DescriptionImage" 
                      MaxWidth="400" MaxHeight="60" Margin="15,0,15,0">
-                <TextBlock x:Name="Difficulty" Text="Dificultad" Foreground="White" TextWrapping="Wrap" TextAlignment="Center"/>
+                <TextBlock x:Name="Difficulty" FontFamily="Modern No. 20" Text="Dificultad" Foreground="White" TextWrapping="Wrap" TextAlignment="Center"/>
             </Viewbox>
             <Viewbox RelativePanel.AlignVerticalCenterWith="DescriptionImage" RelativePanel.AlignHorizontalCenterWith="DescriptionImage" 
                      MaxWidth="400" MaxHeight="60" Margin="15,180,15,0" >
-                <TextBlock x:Name="Races" Text="Nº carreras" Foreground="White" TextWrapping="Wrap" TextAlignment="Center"/>
+                <TextBlock x:Name="Races" FontFamily="Modern No. 20" Text="Nº carreras" Foreground="White" TextWrapping="Wrap" TextAlignment="Center"/>
             </Viewbox>
         </RelativePanel>
 
