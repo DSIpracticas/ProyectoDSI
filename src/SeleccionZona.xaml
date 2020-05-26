@@ -71,39 +71,39 @@
         <RelativePanel Grid.Column="2" Grid.Row="1" Margin="0,50,0,0" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Image x:Name="DescriptionImage" Source="Assets/panelTexto.png" Stretch="Fill" MaxWidth="450" MaxHeight="750"/>
             <Viewbox RelativePanel.AlignVerticalCenterWith="DescriptionImage" RelativePanel.AlignHorizontalCenterWith="DescriptionImage" 
-                     MaxWidth="400" MaxHeight="60" Margin="15,0,15,500">
+                     MaxWidth="400" MaxHeight="55" Margin="15,0,15,450">
                 <TextBlock x:Name="Info" FontFamily="Modern No. 20" Text="Información" TextDecorations="Underline" Foreground="#02FEFE" TextWrapping="Wrap" TextAlignment="Center" SelectionChanged="Info_SelectionChanged"/>
             </Viewbox>
             <Viewbox RelativePanel.AlignVerticalCenterWith="DescriptionImage" RelativePanel.AlignHorizontalCenterWith="DescriptionImage" 
-                     MaxWidth="400" MaxHeight="50" Margin="15,0,15,375">
+                     MaxWidth="400" MaxHeight="40" Margin="15,0,15,325">
                 <TextBlock x:Name="Difficulty" FontFamily="Modern No. 20" Text="Dificultad" Foreground="White" TextWrapping="Wrap" TextAlignment="Center"/>
             </Viewbox>
             <Viewbox RelativePanel.AlignVerticalCenterWith="DescriptionImage" RelativePanel.AlignHorizontalCenterWith="DescriptionImage" 
-                     MaxWidth="400" MaxHeight="50" Margin="15,0,15,250" >
+                     MaxWidth="400" MaxHeight="40" Margin="15,0,15,225" >
                 <TextBlock x:Name="Type" FontFamily="Modern No. 20" Text="Tipo de carrera" Foreground="White" TextWrapping="Wrap" TextAlignment="Center"/>
             </Viewbox>
             <Viewbox RelativePanel.AlignVerticalCenterWith="DescriptionImage" RelativePanel.AlignHorizontalCenterWith="DescriptionImage" 
-                     MaxWidth="400" MaxHeight="50" Margin="15,0,15,125" >
+                     MaxWidth="400" MaxHeight="40" Margin="15,0,15,125" >
                 <TextBlock x:Name="Laps" FontFamily="Modern No. 20" Text="Nº de vueltas" Foreground="White" TextWrapping="Wrap" TextAlignment="Center"/>
             </Viewbox>
             <Viewbox RelativePanel.AlignVerticalCenterWith="DescriptionImage" RelativePanel.AlignHorizontalCenterWith="DescriptionImage" 
-                     MaxWidth="400" MaxHeight="60" Margin="15,0,15,0">
+                     MaxWidth="400" MaxHeight="55" Margin="15,0,15,0">
                 <TextBlock FontFamily="Modern No. 20" Text="Recompensas:" TextDecorations="Underline" Foreground="#02FEFE" TextWrapping="Wrap" TextAlignment="Center"/>
             </Viewbox>
             <Viewbox RelativePanel.AlignVerticalCenterWith="DescriptionImage" RelativePanel.AlignHorizontalCenterWith="DescriptionImage" 
-                     MaxWidth="400" MaxHeight="50" Margin="15,125,15,0">
+                     MaxWidth="400" MaxHeight="40" Margin="15,125,15,0">
                 <TextBlock x:Name="Reward1" FontFamily="Modern No. 20" Text="Primer puesto" Foreground="White" TextWrapping="Wrap" TextAlignment="Center"/>
             </Viewbox>
             <Viewbox RelativePanel.AlignVerticalCenterWith="DescriptionImage" RelativePanel.AlignHorizontalCenterWith="DescriptionImage" 
-                     MaxWidth="400" MaxHeight="50" Margin="15,250,15,0" >
+                     MaxWidth="400" MaxHeight="40" Margin="15,225,15,0" >
                 <TextBlock x:Name="Reward2" FontFamily="Modern No. 20" Text="Segundo puesto" Foreground="White" TextWrapping="Wrap" TextAlignment="Center"/>
             </Viewbox>
             <Viewbox RelativePanel.AlignVerticalCenterWith="DescriptionImage" RelativePanel.AlignHorizontalCenterWith="DescriptionImage" 
-                     MaxWidth="400" MaxHeight="50" Margin="15,375,15,0" >
+                     MaxWidth="400" MaxHeight="40" Margin="15,325,15,0" >
                 <TextBlock x:Name="Reward3" FontFamily="Modern No. 20" Text="Tercer puesto" Foreground="White" TextWrapping="Wrap" TextAlignment="Center"/>
             </Viewbox>
             <Viewbox RelativePanel.AlignVerticalCenterWith="DescriptionImage" RelativePanel.AlignHorizontalCenterWith="DescriptionImage" 
-                     MaxWidth="400" MaxHeight="50" Margin="15,500,15,0" >
+                     MaxWidth="400" MaxHeight="40" Margin="15,425,15,0" >
                 <TextBlock x:Name="RestReward" FontFamily="Modern No. 20" Text="Resto" Foreground="White" TextWrapping="Wrap" TextAlignment="Center"/>
             </Viewbox>
         </RelativePanel>

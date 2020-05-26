@@ -32,7 +32,7 @@ namespace ProyectoDSI
 
         private void MuestraInfo(VMLogro logro)
         {
-            logro.Recompensa = "Dinero: " + logro.Dinero + "€ Fama: " + logro.Fama;
+            logro.Recompensa = "Dinero: " + logro.Dinero + "€ Fama: " + logro.Fama + " Followers";
         }
 
         //Método para mostrar los atributos de los logros
@@ -74,7 +74,7 @@ namespace ProyectoDSI
                         id++;
                     }
                 }
-                famaText_.Text = "Fama: " + fama + " Followers";
+                famaText_.Text = "Fama: " + fama + " Seguidores";
                 dineroText_.Text = "Dinero: " + dinero + " €";
             }
 

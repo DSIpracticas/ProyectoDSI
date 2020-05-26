@@ -32,7 +32,7 @@ namespace ProyectoDSI
 
         private void MuestraInfo(VMRanking ranking)
         {
-            ranking.FamaText = "Fama necesaria: " + ranking.Fama + " Followers";
+            ranking.FamaText = "Fama necesaria: " + ranking.Fama + " Seguidores";
         }
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {

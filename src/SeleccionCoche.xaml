@@ -47,96 +47,270 @@
         <Image x:Name="backgroudImage" Source="/Assets/Garage3.jpg" Stretch="Fill" Grid.ColumnSpan="3" Grid.RowSpan="4"/>
 
         <!--Dinero-->
-        <Image Source="/Assets/panel.png" Stretch="Fill" Grid.Column="2" Margin="80,20,80,40"/>
-        <TextBlock x:Name="DineroText" Text="DINERO: €" Grid.Column="2" HorizontalAlignment="Center" Grid.Row="0" FontSize="40" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Height="77" Width="382" Foreground="#02FEFE"/>
+        <!--<Image Source="/Assets/panel.png" Stretch="Fill" Grid.Column="2" Margin="80,20,80,40"/>
+        <TextBlock x:Name="DineroText" Text="DINERO: €" Grid.Column="2" HorizontalAlignment="Center" Grid.Row="0" FontSize="40" TextAlignment="Center" 
+                   TextWrapping="Wrap" VerticalAlignment="Center" Height="77" Width="382" Foreground="#02FEFE"/>-->
+        <RelativePanel x:Name="PanelDinero" Grid.Column="2" Margin="80,20,80,40">
+            <Image x:Name="streetRacingImage" Source="/Assets/panel.png" Stretch="Fill" MaxWidth="300" MaxHeight="100"
+                    RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.AlignHorizontalCenterWithPanel="True"/>
+            <Viewbox RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.AlignHorizontalCenterWithPanel="True" 
+                     MaxWidth="250" MaxHeight="75" Margin="15,0,15,0" >
+                <TextBlock x:Name="DineroText" Text="DINERO: €" Foreground="#02FEFE" TextWrapping="Wrap" TextAlignment="Center" FontSize="40"/>
+            </Viewbox>
+        </RelativePanel>
 
         <!--Estadisticas-->
         <RelativePanel Grid.Row="1" HorizontalAlignment="Center">
             <Image Source="/Assets/panelTexto.PNG" Stretch="Fill" Margin="30, 0, 30, 15"/>
         </RelativePanel>
-        <StackPanel Grid.Row="1" HorizontalAlignment="Center" Margin="0,60,0,0" >
-            <TextBlock Style="{StaticResource Propiedades}" Text="GAMA" FontWeight="Bold"/>
-            <StackPanel Height="40" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,6">
-                <Image x:Name="Estrella1" Source="/Assets/estrellaGama.PNG" Width="40"/>
-                <Image x:Name="Estrella2" Source="/Assets/estrellaGama.PNG" Width="40"/>
-                <Image x:Name="Estrella3" Source="/Assets/estrellaGama.PNG" Width="40"/>
-                <Image x:Name="Estrella4" Source="/Assets/estrellaGama.PNG" Width="40"/>
-                <Image x:Name="Estrella5" Source="/Assets/estrellaGama.PNG" Width="40"/>
-            </StackPanel>
-            <TextBlock Style="{StaticResource Propiedades}" Text="ACELERACION"/>
-            <TextBlock Style="{StaticResource Propiedades}" x:Name="AceleracionText" Text="XX"/>
-            <TextBlock Style="{StaticResource Propiedades}" Text="VELOCIDAD"/>
-            <TextBlock Style="{StaticResource Propiedades}" x:Name="VelocidadText" Text="XX"/>
-            <TextBlock Style="{StaticResource Propiedades}" Text="SUSPENSION"/>
-            <TextBlock Style="{StaticResource Propiedades}" x:Name="SuspensionText" Text="XX"/>
-            <TextBlock Style="{StaticResource Propiedades}" Text="AGARRE"/>
-            <TextBlock Style="{StaticResource Propiedades}" x:Name="AgarreText" Text="XX"/>
-            <TextBlock Style="{StaticResource Propiedades}" Text="AERODINAMICA"/>
-            <TextBlock Style="{StaticResource Propiedades}" x:Name="AerodinamicaText" Text="XX"/>
-        </StackPanel>
+        <Grid Grid.Row="1" HorizontalAlignment="Center" Margin="0,0,0,0">
+                <Grid.RowDefinitions>
+                <RowDefinition Height="1.2*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="1.7*"/>
+            </Grid.RowDefinitions>
+                <RelativePanel Margin="40,0,40,0" Grid.Row="1">
+                    <Viewbox RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.AlignHorizontalCenterWithPanel="True" MaxWidth="150" MaxHeight="40">
+                        <TextBlock Style="{StaticResource Propiedades}" Text="GAMA" FontWeight="Bold"/>
+                    </Viewbox>
+                </RelativePanel>
 
-        <!--Panel de mejora-->
+                <StackPanel MaxHeight="40" MaxWidth="200" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,6" Grid.Row="2">
+                    <Image x:Name="Estrella1" Source="/Assets/estrellaGama.PNG" MaxWidth="40"/>
+                    <Image x:Name="Estrella2" Source="/Assets/estrellaGama.PNG" MaxWidth="40"/>
+                    <Image x:Name="Estrella3" Source="/Assets/estrellaGama.PNG" MaxWidth="40"/>
+                    <Image x:Name="Estrella4" Source="/Assets/estrellaGama.PNG" MaxWidth="40"/>
+                    <Image x:Name="Estrella5" Source="/Assets/estrellaGama.PNG" MaxWidth="40"/>
+                </StackPanel>
+
+            <RelativePanel Margin="40,0,40,0" Grid.Row="3">
+                    <Viewbox RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.AlignHorizontalCenterWithPanel="True" MaxWidth="150" MaxHeight="40">
+                        <TextBlock Style="{StaticResource Propiedades}" Text="ACELERACION" TextWrapping="Wrap"/>
+                    </Viewbox>
+                </RelativePanel>
+
+                <RelativePanel Margin="40,0,40,0" Grid.Row="4">
+                    <Viewbox RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.AlignHorizontalCenterWithPanel="True" MaxWidth="150" MaxHeight="40">
+                        <TextBlock Style="{StaticResource Propiedades}" x:Name="AceleracionText" Text="XX"/>
+                    </Viewbox>
+                </RelativePanel>
+
+                <RelativePanel Margin="40,0,40,0" Grid.Row="5">
+                    <Viewbox RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.AlignHorizontalCenterWithPanel="True" MaxWidth="150" MaxHeight="40">
+                        <TextBlock Style="{StaticResource Propiedades}" Text="VELOCIDAD"/>
+                    </Viewbox>
+                </RelativePanel>
+
+                <RelativePanel Margin="40,0,40,0" Grid.Row="6">
+                    <Viewbox RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.AlignHorizontalCenterWithPanel="True" MaxWidth="150" MaxHeight="40">
+                        <TextBlock Style="{StaticResource Propiedades}" x:Name="VelocidadText" Text="XX"/>
+                    </Viewbox>
+                </RelativePanel>
+
+                <RelativePanel Margin="40,0,40,0" Grid.Row="7">
+                    <Viewbox RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.AlignHorizontalCenterWithPanel="True" MaxWidth="150" MaxHeight="40">
+                        <TextBlock Style="{StaticResource Propiedades}" Text="SUSPENSION"/>
+                    </Viewbox>
+                </RelativePanel>
+
+                <RelativePanel Margin="40,0,40,0" Grid.Row="8">
+                    <Viewbox RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.AlignHorizontalCenterWithPanel="True" MaxWidth="150" MaxHeight="40">
+                        <TextBlock Style="{StaticResource Propiedades}" x:Name="SuspensionText" Text="XX"/>
+                    </Viewbox>
+                </RelativePanel>
+
+                <RelativePanel Margin="40,0,40,0" Grid.Row="9">
+                    <Viewbox RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.AlignHorizontalCenterWithPanel="True" MaxWidth="150" MaxHeight="40">
+                        <TextBlock Style="{StaticResource Propiedades}" Text="AGARRE"/>
+                    </Viewbox>
+                </RelativePanel>
+
+                <RelativePanel Margin="40,0,40,0" Grid.Row="10">
+                    <Viewbox RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.AlignHorizontalCenterWithPanel="True" MaxWidth="150" MaxHeight="40">
+                        <TextBlock Style="{StaticResource Propiedades}" x:Name="AgarreText" Text="XX"/>
+                    </Viewbox>
+                </RelativePanel>
+
+                <RelativePanel Margin="40,0,40,0" Grid.Row="11">
+                    <Viewbox RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.AlignHorizontalCenterWithPanel="True" MaxWidth="150" MaxHeight="40">
+                        <TextBlock Style="{StaticResource Propiedades}" Text="AERODINAMICA"/>
+                    </Viewbox>
+                </RelativePanel>
+
+                <RelativePanel Margin="40,0,40,0" Grid.Row="12">
+                    <Viewbox RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.AlignHorizontalCenterWithPanel="True" MaxWidth="150" MaxHeight="40">
+                        <TextBlock Style="{StaticResource Propiedades}" x:Name="AerodinamicaText" Text="XX"/>
+                    </Viewbox>
+                </RelativePanel>
+            </Grid>
+
+            <!--Panel de mejora-->
         <Image Source="/Assets/panelTexto.PNG" Stretch="Fill" Grid.Row="1" Grid.Column="2" Margin="30, 0, 30, 15"/>
-        <StackPanel Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" Margin="0,60,0,0" Orientation="Horizontal">
-            <StackPanel>
-                <TextBlock Style="{StaticResource Propiedades}" Text="PANEL DE MEJORAS" FontWeight="Bold" Margin="0,10,0,10"/>
-                <TextBlock Style="{StaticResource Propiedades}" x:Name="Turbo" Text="XX" Margin="0,10,0,10"/>
-                <TextBlock Style="{StaticResource Propiedades}" x:Name="MejoraAceleracion" Text="XX" Margin="0,10,0,10"/>
-                <TextBlock Style="{StaticResource Propiedades}" x:Name="Motor" Text="XX" Margin="0,10,0,10"/>
-                <TextBlock Style="{StaticResource Propiedades}" x:Name="MejoraVelocidad" Text="XX" Margin="0,10,0,10"/>
-                <TextBlock Style="{StaticResource Propiedades}" x:Name="Amortiguadores" Text="XX" Margin="0,10,0,10"/>
-                <TextBlock Style="{StaticResource Propiedades}" x:Name="MejoraSuspension" Text="XX" Margin="0,10,0,10"/>
-                <TextBlock Style="{StaticResource Propiedades}" x:Name="Neumaticos" Text="XX" Margin="0,10,0,10"/>
-                <TextBlock Style="{StaticResource Propiedades}" x:Name="MejoraAgarre" Text="XX" Margin="0,10,0,10"/>
-                <TextBlock Style="{StaticResource Propiedades}" x:Name="Carroceria" Text="XX" Margin="0,10,0,10"/>
-                <TextBlock Style="{StaticResource Propiedades}" x:Name="MejoraAerodinamica" Text="XX" Margin="0,10,0,10"/>
-            </StackPanel>
-            <StackPanel x:Name="PanelBotonesMejorar" Margin="0, 40, 0,0">
-                <RelativePanel Width="100" Height="72" Margin="0,6,0,6">
-                    <Image x:Name="ImagenMejoraAce" Source="Assets/upgradeButton.png" Stretch="Fill"/>
-                    <Viewbox>
-                        <TextBlock Style="{StaticResource Mejoras}" x:Name="TextoMejoraAce" Text="XXXXX" TextWrapping="Wrap" TextAlignment="Center"/>
-                    </Viewbox>
-                    <Button x:Name="BotonMejoraAce" Background="Transparent" Width="100" Height="72" HorizontalAlignment="Center" Click="BotonMejoraAce_Click"/>
-                </RelativePanel>
-                <RelativePanel Width="100" Height="72" Margin="0,6,0,6">
-                    <Image x:Name="ImagenMejoraVel" Source="Assets/upgradeButton.png" Stretch="Fill"/>
-                    <Viewbox>
-                        <TextBlock Style="{StaticResource Mejoras}" x:Name="TextoMejoraVel" Text="XXXXX" TextWrapping="Wrap" TextAlignment="Center"/>
-                    </Viewbox>
-                    <Button x:Name="BotonMejoraVel" Background="Transparent" Width="100" Height="72" HorizontalAlignment="Center" Click="BotonMejoraVel_Click"/>
-                </RelativePanel>
-                <RelativePanel Width="100" Height="72" Margin="0,6,0,6">
-                    <Image x:Name="ImagenMejoraSus" Source="Assets/upgradeButton.png" Stretch="Fill"/>
-                    <Viewbox>
-                        <TextBlock Style="{StaticResource Mejoras}" x:Name="TextoMejoraSus" Text="XXXXX" TextWrapping="Wrap" TextAlignment="Center"/>
-                    </Viewbox>
-                    <Button x:Name="BotonMejoraSus" Background="Transparent" Width="100" Height="72" HorizontalAlignment="Center" Click="BotonMejoraSus_Click"/>
-                </RelativePanel>
-                <RelativePanel Width="100" Height="72" Margin="0,6,0,6">
-                    <Image x:Name="ImagenMejoraAga" Source="Assets/upgradeButton.png" Stretch="Fill"/>
-                    <Viewbox>
-                        <TextBlock Style="{StaticResource Mejoras}" x:Name="TextoMejoraAga" Text="XXXXX" TextWrapping="Wrap" TextAlignment="Center"/>
-                    </Viewbox>
-                    <Button x:Name="BotonMejoraAga" Background="Transparent" Width="100" Height="72" HorizontalAlignment="Center" Click="BotonMejoraAga_Click"/>
-                </RelativePanel>
-                <RelativePanel Width="100" Height="72" Margin="0,6,0,6">
-                    <Image x:Name="ImagenMejoraAer" Source="Assets/upgradeButton.png" Stretch="Fill"/>
-                    <Viewbox>
-                        <TextBlock Style="{StaticResource Mejoras}" x:Name="TextoMejoraAer" Text="XXXXX" TextWrapping="Wrap" TextAlignment="Center"/>
-                    </Viewbox>
-                    <Button x:Name="BotonMejoraAer" Background="Transparent" Width="100" Height="72" HorizontalAlignment="Center" Click="BotonMejoraAer_Click"/>
-                </RelativePanel>
-            </StackPanel>
-        </StackPanel>
+        <Grid Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="8*"/>
+                <ColumnDefinition Width="5*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1.2*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="1.7*"/>
+            </Grid.RowDefinitions>
+            
+            <!--Textos-->
+            <RelativePanel Margin="40,0,40,0" Grid.ColumnSpan="2" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Viewbox RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.AlignHorizontalCenterWithPanel="True">
+                    <TextBlock Style="{StaticResource Propiedades}" Text="PANEL DE MEJORAS" FontWeight="Bold" FontSize="50"/>
+                </Viewbox>
+            </RelativePanel>
+
+            <RelativePanel Margin="40,0,10,0" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Viewbox RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.AlignHorizontalCenterWithPanel="True">
+                    <TextBlock Style="{StaticResource Propiedades}" x:Name="Turbo" Text="XX" Margin="0,10,0,10"/>
+                </Viewbox>
+            </RelativePanel>
+
+            <RelativePanel Margin="40,0,10,0" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Viewbox RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.AlignHorizontalCenterWithPanel="True">
+                    <TextBlock Style="{StaticResource Propiedades}" x:Name="MejoraAceleracion" Text="XX" Margin="0,10,0,10"/>
+                </Viewbox>
+            </RelativePanel>
+
+            <RelativePanel Margin="40,0,10,0" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Viewbox RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.AlignHorizontalCenterWithPanel="True">
+                    <TextBlock Style="{StaticResource Propiedades}" x:Name="Motor" Text="XX" Margin="0,10,0,10"/>
+                </Viewbox>
+            </RelativePanel>
+
+            <RelativePanel Margin="40,0,10,0" Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Viewbox RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.AlignHorizontalCenterWithPanel="True">
+                    <TextBlock Style="{StaticResource Propiedades}" x:Name="MejoraVelocidad" Text="XX" Margin="0,10,0,10"/>
+                </Viewbox>
+            </RelativePanel>
+
+            <RelativePanel Margin="50,0,10,0" Grid.Row="6" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Viewbox RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.AlignHorizontalCenterWithPanel="True">
+                    <TextBlock Style="{StaticResource Propiedades}" x:Name="Amortiguadores" Text="XX" Margin="0,10,0,10"/>
+                </Viewbox>
+            </RelativePanel>
+
+            <RelativePanel Margin="40,0,10,0" Grid.Row="7" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Viewbox RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.AlignHorizontalCenterWithPanel="True">
+                    <TextBlock Style="{StaticResource Propiedades}" x:Name="MejoraSuspension" Text="XX" Margin="0,10,0,10"/>
+                </Viewbox>
+            </RelativePanel>
+
+            <RelativePanel Margin="40,0,10,0" Grid.Row="8" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Viewbox RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.AlignHorizontalCenterWithPanel="True">
+                    <TextBlock Style="{StaticResource Propiedades}" x:Name="Neumaticos" Text="XX" Margin="0,10,0,10"/>
+                </Viewbox>
+            </RelativePanel>
+            
+            <RelativePanel Margin="40,0,10,0" Grid.Row="9" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Viewbox RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.AlignHorizontalCenterWithPanel="True">
+                    <TextBlock Style="{StaticResource Propiedades}" x:Name="MejoraAgarre" Text="XX" Margin="0,10,0,10"/>
+                </Viewbox>
+            </RelativePanel>
+            
+            <RelativePanel Margin="40,0,10,0" Grid.Row="10" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Viewbox RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.AlignHorizontalCenterWithPanel="True">
+                    <TextBlock Style="{StaticResource Propiedades}" x:Name="Carroceria" Text="XX" Margin="0,10,0,10"/>
+                </Viewbox>
+            </RelativePanel>
+
+            <RelativePanel Margin="40,0,10,0" Grid.Row="11" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Viewbox RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.AlignHorizontalCenterWithPanel="True">
+                    <TextBlock Style="{StaticResource Propiedades}" x:Name="MejoraAerodinamica" Text="XX" Margin="0,10,0,10"/>
+                </Viewbox>
+            </RelativePanel>
+
+            <!--Botones-->
+            <RelativePanel Margin="0,10,30,10" Grid.Row="2" Grid.RowSpan="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" MaxWidth="100" MaxHeight="100">
+                <Image x:Name="ImagenMejoraAce" Source="Assets/upgradeButton.png" Stretch="Fill" MaxHeight="100" MaxWidth="100" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True"/>
+                <Viewbox RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True">
+                    <TextBlock Style="{StaticResource Mejoras}" x:Name="TextoMejoraAce" Text="XXXXX" TextWrapping="Wrap" TextAlignment="Center"/>
+                </Viewbox>
+                <Button x:Name="BotonMejoraAce" Background="Transparent" Width="100" Height="72" HorizontalAlignment="Center" Click="BotonMejoraAce_Click"
+                        RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True"/>
+            </RelativePanel>
+
+            <RelativePanel Margin="0,10,30,10" Grid.Row="4" Grid.RowSpan="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" MaxWidth="100" MaxHeight="100">
+                <Image x:Name="ImagenMejoraVel" Source="Assets/upgradeButton.png" Stretch="Fill" MaxHeight="100" MaxWidth="100" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True"/>
+                <Viewbox RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True">
+                    <TextBlock Style="{StaticResource Mejoras}" x:Name="TextoMejoraVel" Text="XXXXX" TextWrapping="Wrap" TextAlignment="Center"/>
+                </Viewbox>
+                <Button x:Name="BotonMejoraVel" Background="Transparent" Width="100" Height="72" HorizontalAlignment="Center" Click="BotonMejoraVel_Click"
+                        RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True"/>
+            </RelativePanel>
+
+            <RelativePanel Margin="0,10,30,10" Grid.Row="6" Grid.RowSpan="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" MaxWidth="100" MaxHeight="100">
+                <Image x:Name="ImagenMejoraSus" Source="Assets/upgradeButton.png" Stretch="Fill" MaxHeight="100" MaxWidth="100" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True"/>
+                <Viewbox RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True">
+                    <TextBlock Style="{StaticResource Mejoras}" x:Name="TextoMejoraSus" Text="XXXXX" TextWrapping="Wrap" TextAlignment="Center"/>
+                </Viewbox>
+                <Button x:Name="BotonMejoraSus" Background="Transparent" Width="100" Height="72" HorizontalAlignment="Center" Click="BotonMejoraSus_Click"
+                        RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True"/>
+            </RelativePanel>
+
+            <RelativePanel Margin="0,10,30,10" Grid.Row="8" Grid.RowSpan="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" MaxWidth="100" MaxHeight="100">
+                <Image x:Name="ImagenMejoraAga" Source="Assets/upgradeButton.png" Stretch="Fill" MaxHeight="100" MaxWidth="100" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True"/>
+                <Viewbox RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True">
+                    <TextBlock Style="{StaticResource Mejoras}" x:Name="TextoMejoraAga" Text="XXXXX" TextWrapping="Wrap" TextAlignment="Center"/>
+                </Viewbox>
+                <Button x:Name="BotonMejoraAga" Background="Transparent" Width="100" Height="72" HorizontalAlignment="Center" Click="BotonMejoraAga_Click"
+                        RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True"/>
+            </RelativePanel>
+
+            <RelativePanel Margin="0,10,30,10" Grid.Row="10" Grid.RowSpan="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" MaxWidth="100" MaxHeight="100">
+                <Image x:Name="ImagenMejoraAer" Source="Assets/upgradeButton.png" Stretch="Fill" MaxHeight="100" MaxWidth="100" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True"/>
+                <Viewbox RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True">
+                    <TextBlock Style="{StaticResource Mejoras}" x:Name="TextoMejoraAer" Text="XXXXX" TextWrapping="Wrap" TextAlignment="Center"/>
+                </Viewbox>
+                <Button x:Name="BotonMejoraAer" Background="Transparent" Width="100" Height="72" HorizontalAlignment="Center" Click="BotonMejoraAer_Click"
+                        RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True"/>
+            </RelativePanel>
+        </Grid>
+        
 
         <!--Coche-->
-        <StackPanel Grid.Column="1" Grid.Row="1">
-            <RelativePanel Height="50" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="80,0,80,0">
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="8*"/>
+                <RowDefinition Height="3*"/>
+            </Grid.RowDefinitions>
+
+            <RelativePanel Height="auto" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="80,0,80,0">
                 <Image Source="/Assets/panel.png" Stretch="Fill"/>
-                <TextBlock x:Name="NombreCoche" Text="Ferrari 599XX Dogde Charger" Foreground="#02FEFE" FontSize="24" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True" FontWeight="Bold"/>
+                <RelativePanel Grid.Row="4" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True" Width="auto" Margin="22,0,22,0">
+                    <Viewbox RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.AlignHorizontalCenterWithPanel="True" MaxWidth="400" MaxHeight="100">
+                        <TextBlock x:Name="NombreCoche" Text="Ferrari 599XX Dogde Charger" Foreground="#02FEFE" FontSize="40" FontWeight="Bold"/>
+                    </Viewbox>
+                </RelativePanel>
             </RelativePanel>
-            <RelativePanel Height="auto" MaxHeight="400">
+
+            <RelativePanel Height="auto" MaxHeight="400" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
                 <FlipView x:Name="ImagenesGrandes" Height="auto" SelectedIndex="0" SelectionChanged="ImagenesGrandes_SelectionChanged">
                     <Image x:Name="ImagenCoche1" Source="/Assets/Cars/Coche1.png"/>
                     <Image x:Name="ImagenCoche2" Source="/Assets/Cars/Coche2.png"/>
@@ -154,14 +328,16 @@
                 </FlipView>
                 <Image x:Name="Candado" Source="/Assets/candado.png" Height="100" Width="100" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True"/>
             </RelativePanel>
-            <RelativePanel Height="80" Width="400">
-                <Image x:Name="ImagenComprar" Source="Assets/upgradeButton.png" Stretch="Fill"/>
+
+            <RelativePanel Height="Auto" Margin="0,10,30,10" Grid.Row="10" Grid.RowSpan="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" MaxWidth="300" MaxHeight="100">
+                <Image x:Name="ImagenComprar" Source="Assets/upgradeButton.png" Stretch="Fill" MaxHeight="100" MaxWidth="300" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True"/>
                 <Viewbox RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True">
                     <TextBlock Style="{StaticResource Mejoras}" x:Name="CosteCompra" Text="XXXXX" TextWrapping="Wrap" TextAlignment="Center"/>
                 </Viewbox>
-                <Button x:Name="BotonComprar" Background="Transparent" Height="80" Width="400" HorizontalAlignment="Center" Click="Comprar"/>
+                <Button x:Name="BotonComprar" Background="Transparent" Width="300" Height="100" HorizontalAlignment="Center" Click="Comprar"
+                        RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True"/>
             </RelativePanel>
-        </StackPanel>
+        </Grid>
 
         <!--Lista de coches-->
         <ScrollViewer x:Name="CochesImageScroller" Grid.Row="2" Grid.ColumnSpan="3" ZoomMode="Disabled" HorizontalScrollMode="Enabled"
@@ -184,12 +360,23 @@
         </ScrollViewer>
 
         <!--botón de atrás-->
-        <RelativePanel Grid.Row="3" Width="80" Height="60" HorizontalAlignment="Left" Margin="50,10,10,10">
-            <Image Source="Assets/backButton.png" Stretch="Fill"/>
-            <Button x:Name="back" Background="Transparent" Width="120" Height="90" HorizontalAlignment="Center" Click="back_Click"/>
+        <RelativePanel x:Name="backPanel" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" MaxWidth="100" MaxHeight="100">
+            <Image x:Name="backImage" Source="Assets/backButton.png" Stretch="Fill" MaxWidth="100" MaxHeight="100"
+                    RelativePanel.AlignVerticalCenterWith="backButton" RelativePanel.AlignHorizontalCenterWith="backButton"/>
+            <Button x:Name="backButton" Background="Transparent" Click="back_Click" Width="100" Height="100"
+                    RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True"/>
         </RelativePanel>
-
-        <Button x:Name="BotonJugar" Content="Jugar" Click="Jugar" Grid.Row="3" Grid.Column="2" Width="175" Background="Yellow" HorizontalAlignment="Center"/>
+        
+        <!--BotonJugar-->
+        <RelativePanel Margin="0,10,30,10" Grid.Row="3" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" MaxWidth="175" MaxHeight="100">
+            <Image x:Name="ImagenJugar" Source="Assets/upgradeButton.png" Stretch="Fill" MaxHeight="100" MaxWidth="300" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True"/>
+            <Viewbox RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True">
+                <TextBlock Style="{StaticResource Mejoras}" x:Name="TextoJugar" Text="XXXXX" TextWrapping="Wrap" TextAlignment="Center"/>
+            </Viewbox>
+            <Button x:Name="BotonJugar" Background="Transparent" Width="175" Height="72" HorizontalAlignment="Center" Click="Jugar"
+                        RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True"/>
+        </RelativePanel>
+        
 
     </Grid>
 </Page>

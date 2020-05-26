@@ -39,13 +39,13 @@
         </RelativePanel>
 
         <RelativePanel VerticalAlignment="Center" Grid.Column="2" Grid.ColumnSpan="2">
-            <Image x:Name="World2" Source="Assets/fondoInvisible.png" Stretch="Fill" PointerPressed="World_Click"/>
             <Image x:Name="Lock1" Source="Assets/candado.png" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True" MaxWidth="100" MaxHeight="100"/>
+            <Image x:Name="World2" Source="Assets/fondoInvisible.png" Stretch="Fill" PointerPressed="World_Click"/>
         </RelativePanel>
 
         <RelativePanel VerticalAlignment="Center" Grid.Column="4" Grid.ColumnSpan="2">
-            <Image x:Name="World3" Source="Assets/fondoInvisible.png" Stretch="Fill" PointerPressed="World_Click"/>
             <Image x:Name="Lock2" Source="Assets/candado.png" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True" MaxWidth="100" MaxHeight="100"/>
+            <Image x:Name="World3" Source="Assets/fondoInvisible.png" Stretch="Fill" PointerPressed="World_Click"/>
         </RelativePanel>
 
         <!--<RelativePanel VerticalAlignment="Bottom" Margin="0,0,30,60" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True">
