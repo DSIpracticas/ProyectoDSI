@@ -25,62 +25,89 @@
         <!--imagen de fondo-->
         <Image x:Name="backgroudImage" Source="Assets/mainMenuBackgroud.png" Stretch="Fill" Grid.ColumnSpan="6" Grid.RowSpan="3"></Image>
         <!--Fama completados-->
-        <Image Source="Assets/mainButton.png" Stretch="Fill" Height="100" Width="400" Grid.ColumnSpan="2"/>
-        <TextBlock x:Name="famaText_" Grid.ColumnSpan="2" Text="Fama: 0 Followers"
-                    FontSize="25" VerticalAlignment="Center" 
-                    HorizontalAlignment="Center" Foreground="White"/>
-        <!--Logros total-->
-        <Image Source="Assets/mainButton.png" Stretch="Fill" Height="100" Width="400"
-               Grid.Column="2" Grid.ColumnSpan="2"/>
-        <TextBlock x:Name="logrosText_" Grid.Column="2" Grid.ColumnSpan="2" Text="Completados: 3/40"
-                    FontSize="25" VerticalAlignment="Center"
-                    HorizontalAlignment="Center" Foreground="White" FocusVisualPrimaryBrush="White"/>
-        <!--Dinero total-->
-        <Image Source="Assets/mainButton.png" Stretch="Fill" Height="100" Width="400" Grid.Column="4" Grid.ColumnSpan="2"/>
-        <TextBlock x:Name="dineroText_" Grid.Column="4" Grid.ColumnSpan="2" Text="Dinero: 0 €"
-                    FontSize="25" VerticalAlignment="Center"
-                   HorizontalAlignment="Center" Foreground="White"/>
-        <!--botón de atrás-->
-        <StackPanel x:Name="downLeft" Grid.Row="2" HorizontalAlignment="Center">
-            <Button x:Name="back" Width="120" Height="90" Background="Transparent" 
-                    VerticalAlignment="Center" HorizontalAlignment="Center" Click="back_Click"  >
-                <Canvas x:Name="backCanvas" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <Image Source="Assets/backButton.png" Stretch="Fill"
-                           Height="100" Width="150" Canvas.Left ="-70"  Canvas.Top="-50"/>
-                </Canvas>
-            </Button>
-        </StackPanel>
+        <RelativePanel x:Name="famaRelative" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center"
+                       MaxHeight="100" MaxWidth="400">
+            <Image x:Name="famaBg" Source="Assets/mainButton.png" Stretch="Fill" MaxWidth="400"
+                   RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True"/>
+            <Viewbox RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True" MaxWidth="300" MaxHeight="100">
+                <TextBlock x:Name="famaText_" Text="Fama: 0 Followers" TextWrapping="Wrap" Foreground="White" TextAlignment="Center" Margin="20,10,20,10"/>
+            </Viewbox>
+        </RelativePanel>
 
-        <ListView x:Name="listaLogros_" Grid.Row="1" Grid.ColumnSpan="6" VerticalAlignment="Center" HorizontalAlignment="Center"
-                  Height="570" Width="1150" SelectionMode="None">
-            <ListView.ItemTemplate>
-                <DataTemplate x:DataType="local:VMLogro">
-                    <Border x:Name="borderList_" Background= "Transparent" BorderThickness="5" Margin="5, 0, 0, 0">
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="400"/>
-                                <ColumnDefinition Width="500"/>
-                                <ColumnDefinition/>
-                            </Grid.ColumnDefinitions>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="30"/>
-                                <RowDefinition/>
-                            </Grid.RowDefinitions>
-                            <Image Source="{x:Bind Imagen}" Stretch="Fill" Height="60" Width="1150" Grid.RowSpan="2" Grid.ColumnSpan="3"/>
-                            <TextBlock Text="{x:Bind Nombre}" Foreground="Black" FontSize="14" 
-                                        VerticalAlignment="Center" HorizontalAlignment="Left" Margin="20,0,0,0"/>
-                            <TextBlock Text="{x:Bind Requisitos}" Foreground="Black" FontSize="14" 
-                                       Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="20,0,0,0"/>
-                            <TextBlock Text="Recompensas: " Foreground="Black" FontSize="14" 
-                                       Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                            <TextBlock Text="{x:Bind Recompensa}" Foreground="Black" FontSize="14" 
-                                       Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                            <Button x:Name="awardButton" Content="Cobrar Recompensa" Grid.Column="2" Grid.RowSpan="2"
-                                    VerticalAlignment="Center" HorizontalAlignment="Right" IsEnabled="False" Margin="0,0,30,0"/>
-                        </Grid>
-                    </Border>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+        <!--Logros total-->
+        <RelativePanel x:Name="logrosRelative" Grid.ColumnSpan="2" Grid.Column="2" MaxHeight="100" MaxWidth="400"
+                       HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Image x:Name="logrosBg" Source="Assets/mainButton.png" Stretch="Fill" Grid.ColumnSpan="2" MaxWidth="400"
+                   RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True"/>
+            <Viewbox RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True" MaxWidth="300" MaxHeight="100">
+                <TextBlock x:Name="logrosText" Text="Completados: 3/40" TextWrapping="Wrap" Foreground="White" TextAlignment="Center" Margin="20,10,20,10"/>
+            </Viewbox>
+        </RelativePanel>
+        <!--Dinero total-->
+        <RelativePanel x:Name="dineroRelative" Grid.ColumnSpan="2" Grid.Column="4" MaxHeight="100" MaxWidth="400"
+                       HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Image x:Name="dineroBg" Source="Assets/mainButton.png" Stretch="Fill" Grid.ColumnSpan="2" MaxWidth="400"
+                   RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True"/>
+            <Viewbox RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True" MaxWidth="300" MaxHeight="100">
+                <TextBlock x:Name="dineroText_" Text="Dinero: 0 €" TextWrapping="Wrap" Foreground="White"
+                           TextAlignment="Center" Margin="20,10,20,10"/>
+            </Viewbox>
+        </RelativePanel>
+        <!--botón de atrás-->
+        <RelativePanel x:Name="backPanel" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" MaxWidth="150" MaxHeight="100">
+            <Image x:Name="backImage" Source="Assets/backButton.png" Stretch="Fill" MaxWidth="150" MaxHeight="100"
+                    RelativePanel.AlignVerticalCenterWith="backButton" RelativePanel.AlignHorizontalCenterWith="backButton"/>
+            <Button x:Name="backButton" Background="Transparent" Click="back_Click" Width="150" Height="100"
+                    RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True"/>
+        </RelativePanel>
+
+        <RelativePanel Grid.Row="1" Grid.ColumnSpan="6" VerticalAlignment="Center" HorizontalAlignment="Center"
+                       MaxWidth="1150" MaxHeight="570" Margin="10, 0, 10, 0">
+            <ListView x:Name="listaLogros_" SelectionMode="None" RelativePanel.AlignHorizontalCenterWithPanel="True"
+                      RelativePanel.AlignVerticalCenterWithPanel="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="local:VMLogro">
+                        <Border x:Name="borderList_" Background= "Transparent" BorderThickness="5" Margin="5, 0, 0, 0">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="1.25*"/>
+                                    <ColumnDefinition Width="0.625*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Image Source="{x:Bind Imagen}" Stretch="Fill" MaxHeight="60" MaxWidth="1150" Grid.RowSpan="2" Grid.ColumnSpan="3"
+                                       RelativePanel.AlignVerticalCenterWith ="listaRanking_"  RelativePanel.AlignHorizontalCenterWith="listaRanking_"/>
+                                <Viewbox MaxWidth="400" MaxHeight="30" RelativePanel.AlignVerticalCenterWith ="listaRanking_"
+                                         RelativePanel.AlignHorizontalCenterWith="listaRanking_">
+                                    <TextBlock Text="{x:Bind Nombre}" Foreground="Black" TextWrapping="Wrap"
+                                        VerticalAlignment="Center" HorizontalAlignment="Left" Margin="20,10,20,10"/>
+                                </Viewbox>
+                                <Viewbox MaxWidth="400" MaxHeight="30" RelativePanel.AlignVerticalCenterWith ="listaRanking_"
+                                         RelativePanel.AlignHorizontalCenterWith="listaRanking_" Grid.Row="1">
+                                    <TextBlock Text="{x:Bind Requisitos}" Foreground="Black" TextWrapping="Wrap"
+                                            VerticalAlignment="Center" HorizontalAlignment="Left" Margin="20,10,20,10"/>
+                                </Viewbox>
+                                <Viewbox MaxWidth="500" MaxHeight="30" RelativePanel.AlignVerticalCenterWith ="listaRanking_"
+                                         RelativePanel.AlignHorizontalCenterWith="listaRanking_" Grid.Column="1">
+                                    <TextBlock Text="Recompensas: " Foreground="Black" TextWrapping="Wrap"
+                                            VerticalAlignment="Center" HorizontalAlignment="Center" Margin="20,10,20,10"/>
+                                </Viewbox>
+                                <Viewbox MaxWidth="500" MaxHeight="30" RelativePanel.AlignVerticalCenterWith ="listaRanking_"
+                                         RelativePanel.AlignHorizontalCenterWith="listaRanking_" Grid.Column="1" Grid.Row="1">
+                                    <TextBlock Text="{x:Bind Recompensa}" Foreground="Black"  TextWrapping="Wrap"
+                                            VerticalAlignment="Center" HorizontalAlignment="Center" Margin="20,10,20,10"/>
+                                </Viewbox>
+                                <Button x:Name="awardButton" Content="Cobrar Recompensa" Grid.Column="2" Grid.RowSpan="2"
+                                   RelativePanel.AlignHorizontalCenterWith="listaRanking_" RelativePanel.AlignVerticalCenterWith ="listaRanking_"
+                                        IsEnabled="False" Margin="30,0,30,0"/>
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </RelativePanel>
     </Grid>
 </Page>
