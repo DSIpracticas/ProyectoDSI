@@ -42,7 +42,7 @@ namespace ProyectoDSI
 
         private void PlayAgainButton_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(SeleccionCoche));
+            this.Frame.Navigate(typeof(SeleccionCoche), false);
         }
     }
 }
